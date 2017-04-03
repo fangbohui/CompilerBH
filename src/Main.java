@@ -16,7 +16,7 @@ public class Main {
 
 	public static void main(String[] args) throws Exception {
 
-		InputStream is = new FileInputStream("/home/fangbohui/IdeaProjects/Compiler2017BH/src/test.momo");
+		InputStream is = new FileInputStream("/home/fangbohui/IdeaProjects/Compiler2017BH/src/test.txt");
 		InputStreamReader Src = new InputStreamReader(is);
 		ANTLRInputStream input = new ANTLRInputStream(Src);
 		MomoLexer lexer = new MomoLexer(input);
