@@ -65,14 +65,14 @@ expression
 		|   expression '.' IDEN                                                         #fieldExpression
 		|   operator=('+' | '-' | '!' | '~' | '++' | '--') expression                   #unaryExpression
 		|   'new' type ('[' expression? ']')*                                           #newExpression
-		|   expression operator=('*' |' /' | '%') expression                            #multiExpression
-		|   expression operator=('+' |' -') expression                                  #addExpression
+		|   expression operator=('*' | '/' | '%') expression                            #multiExpression
+		|   expression operator=('+' | '-') expression                                  #addExpression
 		|   expression operator=('<<' | '>>') expression                                #shiftExpression
 		|   expression operator=('<' | '>' | '<=' | '>=') expression                    #cmpExpression
 		|   expression operator=('==' | '!=') expression                                #equalExpression
 		|   expression operator=('&' | '|' | '^' ) expression                           #bitExpression
 		|   expression operator=('&&' | '||') expression                                #logicExpression
-		|   expression '=' expression                                                   #assignExpression
+		|   <assoc = right> expression '=' expression                                   #assignExpression
 		;
 
 type

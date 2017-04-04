@@ -39,7 +39,7 @@ public class ClassType extends Type implements Scope {
 			MemberFunction memberFunction = new MemberFunction(name, function);
 			memberFunctionMap.put(name, memberFunction);
 		} else {
-			MemberVar memberVar = new MemberVar(name, type);
+			MemberVar memberVar = new MemberVar(this, name, type);
 			memberVarMap.put(name, memberVar);
 		}
 	}

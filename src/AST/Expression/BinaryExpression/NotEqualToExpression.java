@@ -5,6 +5,7 @@ import AST.Expression.ConstantExpression.IntConstant;
 import AST.Expression.ConstantExpression.NullConstant;
 import AST.Expression.ConstantExpression.StringConstant;
 import AST.Expression.Expression;
+import AST.Type.BasicType.BoolType;
 import AST.Type.Type;
 import Error.CompileError;
 
@@ -34,7 +35,7 @@ public class NotEqualToExpression extends BinaryExpression {
 			String s2 = ((StringConstant) rightExpression).value;
 			return BoolConstant.getConstant(!s1.equals(s2));
 		} else {
-			return new NotEqualToExpression(leftExpression.type, false, leftExpression, rightExpression);
+			return new NotEqualToExpression(BoolType.getType(), false, leftExpression, rightExpression);
 		}
 	}
 }

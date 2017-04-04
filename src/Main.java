@@ -17,22 +17,24 @@ public class Main {
 	public static void main(String[] args) throws Exception {
 
 		InputStream is = new FileInputStream("/home/fangbohui/IdeaProjects/Compiler2017BH/src/test.txt");
-		InputStreamReader Src = new InputStreamReader(is);
-		ANTLRInputStream input = new ANTLRInputStream(Src);
+
+		Environment.inintiallize();
+		ANTLRInputStream input = new ANTLRInputStream(is);
 		MomoLexer lexer = new MomoLexer(input);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		MomoParser parser = new MomoParser(tokens);
-
-		Environment.inintiallize();;
-		ParseTree tree = parser.program();
 		if (parser.getNumberOfSyntaxErrors() > 0) {
 			throw new CompileError("Syntax Error");
 		}
+		ParseTree tree = parser.program();
 		ParseTreeWalker walker = new ParseTreeWalker();
-
 		walker.walk(new ClassGetterListener(), tree);
 		walker.walk(new DefinitionGetterListener(), tree);
 		walker.walk(new BuildTreeListener(), tree);
+
+		if (!Environment.hasMain) {
+			throw new CompileError("You don't have a main function");
+		}
 
 	}
 }

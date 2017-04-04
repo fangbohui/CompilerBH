@@ -54,6 +54,9 @@ public class BuildTreeListener extends BaseListener {
 		Function function = (Function) propertyTree.get(ctx);
 		function.addStatement((BlockStatement) propertyTree.get(ctx.blockStatement()));
 		Environment.exitScope();
+		if (function.name.equals("main")) {
+			Environment.hasMain = true;
+		}
 	}
 
 	@Override
@@ -108,7 +111,7 @@ public class BuildTreeListener extends BaseListener {
 		ctx.statement().forEach(statementContext -> {
 			((BlockStatement)propertyTree.get(ctx)).addStatement((Statement) propertyTree.get(statementContext));
 		});
-		Environment.scopeTable.exitScope();
+		Environment.exitScope();
 	}
 
 	@Override
@@ -258,6 +261,12 @@ public class BuildTreeListener extends BaseListener {
 	public void exitFunctionExpression(MomoParser.FunctionExpressionContext ctx) {
 		Expression expression = (Expression) propertyTree.get(ctx.expression(0));
 		List<Expression> parameters = new ArrayList<>();
+		ClassType classType = Environment.scopeTable.classTypeTop();
+		/*
+		if (classType != null) {
+			parameters.add();
+		}
+		*/
 		for (int i = 1; i < ctx.expression().size(); i ++) {
 			Expression parameter = (Expression) propertyTree.get(ctx.expression(i));
 			parameters.add(parameter);
@@ -279,8 +288,8 @@ public class BuildTreeListener extends BaseListener {
 			} else if (parseTree.getText().equals("]")) {
 				if (last.equals("[")) {
 					hasEmpty = true;
+					dimensionExpressions.add(null);
 				}
-				dimensionExpressions.add(null);
 			}
 			last = parseTree.getText();
 		}

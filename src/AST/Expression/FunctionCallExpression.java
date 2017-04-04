@@ -4,6 +4,7 @@ import AST.Expression.VarExpression.FieldExpression;
 import AST.Function;
 import AST.Type.ClassType;
 import AST.Type.Type;
+import Environment.Environment;
 import Error.CompileError;
 import java.util.List;
 
@@ -56,6 +57,6 @@ public class FunctionCallExpression extends Expression {
 			}
 			return new FunctionCallExpression(function.type, false, function, parameters);
 		}
-		throw new CompileError("I guess there should be a function");
+		throw new CompileError("I guess there it's not a function");
 	}
 }

@@ -39,7 +39,7 @@ public class EqualToExpression extends BinaryExpression {
 			String s2 = ((StringConstant) rightExpression).value;
 			return BoolConstant.getConstant(s1.equals(s2));
 		} else {
-			return new EqualToExpression(leftExpression.type, false, leftExpression, rightExpression);
+			return new EqualToExpression(BoolType.getType(), false, leftExpression, rightExpression);
 		}
 	}
 }

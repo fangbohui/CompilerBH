@@ -19,8 +19,10 @@ public class Environment {
 	public static ScopeTable scopeTable;
 	public static SymbolTable symbolTable;
 	public static ClassTable classTable;
+	public static boolean hasMain;
 
 	public static void inintiallize() {
+		hasMain = false;
 		scopeTable = new ScopeTable();
 		symbolTable = new SymbolTable();
 		classTable = new ClassTable();

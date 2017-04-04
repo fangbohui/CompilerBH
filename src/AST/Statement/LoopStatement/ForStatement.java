@@ -26,8 +26,9 @@ public class ForStatement extends LoopStatement {
 			this.condition = BoolConstant.getConstant(true);
 		} else if (condition.type instanceof BoolType) {
 			this.condition = condition;
+		} else {
+			throw new CompileError("if-condition should be a bool-type");
 		}
-		throw new CompileError("if-condition should be a bool-type");
 	}
 
 	public void addInc(Expression inc) {

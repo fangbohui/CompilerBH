@@ -48,7 +48,7 @@ public class DefinitionGetterListener extends BaseListener {
 			for (int i = 1; i < ctx.type().size(); i ++) {
 				String parameterName = ctx.IDEN(pos).getText();
 				Type parameterType = (Type) propertyTree.get(ctx.type(i));
-				add(new Symbol(parameterName, classType));
+				add(new Symbol(parameterName, parameterType));
 				pos ++;
 			}
 		}};

@@ -1,6 +1,7 @@
 package AST.Expression.VarExpression;
 
 import AST.Function;
+import AST.Type.ClassType;
 import Error.CompileError;
 import AST.Expression.Expression;
 import AST.Type.Type;
@@ -24,7 +25,7 @@ public class IdenExpression extends Expression {
 			throw new CompileError("there is no such an ID");
 		}
 		Symbol symbol = Environment.symbolTable.get(name);
-		if (symbol.scope instanceof ClassScope) {
+		if (symbol.scope instanceof ClassType) {
 			return FieldExpression.getExpression(IdenExpression.getExpression("this"), name);
 		} else if (symbol.scope instanceof Function) {
 			return new IdenExpression(symbol.type, false, symbol);
