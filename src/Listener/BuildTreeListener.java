@@ -116,9 +116,6 @@ public class BuildTreeListener extends BaseListener {
 			Function function = (Function)propertyTree.get(ctx.parent);
 			for (int i = 0; i < function.parameters.size(); i ++) {
 				Symbol parameter = function.parameters.get(i);
-				if (parameter.name.equals("this")) {
-					throw new CompileError("you cannot use this");
-				}
 				function.parameters.set(i, Environment.symbolTable.add(parameter.name, parameter.type));
 			}
 		}
