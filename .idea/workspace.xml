@@ -2,31 +2,65 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="130622e1-2e91-4c8e-b79c-317a8b8f5b0c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ThisExpressionContext.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Type/ClassType.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Type/ClassType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$10.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$10.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$11.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$11.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$12.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$12.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$13.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$13.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$14.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$14.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$15.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$15.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$6.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$7.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$8.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$8.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$9.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$9.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Listener/DefinitionGetterListener.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Listener/DefinitionGetterListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Listener/BuildTreeListener.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Listener/BuildTreeListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoBaseListener.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoBaseListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoBaseVisitor.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoBaseVisitor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoLexer.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoLexer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoListener.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$AddExpressionContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$AddExpressionContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ArrayTypeContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ArrayTypeContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$AssignExpressionContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$AssignExpressionContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$BitExpressionContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$BitExpressionContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$BlockStatementContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$BlockStatementContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$BoolTypeContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$BoolTypeContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$BreakStatementContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$BreakStatementContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ClassDefinitionContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ClassDefinitionContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ClassTypeContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ClassTypeContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$CmpExpressionContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$CmpExpressionContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ConditionStatementContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ConditionStatementContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ConstantContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ConstantContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ConstantExpressionContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ConstantExpressionContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ContinueStatementContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ContinueStatementContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ControlStatementContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ControlStatementContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$EqualExpressionContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$EqualExpressionContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ExpressionContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ExpressionContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ExpressionStatementContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ExpressionStatementContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$FalseConstantContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$FalseConstantContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$FieldExpressionContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$FieldExpressionContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ForStatementContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ForStatementContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$FunctionDefinitionContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$FunctionDefinitionContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$FunctionExpressionContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$FunctionExpressionContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$IdenExpressionContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$IdenExpressionContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$IndexExpressionContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$IndexExpressionContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$IntConstantContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$IntConstantContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$IntTypeContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$IntTypeContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$LogicExpressionContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$LogicExpressionContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$LoopStatementContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$LoopStatementContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$MultiExpressionContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$MultiExpressionContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$NewExpressionContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$NewExpressionContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$NullConstantContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$NullConstantContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$PostfixExpressionContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$PostfixExpressionContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ProgramContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ProgramContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ReturnStatementContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ReturnStatementContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ShiftExpressionContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ShiftExpressionContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$StatementContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$StatementContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$StringConstantContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$StringConstantContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$StringTypeContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$StringTypeContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$SubExpressionContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$SubExpressionContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$TrueConstantContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$TrueConstantContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$TypeContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$TypeContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$UnaryExpressionContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$UnaryExpressionContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$VarDefinitionContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$VarDefinitionContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$VoidTypeContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$VoidTypeContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$WhileStatementContext.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$WhileStatementContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoVisitor.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoVisitor.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/Momo.g4" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/Momo.g4" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/Momo.tokens" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/Momo.tokens" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoLexer.tokens" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoLexer.tokens" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/test.txt" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/test.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Listener/BuildTreeListener.java" afterPath="$PROJECT_DIR$/src/Listener/BuildTreeListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Parser/Momo.g4" afterPath="$PROJECT_DIR$/src/Parser/Momo.g4" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Parser/Momo.tokens" afterPath="$PROJECT_DIR$/src/Parser/Momo.tokens" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Parser/MomoBaseListener.java" afterPath="$PROJECT_DIR$/src/Parser/MomoBaseListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Parser/MomoBaseVisitor.java" afterPath="$PROJECT_DIR$/src/Parser/MomoBaseVisitor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Parser/MomoLexer.java" afterPath="$PROJECT_DIR$/src/Parser/MomoLexer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Parser/MomoLexer.tokens" afterPath="$PROJECT_DIR$/src/Parser/MomoLexer.tokens" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Parser/MomoListener.java" afterPath="$PROJECT_DIR$/src/Parser/MomoListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Parser/MomoParser.java" afterPath="$PROJECT_DIR$/src/Parser/MomoParser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Parser/MomoVisitor.java" afterPath="$PROJECT_DIR$/src/Parser/MomoVisitor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test.txt" afterPath="$PROJECT_DIR$/src/test.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -80,18 +114,40 @@
       <file leaf-file-name="test.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
-              <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+            <state relative-caret-position="380">
+              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FieldExpression.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/AST/Expression/VarExpression/FieldExpression.java">
+      <file leaf-file-name="IfStatement.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AST/Statement/IfStatement.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="37">
-              <caret line="34" column="33" lean-forward="false" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+            <state relative-caret-position="456">
+              <caret line="27" column="9" lean-forward="true" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BuildTreeListener.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Listener/BuildTreeListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="379">
+              <caret line="96" column="34" lean-forward="false" selection-start-line="96" selection-start-column="34" selection-end-line="96" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewExpression.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AST/Expression/NewExpression.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -102,6 +158,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="361">
               <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClassGetterListener.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Listener/ClassGetterListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -118,7 +184,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>topx1</find>
       <find>Function</find>
       <find>getExpression</find>
       <find>minus</find>
@@ -146,8 +211,9 @@
       <find>enterclass</find>
       <find>field</find>
       <find>.</find>
-      <find>this</find>
       <find>this.data</find>
+      <find>this</find>
+      <find>symbol</find>
     </findStrings>
     <replaceStrings>
       <replace>Momo</replace>
@@ -212,9 +278,9 @@
         <option value="$PROJECT_DIR$/src/AST/Type/ClassType.java" />
         <option value="$PROJECT_DIR$/src/Environment/Environment.java" />
         <option value="$PROJECT_DIR$/src/AST/Expression/VarExpression/FieldExpression.java" />
-        <option value="$PROJECT_DIR$/src/Listener/BuildTreeListener.java" />
         <option value="$PROJECT_DIR$/src/Parser/Momo.g4" />
         <option value="$PROJECT_DIR$/src/test.txt" />
+        <option value="$PROJECT_DIR$/src/Listener/BuildTreeListener.java" />
       </list>
     </option>
   </component>
@@ -313,7 +379,95 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Listener" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="compiler2017bh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="compiler2017bh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="AST" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="compiler2017bh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="compiler2017bh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AST" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Statement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="compiler2017bh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="compiler2017bh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AST" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Statement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LoopStatement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="compiler2017bh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="compiler2017bh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AST" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Expression" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -804,7 +958,7 @@
       <workItem from="1491186239983" duration="30820000" />
       <workItem from="1491227652929" duration="1180000" />
       <workItem from="1491284609701" duration="405000" />
-      <workItem from="1491285143681" duration="4521000" />
+      <workItem from="1491285143681" duration="5082000" />
     </task>
     <task id="LOCAL-00001" summary="bug fixed">
       <created>1491286707260</created>
@@ -813,11 +967,18 @@
       <option name="project" value="LOCAL" />
       <updated>1491286707260</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="bug fixed">
+      <created>1491289692530</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1491289692530</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="133629000" />
+    <option name="totallyTimeSpent" value="134190000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -834,7 +995,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3014553" sideWeight="0.48262548" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3298647" sideWeight="0.5085494" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3298647" sideWeight="0.51075566" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -850,8 +1011,8 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.264308" sideWeight="0.45835632" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3298647" sideWeight="0.49145064" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.264308" sideWeight="0.45615003" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3298647" sideWeight="0.48924434" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984003" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952183" sideWeight="0.48262548" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2084942" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -895,8 +1056,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/Listener/BuildTreeListener.java</url>
-          <line>215</line>
-          <properties class="Listener.BuildTreeListener">
+          <line>221</line>
+          <properties class="Listener.BuildTreeListener" method="exitFieldExpression">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="13" />
@@ -904,7 +1065,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/AST/Expression/VarExpression/IdenExpression.java</url>
           <line>22</line>
-          <properties class="AST.Expression.VarExpression.IdenExpression">
+          <properties class="AST.Expression.VarExpression.IdenExpression" method="getExpression">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="18" />
@@ -919,13 +1080,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/AST/Statement/IfStatement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AST/Statement/LoopStatement/ForStatement.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -1081,13 +1235,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AST/Expression/NewExpression.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AST/Expression/ConstantExpression/IntConstant.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
@@ -1229,14 +1376,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Listener/ClassGetterListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="14" column="30" lean-forward="false" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Parser/MomoParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
@@ -1263,16 +1402,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Listener/BuildTreeListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="218" column="10" lean-forward="false" selection-start-line="218" selection-start-column="10" selection-end-line="218" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Parser/Momo.g4">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1254">
@@ -1281,10 +1410,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/AST/Expression/VarExpression/FieldExpression.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="703">
+          <caret line="56" column="34" lean-forward="true" selection-start-line="56" selection-start-column="34" selection-end-line="56" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AST/Expression/NewExpression.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+        <state relative-caret-position="380">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AST/Statement/IfStatement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="27" column="9" lean-forward="true" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -1297,11 +1450,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AST/Expression/VarExpression/FieldExpression.java">
+    <entry file="file://$PROJECT_DIR$/src/Listener/ClassGetterListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="34" column="33" lean-forward="false" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+        <state relative-caret-position="323">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Listener/BuildTreeListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="96" column="34" lean-forward="false" selection-start-line="96" selection-start-column="34" selection-end-line="96" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

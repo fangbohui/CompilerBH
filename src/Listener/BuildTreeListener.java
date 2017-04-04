@@ -86,10 +86,16 @@ public class BuildTreeListener extends BaseListener {
 
 	@Override
 	public void enterStatement(MomoParser.StatementContext ctx) {
+		if (ctx.parent instanceof MomoParser.ConditionStatementContext) {
+			Environment.enterScope(null);
+		}
 	}
 
 	@Override
 	public void exitStatement(MomoParser.StatementContext ctx) {
+		if (ctx.parent instanceof MomoParser.ConditionStatementContext) {
+			Environment.exitScope();
+		}
 		propertyTree.put(ctx, propertyTree.get(ctx.getChild(0)));
 	}
 
