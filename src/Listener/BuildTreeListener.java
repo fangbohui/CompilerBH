@@ -63,9 +63,18 @@ public class BuildTreeListener extends BaseListener {
 	public void enterClassDefinition(MomoParser.ClassDefinitionContext ctx) {
 		ClassType classType = (ClassType) propertyTree.get(ctx);
 		Environment.enterScope(classType);
-		//Environment.symbolTable.add("this", classType);
-		classType.memberVarMap.forEach((name, member) -> Environment.symbolTable.add(name, member.type));
-		classType.memberFunctionMap.forEach((name, member) -> Environment.symbolTable.add(name, member.function));
+		classType.memberVarMap.forEach((name, member) -> {
+			if (name.equals("this")) {
+				throw new CompileError("you cannot use 'this' as a member-var name");
+			}
+			Environment.symbolTable.add(name, member.type);
+		});
+		classType.memberFunctionMap.forEach((name, member) -> {
+			if (name.equals("this")) {
+				throw new CompileError("you cannot use 'this' as a member-var name");
+			}
+			Environment.symbolTable.add(name, member.function);
+		});
 	}
 
 	@Override
@@ -107,6 +116,9 @@ public class BuildTreeListener extends BaseListener {
 			Function function = (Function)propertyTree.get(ctx.parent);
 			for (int i = 0; i < function.parameters.size(); i ++) {
 				Symbol parameter = function.parameters.get(i);
+				if (parameter.name.equals("this")) {
+					throw new CompileError("you cannot use this");
+				}
 				function.parameters.set(i, Environment.symbolTable.add(parameter.name, parameter.type));
 			}
 		}
@@ -202,6 +214,9 @@ public class BuildTreeListener extends BaseListener {
 		if (!(ctx.parent instanceof MomoParser.ClassDefinitionContext)) {
 			Type type = (Type) propertyTree.get(ctx.type());
 			String name = ctx.IDEN().getText();
+			if (name.equals("this")) {
+				throw new CompileError("you cannot use this as a name");
+			}
 			Symbol symbol = Environment.symbolTable.add(name, type);
 			Expression expression = (Expression) propertyTree.get(ctx.expression());
 			propertyTree.put(ctx, VarStatement.getStatement(symbol, expression));
