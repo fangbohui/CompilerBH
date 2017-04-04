@@ -1,31 +1,36 @@
-class Cat{
-	void greet(){
-		println("MIAOMIAOMIAO");
+class A{
+	A(){}
+	B x;
+	string abc;
+	int aabc(int abc) {
+		return abc;
 	}
 }
 
-class Lamb{
-	void greet(){
-		println("MIEMIEMIE");
+class B {
+	B(){
+
+	}
+	void D() {
+
+	}
+	A x;
+	B y;
+	void t() {
+		this.D();
 	}
 }
 
-class Animals{
-	Cat c;
-	Lamb l;
-	void greet(){
-		c.greet();
-		l.greet();
-	}
+class f{
+
 }
 
-int main(){
-	Cat cat;
-	cat = new Cat;
-	Lamb lamb;
-	lamb = new Lamb;
-	Animals a = new Animals;
-	a.c = cat;
-	a.l = lamb;
-	a.greet();
+int main() {
+	int [  ] ff = new int[1 ];
+	f g;
+	int [  ][  ][ ] fg = new int[4][ ][	];
+	string String;
+	String = toString(getInt());
+	println(toString(String.length()));
 }
+

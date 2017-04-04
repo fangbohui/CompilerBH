@@ -6,7 +6,7 @@ program
 
 classDefinition
 		:   'class' IDEN '{'
-				(functionDefinition | varDefinition)+
+				(functionDefinition | varDefinition)*
 			'}'
 		;
 

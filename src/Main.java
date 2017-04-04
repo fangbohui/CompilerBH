@@ -4,6 +4,7 @@ import Environment.Environment;
 import Listener.BuildTreeListener;
 import Listener.ClassGetterListener;
 import Listener.DefinitionGetterListener;
+import Listener.SyntaxErrorListener;
 import Parser.MomoLexer;
 import Parser.MomoParser;
 import org.antlr.v4.runtime.ANTLRInputStream;
@@ -23,9 +24,8 @@ public class Main {
 		MomoLexer lexer = new MomoLexer(input);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		MomoParser parser = new MomoParser(tokens);
-		if (parser.getNumberOfSyntaxErrors() > 0) {
-			throw new CompileError("Syntax Error");
-		}
+		parser.removeErrorListeners();
+		parser.addErrorListener(new SyntaxErrorListener());
 		ParseTree tree = parser.program();
 		ParseTreeWalker walker = new ParseTreeWalker() ;
 		walker.walk(new ClassGetterListener(), tree);
