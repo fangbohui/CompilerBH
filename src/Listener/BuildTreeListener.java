@@ -63,6 +63,7 @@ public class BuildTreeListener extends BaseListener {
 	public void enterClassDefinition(MomoParser.ClassDefinitionContext ctx) {
 		ClassType classType = (ClassType) propertyTree.get(ctx);
 		Environment.enterScope(classType);
+		//Environment.symbolTable.add("this", classType);
 		classType.memberVarMap.forEach((name, member) -> Environment.symbolTable.add(name, member.type));
 		classType.memberFunctionMap.forEach((name, member) -> Environment.symbolTable.add(name, member.function));
 	}
@@ -213,7 +214,9 @@ public class BuildTreeListener extends BaseListener {
 
 	@Override
 	public void exitFieldExpression(MomoParser.FieldExpressionContext ctx) {
-		propertyTree.put(ctx, FieldExpression.getExpression((Expression)propertyTree.get(ctx.expression()), ctx.IDEN().getText()));
+		propertyTree.put(ctx, FieldExpression.getExpression(
+				(Expression) propertyTree.get(ctx.expression()), ctx.IDEN().getText())
+		);
 	}
 
 	@Override

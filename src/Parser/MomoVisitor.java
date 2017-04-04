@@ -150,13 +150,6 @@ public interface MomoVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitCmpExpression(MomoParser.CmpExpressionContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code thisExpression}
-	 * labeled alternative in {@link MomoParser#expression}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitThisExpression(MomoParser.ThisExpressionContext ctx);
-	/**
 	 * Visit a parse tree produced by the {@code bitExpression}
 	 * labeled alternative in {@link MomoParser#expression}.
 	 * @param ctx the parse tree

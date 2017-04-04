@@ -244,18 +244,6 @@ public interface MomoListener extends ParseTreeListener {
 	 */
 	void exitCmpExpression(MomoParser.CmpExpressionContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code thisExpression}
-	 * labeled alternative in {@link MomoParser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void enterThisExpression(MomoParser.ThisExpressionContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code thisExpression}
-	 * labeled alternative in {@link MomoParser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void exitThisExpression(MomoParser.ThisExpressionContext ctx);
-	/**
 	 * Enter a parse tree produced by the {@code bitExpression}
 	 * labeled alternative in {@link MomoParser#expression}.
 	 * @param ctx the parse tree

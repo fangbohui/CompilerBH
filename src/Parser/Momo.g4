@@ -57,7 +57,6 @@ controlStatement
 expression
 		:   constant                                                                    #constantExpression
 		|   IDEN                                                                        #idenExpression
-		|   'this'                                                                      #thisExpression
 		|   '(' expression ')'                                                          #subExpression
 		|   expression operator=('++' | '--')                                           #postfixExpression
 		|   expression '(' (expression (',' expression)*)? ')'                          #functionExpression
