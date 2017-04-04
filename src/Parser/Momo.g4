@@ -11,7 +11,7 @@ classDefinition
 		;
 
 functionDefinition
-		:   type IDEN '(' (type IDEN (',' type IDEN)* )? ')'
+		:   type IDEN? '(' (type IDEN (',' type IDEN)* )? ')'
 				blockStatement
 		;
 

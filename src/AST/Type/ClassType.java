@@ -48,7 +48,7 @@ public class ClassType extends Type implements Scope {
 		if (constructor != null) {
 			throw new CompileError("You have 2 constructions in a class");
 		}
-		if (function.parameters.size() != 0) {
+		if (function.parameters.size() != 1) {
 			throw new CompileError("A constructor should have no parameters");
 		}
 		function.name = this.name + '.' + function.name;

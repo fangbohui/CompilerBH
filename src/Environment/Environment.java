@@ -71,6 +71,8 @@ public class Environment {
 		symbolTable.add("FBH_string_substring", Function.getFunction("FBH_string_substring", StringType.getType(), new ArrayList<Symbol>() {
 			{
 				add(new Symbol("string", StringType.getType()));
+				add(new Symbol("left", IntType.getType()));
+				add(new Symbol("right", IntType.getType()));
 			}
 		}));
 		symbolTable.add("FBH_string_parseInt", Function.getFunction("FBH_string_parseInt", IntType.getType(), new ArrayList<Symbol>() {
@@ -81,6 +83,7 @@ public class Environment {
 		symbolTable.add("FBH_string_ord", Function.getFunction("FBH_string_ord", IntType.getType(), new ArrayList<Symbol>() {
 			{
 				add(new Symbol("array", StringType.getType()));
+				add(new Symbol("ord", IntType.getType()));
 			}
 		}));
 		symbolTable.add("FBH_string_<", Function.getFunction("FBH_string_<", BoolType.getType(), new ArrayList<Symbol>() {

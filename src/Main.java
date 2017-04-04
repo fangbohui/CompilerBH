@@ -16,7 +16,7 @@ public class Main {
 
 	public static void main(String[] args) throws Exception {
 
-		InputStream is = new FileInputStream("/home/fangbohui/IdeaProjects/Compiler2017BH/src/test.txt");
+		InputStream is = new FileInputStream("/home/fangbohui/IdeaProjects/compiler2017bh/src/test.txt");
 
 		Environment.inintiallize();
 		ANTLRInputStream input = new ANTLRInputStream(is);
@@ -27,7 +27,7 @@ public class Main {
 			throw new CompileError("Syntax Error");
 		}
 		ParseTree tree = parser.program();
-		ParseTreeWalker walker = new ParseTreeWalker();
+		ParseTreeWalker walker = new ParseTreeWalker() ;
 		walker.walk(new ClassGetterListener(), tree);
 		walker.walk(new DefinitionGetterListener(), tree);
 		walker.walk(new BuildTreeListener(), tree);

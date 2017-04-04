@@ -1,4 +1,4 @@
-// Generated from /home/fangbohui/IdeaProjects/Compiler2017BH/src/Parser/Momo.g4 by ANTLR 4.6
+// Generated from /home/fangbohui/IdeaProjects/compiler2017bh/src/Parser/Momo.g4 by ANTLR 4.6
 package Parser;
 
 import org.antlr.v4.runtime.ParserRuleContext;

@@ -28,14 +28,14 @@ public class DefinitionGetterListener extends BaseListener {
 			if (classType == null) {
 				throw new CompileError("you have a constructor function in the global area");
 			}
-			name = ctx.IDEN(0).getText();
+			name = ctx.type(0).getText();
 			if (!name.equals(classType.name)) {
 				throw new CompileError("constructor should have the same name with the class");
 			}
+		} else {
+			name = ctx.IDEN(0).getText();
+			type = (Type) propertyTree.get(ctx.type(0));
 		}
-
-		name = ctx.IDEN(0).getText();
-		type = (Type) propertyTree.get(ctx.type(0));
 
 		List<Symbol> parameters = new ArrayList<Symbol>() {{
 			if (classType != null) {
