@@ -19,6 +19,7 @@ public class Environment {
 	public static ScopeTable scopeTable;
 	public static SymbolTable symbolTable;
 	public static ClassTable classTable;
+	public static RegisterTable registerTable;
 	public static boolean hasMain;
 
 	public static void inintiallize() {
@@ -26,6 +27,7 @@ public class Environment {
 		scopeTable = new ScopeTable();
 		symbolTable = new SymbolTable();
 		classTable = new ClassTable();
+		registerTable = new RegisterTable();
 		enterScope(program = Program.getProgram());
 		getBuiltinFunctions();
 	}
