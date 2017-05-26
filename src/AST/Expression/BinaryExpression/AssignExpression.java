@@ -8,6 +8,7 @@ import AST.Type.Type;
 import CFG.Instruction.Instruction;
 import CFG.Instruction.MemoryInstruction.LoadInstruction;
 import CFG.Instruction.MemoryInstruction.MoveInstruction;
+import CFG.Instruction.MemoryInstruction.StoreInstruction;
 import CFG.Operand.Address;
 import CFG.Operand.VirtualRegister;
 import Environment.Environment;
@@ -39,7 +40,11 @@ public class AssignExpression extends BinaryExpression {
 		rightExpression.load(instructions);
 
 		operand = leftExpression.operand;
-		instructions.add(MoveInstruction.getInstruction(leftExpression.operand, rightExpression.operand));
+		if (leftExpression.operand instanceof Address) {
+			instructions.add(StoreInstruction.getInstruction(rightExpression.operand, (Address) leftExpression.operand));
+		} else {
+			instructions.add(MoveInstruction.getInstruction(leftExpression.operand, rightExpression.operand));
+		}
 	}
 
 	@Override
