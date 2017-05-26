@@ -97,7 +97,7 @@ public class NASM_Naive_Translator extends NASM_Translator {
 							load(NASMRegister.rdx, binaryInstruction.src1);
 							load(NASMRegister.rax, binaryInstruction.src2);
 							output.printf("\tcmp \trdx, rax\n");
-							output.printf("\t%s \tal\n");
+							output.printf("\teax \tal\n");
 							output.printf("\tmovzx\teax, al\n");
 							store(NASMRegister.rax, binaryInstruction.dest);
 						} else if (binaryInstruction instanceof DivideInstruction) {
