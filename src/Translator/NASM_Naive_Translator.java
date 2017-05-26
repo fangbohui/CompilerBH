@@ -71,7 +71,7 @@ public class NASM_Naive_Translator extends NASM_Translator {
 	public void translate(Graph graph) {
 		this.graph = graph;
 		output.printf("\n");
-		output.printf("function_%s:\n", graph.function.name);
+		output.printf("%s:\n", graph.function.name);
 		output.printf("\tpush\trbp\n");
 		output.printf("\tmov \trbp\n");
 
