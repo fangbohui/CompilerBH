@@ -10,6 +10,7 @@ import CFG.Instruction.Instruction;
 import CFG.Instruction.LabelInstruction;
 import CFG.Instruction.MemoryInstruction.MoveInstruction;
 import CFG.Operand.ImmediatelyNumber;
+import Environment.Environment;
 import Error.CompileError;
 
 import java.util.ArrayList;
@@ -39,18 +40,19 @@ public class LogicOrExpression extends BinaryExpression {
 		LabelInstruction leftFalse = (LabelInstruction) LabelInstruction.getInstruction("leftFalse");
 		LabelInstruction mergeBranch = (LabelInstruction) LabelInstruction.getInstruction("mergeBranch");
 
+		operand = Environment.registerTable.addTemporaryRegister(null);
 		leftExpression.emit(instructions);
 		leftExpression.load(instructions);
 		instructions.add(BranchInstruction.getInstruction(leftExpression.operand, leftTrue, leftFalse));
 
 		instructions.add(leftTrue);
-		operand = rightExpression.operand;
 		instructions.add(MoveInstruction.getInstruction(operand, new ImmediatelyNumber(1)));
 		instructions.add(JumpInstruction.getInstruction(mergeBranch));
 
 		instructions.add(leftFalse);
 		rightExpression.emit(instructions);
 		rightExpression.load(instructions);
+		operand = rightExpression.operand;
 		instructions.add(JumpInstruction.getInstruction(mergeBranch));
 
 		instructions.add(mergeBranch);
