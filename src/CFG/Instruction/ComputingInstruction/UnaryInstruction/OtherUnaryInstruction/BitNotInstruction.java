@@ -16,4 +16,8 @@ public class BitNotInstruction extends UnaryInstruction {
 	public static Instruction getInstruction(VirtualRegister dest, Operand src) {
 		return new BitNotInstruction(dest, src);
 	}
+
+	public String OPname() {
+		return String.format("");
+	}
 }

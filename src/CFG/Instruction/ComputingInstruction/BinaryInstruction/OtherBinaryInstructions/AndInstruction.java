@@ -16,4 +16,8 @@ public class AndInstruction extends BinaryInstruction {
 	public static Instruction getInstruction(VirtualRegister dest, Operand src1, Operand src2) {
 		return new AndInstruction(dest, src1, src2);
 	}
+
+	public String OPname() {
+		return "and";
+	}
 }

@@ -8,9 +8,17 @@ import AST.Type.MemberClass.Member;
 import AST.Type.MemberClass.MemberFunction;
 import AST.Type.MemberClass.MemberVar;
 import AST.Type.Type;
+import CFG.Instruction.Instruction;
+import CFG.Instruction.MemoryInstruction.LoadInstruction;
+import CFG.Instruction.MemoryInstruction.MoveInstruction;
+import CFG.Operand.Address;
+import CFG.Operand.ImmediatelyNumber;
+import CFG.Operand.VirtualRegister;
 import Environment.Environment;
 import Error.CompileError;
 import Error.InternalError;
+
+import java.util.ArrayList;
 
 /**
  * Created by fangbohui on 17-4-2.
@@ -55,5 +63,27 @@ public class FieldExpression extends Expression {
 			throw new CompileError("string cannot do that thing");
 		}
 		throw new InternalError();
+	}
+
+	public void emit(ArrayList<Instruction> instructions) {
+		ClassType classType = (ClassType) className.type;
+		Member member = classType.getMember(fieldName);
+		if (member instanceof MemberVar) {
+			MemberVar memberVar = (MemberVar) member;
+			className.emit(instructions);
+			className.load(instructions);
+			VirtualRegister base = (VirtualRegister) className.operand;
+			ImmediatelyNumber offset = new ImmediatelyNumber(memberVar.offset);
+			operand = new Address(base, offset, 8);
+		}
+	}
+
+	@Override
+	public void load(ArrayList<Instruction> instructions) {
+		if (operand instanceof Address) {
+			Address address = (Address) operand;
+			operand = Environment.registerTable.addTemporaryRegister(null);
+			instructions.add(LoadInstruction.getInstruction((VirtualRegister) operand, address));
+		}
 	}
 }

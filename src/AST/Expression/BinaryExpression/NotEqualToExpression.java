@@ -7,7 +7,14 @@ import AST.Expression.ConstantExpression.StringConstant;
 import AST.Expression.Expression;
 import AST.Type.BasicType.BoolType;
 import AST.Type.Type;
+import CFG.Instruction.ComputingInstruction.BinaryInstruction.OtherBinaryInstructions.AddInstruction;
+import CFG.Instruction.ComputingInstruction.BinaryInstruction.OtherBinaryInstructions.NotEqualToInstruction;
+import CFG.Instruction.Instruction;
+import CFG.Operand.VirtualRegister;
+import Environment.Environment;
 import Error.CompileError;
+
+import java.util.ArrayList;
 
 /**
  * Created by fangbohui on 17-4-2.
@@ -31,11 +38,22 @@ public class NotEqualToExpression extends BinaryExpression {
 			boolean v2 = ((BoolConstant) rightExpression).value;
 			return BoolConstant.getConstant(v1 != v2);
 		} else if (leftExpression instanceof StringConstant && rightExpression instanceof StringConstant) {
-			String s1 = ((StringConstant) leftExpression).value;
-			String s2 = ((StringConstant) rightExpression).value;
+			String s1 = ((StringConstant) leftExpression).string;
+			String s2 = ((StringConstant) rightExpression).string;
 			return BoolConstant.getConstant(!s1.equals(s2));
 		} else {
 			return new NotEqualToExpression(BoolType.getType(), false, leftExpression, rightExpression);
 		}
+	}
+
+	public void emit(ArrayList<Instruction> instructions) {
+		leftExpression.emit(instructions);
+		leftExpression.load(instructions);
+
+		rightExpression.emit(instructions);
+		rightExpression.load(instructions);
+
+		operand = Environment.registerTable.addTemporaryRegister(null);
+		instructions.add(NotEqualToInstruction.getInstruction((VirtualRegister) operand, leftExpression.operand, rightExpression.operand));
 	}
 }

@@ -1,36 +1,87 @@
-class A{
-	A(){}
-	B x;
-	string abc;
-	int aabc(int abc) {
-		return abc;
-	}
+class Edge{
+    int to;
+    int next;
 }
 
-class B {
-	B(){
+Edge[] e;
+int ne = 0;
+int n = 0;
+int[] head;
+int ans = 0;
+int size = 0;
+int i = 0;
 
-	}
-	void D() {
-
-	}
-	A x;
-	B y;
-	void t() {
-		this.D();
-	}
+void add(int from, int to){
+    ++ne;
+    e[ne].to = to;
+    e[ne].next = head[from];
+    head[from] = ne;
 }
 
-class f{
+bool[] visit;
+int[] son;
+int[] maxson;
 
+void init(){
+    e = new Edge[100];
+    ne = 0;
+    ans = 0;
+    size = n;
+    visit = new bool[100];
+    son = new int[100];
+    maxson = new int[100];
+    head = new int[100];
+    for (i = 0; i <= n; ++ i){
+        visit[i] = false;
+        son[i] = 0;
+        maxson[i] = 0;
+        head[i] = 0;
+    }
 }
 
-int main() {
-	int [  ] ff = new int[1 ];
-	f g;
-	int [  ][  ][ ] fg = new int[4][ ][	];
-	string String;
-	String = toString(getInt());
-	println(toString(String.length()));
+int max(int a, int b){
+    if (a > b) return a;
+    else return b;
 }
 
+void dfs(int u){
+    int tmp = 0;
+    visit[u] = true;
+    int i;
+    for (i = head[u]; i != 0; i = e[i].next){
+        int v = e[i].to;
+        if (visit[v]==false) {
+            dfs(v);
+            son[u] = son[u] + (son[v] + 1);
+            tmp = max(tmp, son[v] + 1);
+        }
+    }
+    tmp = max(tmp, n - son[u] - 1);
+    if (tmp < size || (tmp == size && u < ans)){
+       ans = u;
+       size = tmp;
+       }
+}
+
+int main(){
+    int t;
+    t = getInt();
+    while((t--) != 0){
+        n = getInt();
+        init();
+        for (i = 0; i < n-1; ++i){
+            int u;
+            int v;
+            u = getInt();
+            v = getInt();
+            add(u,v);
+            add(v,u);
+        }
+        dfs(1);
+        println(toString(ans));
+        println(toString(size));
+    }
+
+
+    return 0;
+}

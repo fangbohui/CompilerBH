@@ -1,48 +1,193 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="130622e1-2e91-4c8e-b79c-317a8b8f5b0c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Block.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/BinaryInstruction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/AddInstruction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/AndInstruction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/DivideInstruction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/EqualToInstruction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/GreaterEqualInstruction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/GreaterInstruction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/LeftShiftInstruction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/LessEqualInstruction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/LessInstruction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/MinusInstruction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/ModInstruction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/MultiplyInstruction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/NotEqualToInstruction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/OrInstruction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/RightShiftInstruction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/XorInstruction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/ComputingInstruction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/UnaryInstruction/OtherUnaryInstruction/BitNotInstruction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/UnaryInstruction/OtherUnaryInstruction/UnaryMinusInstruction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/UnaryInstruction/UnaryInstruction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ControlInstruction/ControlInstruction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ControlInstruction/OtherControlInstruction/BranchInstruction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ControlInstruction/OtherControlInstruction/JumpInstruction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Instruction/FunctionInstruction/FunctionCallInstruction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Instruction/FunctionInstruction/FunctionInstruction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Instruction/Instruction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Instruction/LabelInstruction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Instruction/MemoryInstruction/MemoryInstruction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Instruction/MemoryInstruction/MoveInstruction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Operand/Address.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Operand/GlobalRegister.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Operand/Operand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Operand/ParameterRegister.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Operand/TemporaryRegister.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Operand/VarRegister.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Operand/VirtualRegister.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Environment/RegisterTable.java" />
+    <list default="true" id="130622e1-2e91-4c8e-b79c-317a8b8f5b0c" name="Default" comment="The work is so huge...">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/fangbohui.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Frame.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Graph.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/EqualityInstruction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/MULMODInstruction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Instruction/FunctionInstruction/ReturnInstruction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Instruction/MemoryInstruction/AllocateInstruction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Instruction/MemoryInstruction/LoadInstruction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Instruction/MemoryInstruction/StoreInstruction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Operand/ImmediatelyNumber.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CFG/Operand/StringRegister.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Translator/NASMRegister.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Translator/NASM_Naive_Translator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Translator/NASM_Translator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Translator/PhysicalRegister.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Translator/Translator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/AddExpression$1.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/AddExpression$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/AddExpression.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/AddExpression.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/AndExpression.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/AndExpression.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/AssignExpression.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/AssignExpression.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/BinaryExpression.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/BinaryExpression.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/DivideExpression.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/DivideExpression.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/EqualToExpression.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/EqualToExpression.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/GreaterEqualExpression.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/GreaterEqualExpression.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/GreaterExpression.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/GreaterExpression.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/LeftShiftExpression.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/LeftShiftExpression.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/LogicAndExpression.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/LogicAndExpression.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/LogicOrExpression.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/LogicOrExpression.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/MinusExpression.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/MinusExpression.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/ModExpression.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/ModExpression.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/MultiExpression.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/MultiExpression.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/NotEqualToExpression.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/NotEqualToExpression.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/OrExpression.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/OrExpression.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/RightShiftExpression.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/RightShiftExpression.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/SmallerEqualExpression.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/SmallerEqualExpression.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/SmallerExpression.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/SmallerExpression.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/XorExpression.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/XorExpression.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/ConstantExpression/BoolConstant.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/ConstantExpression/BoolConstant.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/ConstantExpression/IntConstant.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/ConstantExpression/IntConstant.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/ConstantExpression/NullConstant.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/ConstantExpression/NullConstant.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/ConstantExpression/StringConstant.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/ConstantExpression/StringConstant.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/Expression.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/Expression.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/FunctionCallExpression.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/FunctionCallExpression.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/NewExpression.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/NewExpression.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/UnaryExpression/BoolNotExpression.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/UnaryExpression/BoolNotExpression.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/UnaryExpression/IntNotExpression.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/UnaryExpression/IntNotExpression.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/UnaryExpression/PreDecExpression.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/UnaryExpression/PreDecExpression.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/UnaryExpression/PreIncExpression.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/UnaryExpression/PreIncExpression.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/UnaryExpression/SucDecExpression.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/UnaryExpression/SucDecExpression.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/UnaryExpression/SucIncExpression.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/UnaryExpression/SucIncExpression.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/UnaryExpression/UnaryAddExpression.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/UnaryExpression/UnaryAddExpression.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/UnaryExpression/UnaryExpression.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/UnaryExpression/UnaryExpression.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/UnaryExpression/UnaryMinusExpression.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/UnaryExpression/UnaryMinusExpression.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/VarExpression/FieldExpression.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/VarExpression/FieldExpression.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/VarExpression/IdenExpression.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/VarExpression/IdenExpression.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/VarExpression/IndexExpression.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/VarExpression/IndexExpression.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Function.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Function.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Program.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Program.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Statement/BlockStatement.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Statement/BlockStatement.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Statement/BreakStatement.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Statement/BreakStatement.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Statement/ContinueStatement.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Statement/ContinueStatement.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Statement/ExpressionStatement.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Statement/ExpressionStatement.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Statement/IfStatement.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Statement/IfStatement.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Statement/LoopStatement/ForStatement.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Statement/LoopStatement/ForStatement.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Statement/LoopStatement/LoopStatement.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Statement/LoopStatement/LoopStatement.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Statement/LoopStatement/WhileStatement.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Statement/LoopStatement/WhileStatement.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Statement/ReturnStatement.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Statement/ReturnStatement.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Statement/Statement.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Statement/Statement.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Statement/VarStatement.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Statement/VarStatement.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Type/ClassType.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Type/ClassType.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Type/MemberClass/MemberVar.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Type/MemberClass/MemberVar.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/ClassTable.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/ClassTable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$1.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$10.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$10.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$11.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$11.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$12.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$12.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$13.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$13.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$14.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$14.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$15.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$15.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$2.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$3.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$4.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$5.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$6.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$7.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$8.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$8.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$9.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$9.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Symbol.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Symbol.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/SymbolTable.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/SymbolTable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Listener/BuildTreeListener.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Listener/BuildTreeListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Listener/DefinitionGetterListener.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Listener/DefinitionGetterListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Main.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Environment/Environment.java" afterPath="$PROJECT_DIR$/src/Environment/Environment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/test.txt" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/test.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/AddExpression.java" afterPath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/AddExpression.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/AndExpression.java" afterPath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/AndExpression.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/AssignExpression.java" afterPath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/AssignExpression.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/BinaryExpression.java" afterPath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/BinaryExpression.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/DivideExpression.java" afterPath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/DivideExpression.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/EqualToExpression.java" afterPath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/EqualToExpression.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/GreaterEqualExpression.java" afterPath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/GreaterEqualExpression.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/GreaterExpression.java" afterPath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/GreaterExpression.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/LeftShiftExpression.java" afterPath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/LeftShiftExpression.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/LogicAndExpression.java" afterPath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/LogicAndExpression.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/LogicOrExpression.java" afterPath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/LogicOrExpression.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/MinusExpression.java" afterPath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/MinusExpression.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/ModExpression.java" afterPath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/ModExpression.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/MultiExpression.java" afterPath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/MultiExpression.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/NotEqualToExpression.java" afterPath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/NotEqualToExpression.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/OrExpression.java" afterPath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/OrExpression.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/RightShiftExpression.java" afterPath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/RightShiftExpression.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/SmallerEqualExpression.java" afterPath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/SmallerEqualExpression.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/SmallerExpression.java" afterPath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/SmallerExpression.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/XorExpression.java" afterPath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/XorExpression.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/ConstantExpression/BoolConstant.java" afterPath="$PROJECT_DIR$/src/AST/Expression/ConstantExpression/BoolConstant.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/ConstantExpression/IntConstant.java" afterPath="$PROJECT_DIR$/src/AST/Expression/ConstantExpression/IntConstant.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/ConstantExpression/NullConstant.java" afterPath="$PROJECT_DIR$/src/AST/Expression/ConstantExpression/NullConstant.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/ConstantExpression/StringConstant.java" afterPath="$PROJECT_DIR$/src/AST/Expression/ConstantExpression/StringConstant.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/Expression.java" afterPath="$PROJECT_DIR$/src/AST/Expression/Expression.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/FunctionCallExpression.java" afterPath="$PROJECT_DIR$/src/AST/Expression/FunctionCallExpression.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/NewExpression.java" afterPath="$PROJECT_DIR$/src/AST/Expression/NewExpression.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/UnaryExpression/BoolNotExpression.java" afterPath="$PROJECT_DIR$/src/AST/Expression/UnaryExpression/BoolNotExpression.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/UnaryExpression/IntNotExpression.java" afterPath="$PROJECT_DIR$/src/AST/Expression/UnaryExpression/IntNotExpression.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/UnaryExpression/PreDecExpression.java" afterPath="$PROJECT_DIR$/src/AST/Expression/UnaryExpression/PreDecExpression.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/UnaryExpression/PreIncExpression.java" afterPath="$PROJECT_DIR$/src/AST/Expression/UnaryExpression/PreIncExpression.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/UnaryExpression/SucDecExpression.java" afterPath="$PROJECT_DIR$/src/AST/Expression/UnaryExpression/SucDecExpression.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/UnaryExpression/SucIncExpression.java" afterPath="$PROJECT_DIR$/src/AST/Expression/UnaryExpression/SucIncExpression.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/UnaryExpression/UnaryAddExpression.java" afterPath="$PROJECT_DIR$/src/AST/Expression/UnaryExpression/UnaryAddExpression.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/UnaryExpression/UnaryExpression.java" afterPath="$PROJECT_DIR$/src/AST/Expression/UnaryExpression/UnaryExpression.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/UnaryExpression/UnaryMinusExpression.java" afterPath="$PROJECT_DIR$/src/AST/Expression/UnaryExpression/UnaryMinusExpression.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/VarExpression/FieldExpression.java" afterPath="$PROJECT_DIR$/src/AST/Expression/VarExpression/FieldExpression.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/VarExpression/IdenExpression.java" afterPath="$PROJECT_DIR$/src/AST/Expression/VarExpression/IdenExpression.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/VarExpression/IndexExpression.java" afterPath="$PROJECT_DIR$/src/AST/Expression/VarExpression/IndexExpression.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Function.java" afterPath="$PROJECT_DIR$/src/AST/Function.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Program.java" afterPath="$PROJECT_DIR$/src/AST/Program.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Statement/BlockStatement.java" afterPath="$PROJECT_DIR$/src/AST/Statement/BlockStatement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Statement/BreakStatement.java" afterPath="$PROJECT_DIR$/src/AST/Statement/BreakStatement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Statement/ContinueStatement.java" afterPath="$PROJECT_DIR$/src/AST/Statement/ContinueStatement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Statement/ExpressionStatement.java" afterPath="$PROJECT_DIR$/src/AST/Statement/ExpressionStatement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Statement/IfStatement.java" afterPath="$PROJECT_DIR$/src/AST/Statement/IfStatement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Statement/LoopStatement/ForStatement.java" afterPath="$PROJECT_DIR$/src/AST/Statement/LoopStatement/ForStatement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Statement/LoopStatement/LoopStatement.java" afterPath="$PROJECT_DIR$/src/AST/Statement/LoopStatement/LoopStatement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Statement/LoopStatement/WhileStatement.java" afterPath="$PROJECT_DIR$/src/AST/Statement/LoopStatement/WhileStatement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Statement/ReturnStatement.java" afterPath="$PROJECT_DIR$/src/AST/Statement/ReturnStatement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Statement/Statement.java" afterPath="$PROJECT_DIR$/src/AST/Statement/Statement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Statement/VarStatement.java" afterPath="$PROJECT_DIR$/src/AST/Statement/VarStatement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Type/ClassType.java" afterPath="$PROJECT_DIR$/src/AST/Type/ClassType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Type/MemberClass/MemberVar.java" afterPath="$PROJECT_DIR$/src/AST/Type/MemberClass/MemberVar.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CFG/Block.java" afterPath="$PROJECT_DIR$/src/CFG/Block.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/BinaryInstruction.java" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/BinaryInstruction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/AddInstruction.java" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/AddInstruction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/AndInstruction.java" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/AndInstruction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/DivideInstruction.java" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/DivideInstruction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/EqualToInstruction.java" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/EqualToInstruction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/GreaterEqualInstruction.java" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/GreaterEqualInstruction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/GreaterInstruction.java" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/GreaterInstruction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/LeftShiftInstruction.java" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/LeftShiftInstruction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/LessEqualInstruction.java" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/LessEqualInstruction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/LessInstruction.java" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/LessInstruction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/MinusInstruction.java" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/MinusInstruction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/ModInstruction.java" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/ModInstruction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/MultiplyInstruction.java" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/MultiplyInstruction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/NotEqualToInstruction.java" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/NotEqualToInstruction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/OrInstruction.java" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/OrInstruction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/RightShiftInstruction.java" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/RightShiftInstruction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/XorInstruction.java" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/XorInstruction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/UnaryInstruction/OtherUnaryInstruction/BitNotInstruction.java" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/UnaryInstruction/OtherUnaryInstruction/BitNotInstruction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/UnaryInstruction/OtherUnaryInstruction/UnaryMinusInstruction.java" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/UnaryInstruction/OtherUnaryInstruction/UnaryMinusInstruction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/UnaryInstruction/UnaryInstruction.java" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/UnaryInstruction/UnaryInstruction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CFG/Instruction/ControlInstruction/OtherControlInstruction/BranchInstruction.java" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ControlInstruction/OtherControlInstruction/BranchInstruction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CFG/Instruction/ControlInstruction/OtherControlInstruction/JumpInstruction.java" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ControlInstruction/OtherControlInstruction/JumpInstruction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CFG/Instruction/FunctionInstruction/FunctionCallInstruction.java" afterPath="$PROJECT_DIR$/src/CFG/Instruction/FunctionInstruction/FunctionCallInstruction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CFG/Instruction/Instruction.java" afterPath="$PROJECT_DIR$/src/CFG/Instruction/Instruction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CFG/Instruction/LabelInstruction.java" afterPath="$PROJECT_DIR$/src/CFG/Instruction/LabelInstruction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CFG/Instruction/MemoryInstruction/MoveInstruction.java" afterPath="$PROJECT_DIR$/src/CFG/Instruction/MemoryInstruction/MoveInstruction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CFG/Operand/Address.java" afterPath="$PROJECT_DIR$/src/CFG/Operand/Address.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CFG/Operand/VirtualRegister.java" afterPath="$PROJECT_DIR$/src/CFG/Operand/VirtualRegister.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Environment/ClassTable.java" afterPath="$PROJECT_DIR$/src/Environment/ClassTable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Environment/RegisterTable.java" afterPath="$PROJECT_DIR$/src/Environment/RegisterTable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Environment/Symbol.java" afterPath="$PROJECT_DIR$/src/Environment/Symbol.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Environment/SymbolTable.java" afterPath="$PROJECT_DIR$/src/Environment/SymbolTable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Listener/BuildTreeListener.java" afterPath="$PROJECT_DIR$/src/Listener/BuildTreeListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Listener/DefinitionGetterListener.java" afterPath="$PROJECT_DIR$/src/Listener/DefinitionGetterListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test.txt" afterPath="$PROJECT_DIR$/src/test.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -70,117 +215,124 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="NASM_Naive_Translator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Translator/NASM_Naive_Translator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="31" column="11" lean-forward="false" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
+              <folding>
+                <element signature="e#1543#1544#0" expanded="true" />
+                <element signature="e#1563#1564#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="22" column="98" lean-forward="false" selection-start-line="22" selection-start-column="94" selection-end-line="22" selection-end-column="98" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-224">
+              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BuildTreeListener.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Listener/BuildTreeListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="214">
+              <caret line="306" column="0" lean-forward="false" selection-start-line="306" selection-start-column="0" selection-end-line="306" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MULMODInstruction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/MULMODInstruction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="9" column="28" lean-forward="false" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#318#319#0" expanded="true" />
+                <element signature="e#348#349#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ModInstruction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/ModInstruction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="21" column="34" lean-forward="false" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+              <folding>
+                <element signature="e#728#729#0" expanded="true" />
+                <element signature="e#760#761#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DivideInstruction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/DivideInstruction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="21" column="39" lean-forward="false" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+              <folding>
+                <element signature="e#737#738#0" expanded="true" />
+                <element signature="e#774#775#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EqualityInstruction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/EqualityInstruction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="8" column="69" lean-forward="false" selection-start-line="8" selection-start-column="69" selection-end-line="11" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#322#323#0" expanded="true" />
+                <element signature="e#352#353#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="LessInstruction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/LessInstruction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UnaryInstruction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/UnaryInstruction/UnaryInstruction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BitNotInstruction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/UnaryInstruction/OtherUnaryInstruction/BitNotInstruction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UnaryMinusInstruction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/UnaryInstruction/OtherUnaryInstruction/UnaryMinusInstruction.java">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="133">
-              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ControlInstruction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ControlInstruction/ControlInstruction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="61" lean-forward="false" selection-start-line="7" selection-start-column="61" selection-end-line="7" selection-end-column="61" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BranchInstruction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ControlInstruction/OtherControlInstruction/BranchInstruction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="57" lean-forward="false" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="57" />
+              <caret line="11" column="56" lean-forward="false" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#735#736#0" expanded="true" />
+                <element signature="e#755#756#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JumpInstruction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ControlInstruction/OtherControlInstruction/JumpInstruction.java">
+      <file leaf-file-name="NotEqualToInstruction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/NotEqualToInstruction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="18" column="39" lean-forward="false" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+            <state relative-caret-position="266">
+              <caret line="21" column="21" lean-forward="false" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
               <folding>
-                <element signature="e#419#420#0" expanded="true" />
-                <element signature="e#442#443#0" expanded="true" />
-                <element signature="e#510#511#0" expanded="true" />
-                <element signature="e#549#550#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FunctionCallInstruction.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/FunctionInstruction/FunctionCallInstruction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FunctionInstruction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/FunctionInstruction/FunctionInstruction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="63" lean-forward="false" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LabelInstruction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/LabelInstruction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding>
-                <element signature="e#183#184#0" expanded="true" />
-                <element signature="e#206#207#0" expanded="true" />
-                <element signature="e#264#265#0" expanded="true" />
-                <element signature="e#304#305#0" expanded="true" />
+                <element signature="e#753#754#0" expanded="true" />
+                <element signature="e#774#775#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -197,17 +349,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>get</find>
-      <find>add</find>
-      <find>class</find>
-      <find>void</find>
-      <find>inttype</find>
-      <find>classtyp</find>
-      <find>clas</find>
-      <find>condition</find>
-      <find>par</find>
-      <find>e</find>
-      <find>index</find>
       <find>varde</find>
       <find>forState</find>
       <find>blockst</find>
@@ -227,6 +368,17 @@
       <find>symbol</find>
       <find>symbolta</find>
       <find>construct</find>
+      <find>newexp</find>
+      <find>operand</find>
+      <find>newexpression</find>
+      <find>graph</find>
+      <find>load</find>
+      <find>vardefini</find>
+      <find>vardefi</find>
+      <find>var</find>
+      <find>exitvar</find>
+      <find>block</find>
+      <find>Block</find>
     </findStrings>
     <replaceStrings>
       <replace>Momo</replace>
@@ -243,57 +395,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/CFG/Operand/VarRegister.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Operand/GlobalRegister.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Operand/TemporaryRegister.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Operand/ParameterRegister.java" />
-        <option value="$PROJECT_DIR$/src/Environment/RegisterTable.java" />
-        <option value="$PROJECT_DIR$/src/Environment/Environment.java" />
+        <option value="$PROJECT_DIR$/src/AST/Expression/VarExpression/IndexExpression.java" />
+        <option value="$PROJECT_DIR$/src/AST/Expression/NewExpression.java" />
+        <option value="$PROJECT_DIR$/src/Translator/Translator.java" />
+        <option value="$PROJECT_DIR$/src/AST/Type/MemberClass/MemberVar.java" />
+        <option value="$PROJECT_DIR$/src/Translator/NASMTranslator.java" />
+        <option value="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/AssignExpression.java" />
+        <option value="$PROJECT_DIR$/src/Translator/NASM_Translator.java" />
+        <option value="$PROJECT_DIR$/src/RegisterAllocator/PhysicalRegister.java" />
+        <option value="$PROJECT_DIR$/src/Translator/PhysicalRegister.java" />
+        <option value="$PROJECT_DIR$/src/Translator/NASMRegister.java" />
         <option value="$PROJECT_DIR$/src/CFG/Operand/VirtualRegister.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/Instruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/ComputingInstruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/MemoryInstruction/MemoryInstruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/MemoryInstruction/OtherMemoryInstruction/AllocateInstruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/MemoryInstruction/AllocateInstruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/FunctionInstruction/FunctionInstruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/MemoryInstruction/MoveInstruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/FunctionInstruction/FunctionCallInstruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/UnaryInstruction/BitNotInstruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/UnaryInstruction/UnaryMinusInstruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/BinaryInstruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/AdditionInstruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/AdditionInstruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/AddInstruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/MinusInstruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/MultiplyInstruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/DivideInstruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/BitAndInstruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/BitOrInstruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/BitNorInstruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/BitXorInstruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/LeftShiftInstruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/RghtShiftInstruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/RightShiftInstruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/EqualToInstruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/NotEqualToInstruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/ModInstruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/GreaterInstruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/GreaterEqualInstruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/SmallerEqualInstruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/LessEqualInstruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/LessInstruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/UnaryInstruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/UnaryInstruction/UnaryInstruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/UnaryInstruction/OtherUnaryInstruction/BitNotInstruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/UnaryInstruction/OtherUnaryInstruction/UnaryMinusInstruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/ControlInstruction/ControlInstruction.java" />
+        <option value="$PROJECT_DIR$/src/CFG/Operand/StringRegister.java" />
+        <option value="$PROJECT_DIR$/src/CFG/Frame.java" />
+        <option value="$PROJECT_DIR$/src/AST/Program.java" />
+        <option value="$PROJECT_DIR$/src/Environment/SymbolTable.java" />
+        <option value="$PROJECT_DIR$/src/Listener/BuildTreeListener.java" />
         <option value="$PROJECT_DIR$/src/CFG/Instruction/LabelInstruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/ControlInstruction/OtherControlInstruction/BranchInstruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/ControlInstruction/OtherControlInstruction/JumpInstruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/ControlInstruction/ControlInstruction.java" />
-        <option value="$PROJECT_DIR$/src/CFG/Instruction/ControlInstruction/OtherControlInstruction/BrachInstruction.java" />
+        <option value="$PROJECT_DIR$/src/CFG/Instruction/MemoryInstruction/AllocateInstruction.java" />
+        <option value="$PROJECT_DIR$/src/CFG/Instruction/MemoryInstruction/LoadInstruction.java" />
+        <option value="$PROJECT_DIR$/src/CFG/Instruction/MemoryInstruction/MoveInstruction.java" />
+        <option value="$PROJECT_DIR$/src/CFG/Instruction/MemoryInstruction/StoreInstruction.java" />
+        <option value="$PROJECT_DIR$/src/CFG/Instruction/FunctionInstruction/FunctionCallInstruction.java" />
+        <option value="$PROJECT_DIR$/src/CFG/Instruction/FunctionInstruction/ReturnInstruction.java" />
         <option value="$PROJECT_DIR$/src/CFG/Instruction/ControlInstruction/OtherControlInstruction/BranchInstruction.java" />
         <option value="$PROJECT_DIR$/src/CFG/Instruction/ControlInstruction/OtherControlInstruction/JumpInstruction.java" />
+        <option value="$PROJECT_DIR$/src/CFG/Instruction/Instruction.java" />
+        <option value="$PROJECT_DIR$/src/CFG/Graph.java" />
+        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/UnaryInstruction/OtherUnaryInstruction/UnaryMinusInstruction.java" />
+        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/UnaryInstruction/OtherUnaryInstruction/BitNotInstruction.java" />
+        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/BinaryInstruction.java" />
+        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/UnaryInstruction/UnaryInstruction.java" />
+        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/MinusInstruction.java" />
+        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/AddInstruction.java" />
+        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/MultiplyInstruction.java" />
+        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/AndInstruction.java" />
+        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/OrInstruction.java" />
+        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/XorInstruction.java" />
+        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/RightShiftInstruction.java" />
+        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/LeftShiftInstruction.java" />
+        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/EqualityInstruction.java" />
+        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/EqualToInstruction.java" />
+        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/GreaterEqualInstruction.java" />
+        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/GreaterInstruction.java" />
+        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/LessEqualInstruction.java" />
+        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/LessInstruction.java" />
+        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/NotEqualToInstruction.java" />
+        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/MULMODInstruction.java" />
+        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/ModInstruction.java" />
+        <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/DivideInstruction.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/Translator/NASM_Naive_Translator.java" />
       </list>
     </option>
   </component>
@@ -310,10 +462,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
-    <option name="y" value="-4" />
-    <option name="width" value="1855" />
-    <option name="height" value="1084" />
+    <option name="x" value="64" />
+    <option name="y" value="-11" />
+    <option name="width" value="1857" />
+    <option name="height" value="1092" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -352,7 +504,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -393,7 +547,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Listener" />
+              <option name="myItemId" value="Translator" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -411,7 +565,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Error" />
+              <option name="myItemId" value="Parser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="compiler2017bh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="compiler2017bh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Listener" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -505,106 +677,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CFG" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Instruction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FunctionInstruction" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="compiler2017bh" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="compiler2017bh" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AST" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="compiler2017bh" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="compiler2017bh" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AST" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Expression" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="compiler2017bh" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="compiler2017bh" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AST" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Expression" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BinaryExpression" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="compiler2017bh" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="compiler2017bh" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="gen" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -617,19 +695,19 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/Parser" />
-      <recent name="$PROJECT_DIR$/src/Front_End/Parser/parser" />
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Front_End/Parser" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Translator" />
       <recent name="CFG.Instruction.ControlInstruction.OtherControlInstruction" />
       <recent name="CFG.Instruction.ComputingInstruction.ControlInstruction.OtherControlInstruction" />
       <recent name="CFG.Instruction.ComputingInstruction.BinaryInstruction.OtherBinaryInstructions" />
       <recent name="CFG.Instruction.ComputingInstruction.UnaryInstruction" />
-      <recent name="CFG.Operand" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Parser" />
+      <recent name="$PROJECT_DIR$/src/Front_End/Parser/parser" />
       <recent name="$PROJECT_DIR$/src/Front_End/Parser" />
     </key>
   </component>
@@ -1080,7 +1158,10 @@
       <workItem from="1491285143681" duration="8651000" />
       <workItem from="1492426262698" duration="1445000" />
       <workItem from="1494947693242" duration="1120000" />
-      <workItem from="1495008817111" duration="11418000" />
+      <workItem from="1495008817111" duration="15630000" />
+      <workItem from="1495469326054" duration="1634000" />
+      <workItem from="1495451337181" duration="53014000" />
+      <workItem from="1495799820078" duration="470000" />
     </task>
     <task id="LOCAL-00001" summary="bug fixed">
       <created>1491286707260</created>
@@ -1131,13 +1212,20 @@
       <option name="project" value="LOCAL" />
       <updated>1491291832195</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="this is reserved.">
+      <created>1495085470531</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1495085470531</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151742000" />
+    <option name="totallyTimeSpent" value="211072000" />
   </component>
-  <component name="TodoView">
+  <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -1147,40 +1235,40 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952183" sideWeight="0.4958632" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3014553" sideWeight="0.48262548" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3007284" sideWeight="0.48262548" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298647" sideWeight="0.09817981" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28511965" sideWeight="0.4804192" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.264308" sideWeight="0.44732487" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952183" sideWeight="0.48262548" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21511307" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53381896" sideWeight="0.9018202" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2498621" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30385014" sideWeight="0.88637614" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882413" sideWeight="0.4958632" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882413" sideWeight="0.46276888" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.264308" sideWeight="0.44732487" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2580645" sideWeight="0.4804192" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952183" sideWeight="0.48262548" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22173193" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882413" sideWeight="0.4958632" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30385014" sideWeight="0.88637614" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1792609" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882413" sideWeight="0.46276888" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984003" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952183" sideWeight="0.4958632" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1195,19 +1283,20 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="bug fixed" />
     <MESSAGE value="this is reserved." />
-    <option name="LAST_COMMIT_MESSAGE" value="this is reserved." />
+    <MESSAGE value="The work is so huge..." />
+    <option name="LAST_COMMIT_MESSAGE" value="The work is so huge..." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/AST/Expression/VarExpression/FieldExpression.java</url>
-          <line>28</line>
+          <url>file://$PROJECT_DIR$/src/Listener/BuildTreeListener.java</url>
+          <line>306</line>
           <properties />
-          <option name="timeStamp" value="17" />
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="19" />
+      <option name="time" value="21" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1216,162 +1305,50 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Parser/Momo.g4">
+    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/MemoryInstruction/AllocateInstruction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="342">
+          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Listener/BaseListener.java">
+    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/MemoryInstruction/LoadInstruction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="12" column="28" lean-forward="false" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Bloc.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="532">
+          <caret line="35" column="24" lean-forward="false" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Block.java">
+    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/MemoryInstruction/StoreInstruction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="18" lean-forward="false" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+        <state relative-caret-position="551">
+          <caret line="33" column="4" lean-forward="false" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Operand/GlobalRegister.java">
+    <entry file="file://$PROJECT_DIR$/src/AST/Statement/VarStatement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-          <folding>
-            <element signature="e#182#183#0" expanded="true" />
-            <element signature="e#202#203#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="152">
+          <caret line="16" column="16" lean-forward="false" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Environment/RegisterTable.java">
+    <entry file="file://$PROJECT_DIR$/src/Environment/Symbol.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="22" column="31" lean-forward="false" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#357#358#0" expanded="true" />
-            <element signature="e#391#392#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="247">
+          <caret line="14" column="33" lean-forward="true" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Environment/Environment.java">
+    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/MemoryInstruction/MoveInstruction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
-          <caret line="31" column="30" lean-forward="true" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Operand/TemporaryRegister.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Instructions/Instructino.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/Instructino.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Listener/BuildTreeListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="223" column="25" lean-forward="false" selection-start-line="223" selection-start-column="25" selection-end-line="223" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Listener/ClassGetterListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Listener/DefinitionGetterListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="24" column="72" lean-forward="false" selection-start-line="24" selection-start-column="72" selection-end-line="24" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/Instruction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#253#254#0" expanded="true" />
-            <element signature="e#271#272#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/ComputingInstruction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="64" lean-forward="false" selection-start-line="7" selection-start-column="64" selection-end-line="7" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Operand/Address.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Operand/VarRegister.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="29" lean-forward="false" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-          <folding>
-            <element signature="e#204#205#0" expanded="true" />
-            <element signature="e#231#232#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Operand/ParameterRegister.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -1379,244 +1356,21 @@
     <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/MemoryInstruction/MemoryInstruction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
-          <caret line="7" column="61" lean-forward="false" selection-start-line="7" selection-start-column="61" selection-end-line="7" selection-end-column="61" />
-          <folding />
+          <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/MemoryInstruction/MoveInstruction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" column="44" lean-forward="false" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Operand/Operand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="31" lean-forward="true" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Operand/VirtualRegister.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#214#215#0" expanded="true" />
-            <element signature="e#275#276#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/BinaryInstruction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="69" lean-forward="false" selection-start-line="10" selection-start-column="69" selection-end-line="10" selection-end-column="69" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/AddInstruction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#445#446#0" expanded="true" />
-            <element signature="e#475#476#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/MinusInstruction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/MultiplyInstruction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/DivideInstruction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/AndInstruction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/OrInstruction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/BitNorInstruction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/XorInstruction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/LeftShiftInstruction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/RghtShiftInstruction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/RightShiftInstruction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/EqualToInstruction.java">
+    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/FunctionInstruction/FunctionInstruction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
+          <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/NotEqualToInstruction.java">
+    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/FunctionInstruction/ReturnInstruction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/ModInstruction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/GreaterInstruction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/GreaterEqualInstruction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/LessEqualInstruction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/LessInstruction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/UnaryInstruction/UnaryInstruction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/UnaryInstruction/OtherUnaryInstruction/BitNotInstruction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/UnaryInstruction/OtherUnaryInstruction/UnaryMinusInstruction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/LabelInstruction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="e#183#184#0" expanded="true" />
-            <element signature="e#206#207#0" expanded="true" />
-            <element signature="e#264#265#0" expanded="true" />
-            <element signature="e#304#305#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ControlInstruction/OtherControlInstruction/BranchInstruction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="92" lean-forward="false" selection-start-line="5" selection-start-column="92" selection-end-line="5" selection-end-column="92" />
+        <state relative-caret-position="323">
+          <caret line="26" column="24" lean-forward="true" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -1624,46 +1378,411 @@
     <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ControlInstruction/ControlInstruction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
-          <caret line="7" column="61" lean-forward="false" selection-start-line="7" selection-start-column="61" selection-end-line="7" selection-end-column="61" />
-          <folding />
+          <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ControlInstruction/OtherControlInstruction/BranchInstruction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="57" lean-forward="false" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="57" />
+        <state relative-caret-position="361">
+          <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="40" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ControlInstruction/OtherControlInstruction/JumpInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="33" column="5" lean-forward="false" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/ComputingInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/LabelInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#397#398#0" expanded="true" />
+            <element signature="e#437#438#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/FunctionInstruction/FunctionCallInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="42" column="49" lean-forward="true" selection-start-line="42" selection-start-column="49" selection-end-line="42" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/Instruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="27" column="53" lean-forward="true" selection-start-line="27" selection-start-column="53" selection-end-line="27" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Translator/NASM_Translator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="18" column="30" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ControlInstruction/OtherControlInstruction/JumpInstruction.java">
+    <entry file="file://$PROJECT_DIR$/src/CFG/Operand/GlobalRegister.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="18" column="39" lean-forward="false" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
-          <folding>
-            <element signature="e#419#420#0" expanded="true" />
-            <element signature="e#442#443#0" expanded="true" />
-            <element signature="e#510#511#0" expanded="true" />
-            <element signature="e#549#550#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/FunctionInstruction/FunctionInstruction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="63" lean-forward="false" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
+        <state relative-caret-position="152">
+          <caret line="8" column="25" lean-forward="false" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/FunctionInstruction/FunctionCallInstruction.java">
+    <entry file="file://$PROJECT_DIR$/src/CFG/Operand/VirtualRegister.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+        <state relative-caret-position="171">
+          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AST/Expression/NewExpression.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="21" column="10" lean-forward="false" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CFG/Frame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CFG/Operand/StringRegister.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="13" column="51" lean-forward="false" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
+          <folding>
+            <element signature="e#237#238#0" expanded="true" />
+            <element signature="e#292#293#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CFG/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="59" column="28" lean-forward="false" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Translator/PhysicalRegister.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CFG/Operand/VarRegister.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="18" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/UnaryInstruction/OtherUnaryInstruction/UnaryMinusInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="20" column="36" lean-forward="false" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+          <folding>
+            <element signature="e#618#619#0" expanded="true" />
+            <element signature="e#652#653#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/UnaryInstruction/OtherUnaryInstruction/BitNotInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="20" column="30" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+          <folding>
+            <element signature="e#606#607#0" expanded="true" />
+            <element signature="e#637#638#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/UnaryInstruction/UnaryInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="12" column="67" lean-forward="false" selection-start-line="12" selection-start-column="67" selection-end-line="12" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/MinusInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+          <folding>
+            <element signature="e#653#654#0" expanded="true" />
+            <element signature="e#672#673#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/AddInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="e#647#648#0" expanded="true" />
+            <element signature="e#666#667#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/MultiplyInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+          <folding>
+            <element signature="e#662#663#0" expanded="true" />
+            <element signature="e#682#683#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/AndInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="20" column="19" lean-forward="false" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+          <folding>
+            <element signature="e#647#648#0" expanded="true" />
+            <element signature="e#666#667#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/OrInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="20" column="18" lean-forward="false" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+          <folding>
+            <element signature="e#644#645#0" expanded="true" />
+            <element signature="e#662#663#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/XorInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="20" column="19" lean-forward="false" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+          <folding>
+            <element signature="e#647#648#0" expanded="true" />
+            <element signature="e#666#667#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/RightShiftInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="20" column="19" lean-forward="false" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+          <folding>
+            <element signature="e#668#669#0" expanded="true" />
+            <element signature="e#687#688#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/LeftShiftInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="19" column="19" lean-forward="false" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+          <folding>
+            <element signature="e#665#666#0" expanded="true" />
+            <element signature="e#684#685#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/BinaryInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="16" column="78" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/EqualToInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <folding>
+            <element signature="e#744#745#0" expanded="true" />
+            <element signature="e#764#765#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/GreaterEqualInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="21" column="21" lean-forward="false" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+          <folding>
+            <element signature="e#759#760#0" expanded="true" />
+            <element signature="e#780#781#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/GreaterInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="11" column="59" lean-forward="false" selection-start-line="11" selection-start-column="59" selection-end-line="11" selection-end-column="59" />
+          <folding>
+            <element signature="e#744#745#0" expanded="true" />
+            <element signature="e#764#765#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/LessEqualInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="21" column="20" lean-forward="false" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+          <folding>
+            <element signature="e#750#751#0" expanded="true" />
+            <element signature="e#771#772#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/LessInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="11" column="56" lean-forward="false" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
+          <folding>
+            <element signature="e#735#736#0" expanded="true" />
+            <element signature="e#755#756#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/NotEqualToInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="21" column="21" lean-forward="false" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+          <folding>
+            <element signature="e#753#754#0" expanded="true" />
+            <element signature="e#774#775#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/EqualityInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="8" column="69" lean-forward="false" selection-start-line="8" selection-start-column="69" selection-end-line="11" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#322#323#0" expanded="true" />
+            <element signature="e#352#353#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/MULMODInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="9" column="28" lean-forward="false" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#318#319#0" expanded="true" />
+            <element signature="e#348#349#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/ModInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="21" column="34" lean-forward="false" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+          <folding>
+            <element signature="e#728#729#0" expanded="true" />
+            <element signature="e#760#761#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/DivideInstruction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="21" column="39" lean-forward="false" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+          <folding>
+            <element signature="e#737#738#0" expanded="true" />
+            <element signature="e#774#775#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Translator/NASM_Naive_Translator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="31" column="11" lean-forward="false" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
+          <folding>
+            <element signature="e#1543#1544#0" expanded="true" />
+            <element signature="e#1563#1564#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Listener/BuildTreeListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="306" column="0" lean-forward="false" selection-start-line="306" selection-start-column="0" selection-end-line="306" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="22" column="98" lean-forward="false" selection-start-line="22" selection-start-column="94" selection-end-line="22" selection-end-column="98" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-224">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>

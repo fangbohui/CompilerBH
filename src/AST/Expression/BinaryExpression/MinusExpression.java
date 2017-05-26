@@ -6,7 +6,14 @@ import AST.Expression.Expression;
 import AST.Type.BasicType.IntType;
 import AST.Type.BasicType.StringType;
 import AST.Type.Type;
+import CFG.Instruction.ComputingInstruction.BinaryInstruction.OtherBinaryInstructions.AddInstruction;
+import CFG.Instruction.ComputingInstruction.BinaryInstruction.OtherBinaryInstructions.MinusInstruction;
+import CFG.Instruction.Instruction;
+import CFG.Operand.VirtualRegister;
+import Environment.Environment;
 import Error.CompileError;
+
+import java.util.ArrayList;
 
 /**
  * Created by fangbohui on 17-4-2.
@@ -25,5 +32,16 @@ public class MinusExpression extends BinaryExpression {
 			return new MinusExpression(IntType.getType(), false, leftExpression, rightExpression);
 		}
 		throw new CompileError("- should between int");
+	}
+
+	public void emit(ArrayList<Instruction> instructions) {
+		leftExpression.emit(instructions);
+		leftExpression.load(instructions);
+
+		rightExpression.emit(instructions);
+		rightExpression.load(instructions);
+
+		operand = Environment.registerTable.addTemporaryRegister(null);
+		instructions.add(MinusInstruction.getInstruction((VirtualRegister) operand, leftExpression.operand, rightExpression.operand));
 	}
 }

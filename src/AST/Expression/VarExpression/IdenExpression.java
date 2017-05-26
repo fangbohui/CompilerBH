@@ -2,12 +2,15 @@ package AST.Expression.VarExpression;
 
 import AST.Function;
 import AST.Type.ClassType;
+import CFG.Instruction.Instruction;
 import Error.CompileError;
 import AST.Expression.Expression;
 import AST.Type.Type;
 import Environment.Environment;
 import Environment.Symbol;
 import sun.reflect.generics.scope.ClassScope;
+
+import java.util.ArrayList;
 
 /**
  * Created by fangbohui on 17-4-2.
@@ -32,5 +35,9 @@ public class IdenExpression extends Expression {
 		} else {
 			return new IdenExpression(symbol.type, true, symbol); // loopStatement
 		}
+	}
+
+	public void emit(ArrayList<Instruction> instructions) {
+		operand = symbol.register;
 	}
 }

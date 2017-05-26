@@ -5,6 +5,8 @@ import CFG.Instruction.Instruction;
 import CFG.Instruction.LabelInstruction;
 import CFG.Operand.Operand;
 
+import java.util.ArrayList;
+
 /**
  * Created by fangbohui on 17-5-18.
  */
@@ -17,5 +19,17 @@ public class JumpInstruction extends ControlInstruction {
 
 	public static Instruction getInstruction(LabelInstruction dest) {
 		return new JumpInstruction(dest);
+	}
+
+	@Override
+	public ArrayList<Operand> getDestOperands() {
+		ArrayList<Operand> operands = new ArrayList<>();
+		return operands;
+	}
+
+	@Override
+	public ArrayList<Operand> getSrcOperands() {
+		ArrayList<Operand> operands = new ArrayList<>();
+		return operands;
 	}
 }

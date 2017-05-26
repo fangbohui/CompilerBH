@@ -1,5 +1,7 @@
 import java.io.*;
 
+import AST.Function;
+import CFG.Graph;
 import Environment.Environment;
 import Listener.BuildTreeListener;
 import Listener.ClassGetterListener;
@@ -7,6 +9,7 @@ import Listener.DefinitionGetterListener;
 import Listener.SyntaxErrorListener;
 import Parser.MomoLexer;
 import Parser.MomoParser;
+import Translator.NASM_Naive_Translator;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
@@ -36,5 +39,10 @@ public class Main {
 			throw new CompileError("You don't have a main function");
 		}
 
+		for (Function function : Environment.program.functionList) {
+			function.graph = new Graph(function);
+		}
+
+		new NASM_Naive_Translator(new PrintStream(System.out)).translate();
 	}
 }

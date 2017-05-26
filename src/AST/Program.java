@@ -30,7 +30,7 @@ public class Program implements Node, Scope {
 		varList.add(var);
 	}
 
-	public void addfunction(Function function) {
+	public void addFunction(Function function) {
 		functionList.add(function);
 	}
 

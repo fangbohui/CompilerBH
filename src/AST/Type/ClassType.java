@@ -17,9 +17,11 @@ public class ClassType extends Type implements Scope {
 	public Map<String, MemberVar> memberVarMap;
 	public Map<String, MemberFunction> memberFunctionMap;
 	public Function constructor;
+	public int totalSize;
 
 	private ClassType(String name) {
 		this.name = name;
+		this.totalSize = 0;
 		memberVarMap = new HashMap<>();
 		memberFunctionMap = new HashMap<>();
 		constructor = null;

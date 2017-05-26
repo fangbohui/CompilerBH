@@ -16,7 +16,7 @@ public class SymbolTable {
 
 	public Symbol add(String name, Type type) {
 		if (symbolTable.peek().containsKey(name)) {
-			throw new CompileError("repeating name " + name);
+			throw new CompileError("repeating id " + name);
 		}
 		if (!stringStack.containsKey(name)) {
 			stringStack.put(name, new Stack<>());
@@ -24,6 +24,24 @@ public class SymbolTable {
 		Symbol symbol = new Symbol(name, type);
 		stringStack.get(name).push(symbol);
 		symbolTable.peek().put(name, symbol);
+		return symbol;
+	}
+
+	public Symbol addGlobalVar(String name, Type type) {
+		Symbol symbol = add(name, type);
+		symbol.register = Environment.registerTable.addGlobalRegister(symbol);
+		return symbol;
+	}
+
+	public Symbol addParameter(String name, Type type) {
+		Symbol symbol = add(name, type);
+		symbol.register = Environment.registerTable.addParameterRegister(symbol);
+		return symbol;
+	}
+
+	public Symbol addTemporaryVar(String name, Type type) {
+		Symbol symbol = add(name, type);
+		symbol.register = Environment.registerTable.addTemporaryRegister(symbol);
 		return symbol;
 	}
 

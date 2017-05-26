@@ -1,9 +1,6 @@
 package Environment;
 
-import CFG.Operand.GlobalRegister;
-import CFG.Operand.ParameterRegister;
-import CFG.Operand.TemporaryRegister;
-import CFG.Operand.VirtualRegister;
+import CFG.Operand.*;
 
 import java.util.Set;
 import java.util.HashSet;
@@ -32,6 +29,12 @@ public class RegisterTable {
 
 	public VirtualRegister addTemporaryRegister(Symbol symbol) {
 		VirtualRegister virtualRegister = new TemporaryRegister(symbol);
+		registers.add(virtualRegister);
+		return virtualRegister;
+	}
+
+	public VirtualRegister addStringRegister(String string) {
+		VirtualRegister virtualRegister = new StringRegister(string);
 		registers.add(virtualRegister);
 		return virtualRegister;
 	}

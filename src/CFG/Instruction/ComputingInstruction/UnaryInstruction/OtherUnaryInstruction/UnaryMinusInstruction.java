@@ -16,4 +16,8 @@ public class UnaryMinusInstruction extends UnaryInstruction {
 	public static Instruction getInstruction(VirtualRegister dest, Operand src) {
 		return new UnaryMinusInstruction(dest, src);
 	}
+
+	public String OPname() {
+		return String.format("neg");
+	}
 }

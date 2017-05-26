@@ -16,4 +16,8 @@ public class OrInstruction extends BinaryInstruction {
 	public static Instruction getInstruction(VirtualRegister dest, Operand src1, Operand src2) {
 		return new OrInstruction(dest, src1, src2);
 	}
+
+	public String OPname() {
+		return "or";
+	}
 }

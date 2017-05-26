@@ -65,13 +65,13 @@ public class BuildTreeListener extends BaseListener {
 		Environment.enterScope(classType);
 		classType.memberVarMap.forEach((name, member) -> {
 			if (name.equals("this")) {
-				throw new CompileError("you cannot use 'this' as a member-var name");
+				throw new CompileError("you cannot use 'this' as a member-var id");
 			}
 			Environment.symbolTable.add(name, member.type);
 		});
 		classType.memberFunctionMap.forEach((name, member) -> {
 			if (name.equals("this")) {
-				throw new CompileError("you cannot use 'this' as a member-var name");
+				throw new CompileError("you cannot use 'this' as a member-var id");
 			}
 			Environment.symbolTable.add(name, member.function);
 		});
@@ -116,7 +116,7 @@ public class BuildTreeListener extends BaseListener {
 			Function function = (Function)propertyTree.get(ctx.parent);
 			for (int i = 0; i < function.parameters.size(); i ++) {
 				Symbol parameter = function.parameters.get(i);
-				function.parameters.set(i, Environment.symbolTable.add(parameter.name, parameter.type));
+				function.parameters.set(i, Environment.symbolTable.addParameter(parameter.name, parameter.type));
 			}
 		}
 		propertyTree.put(ctx, blockStatement);
@@ -212,9 +212,14 @@ public class BuildTreeListener extends BaseListener {
 			Type type = (Type) propertyTree.get(ctx.type());
 			String name = ctx.IDEN().getText();
 			if (name.equals("this")) {
-				throw new CompileError("you cannot use this as a name");
+				throw new CompileError("you cannot use this as a id");
 			}
-			Symbol symbol = Environment.symbolTable.add(name, type);
+			Symbol symbol;
+			if (Environment.scopeTable.top() == Environment.program) {
+				symbol = Environment.symbolTable.addGlobalVar(name, type);
+			} else {
+				symbol = Environment.symbolTable.addTemporaryVar(name, type);
+			}
 			Expression expression = (Expression) propertyTree.get(ctx.expression());
 			propertyTree.put(ctx, VarStatement.getStatement(symbol, expression));
 		}

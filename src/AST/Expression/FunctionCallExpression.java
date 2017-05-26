@@ -2,10 +2,17 @@ package AST.Expression;
 
 import AST.Expression.VarExpression.FieldExpression;
 import AST.Function;
+import AST.Type.BasicType.VoidType;
 import AST.Type.ClassType;
 import AST.Type.Type;
+import CFG.Instruction.FunctionInstruction.FunctionCallInstruction;
+import CFG.Instruction.Instruction;
+import CFG.Operand.Operand;
+import CFG.Operand.VirtualRegister;
 import Environment.Environment;
 import Error.CompileError;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -34,7 +41,6 @@ public class FunctionCallExpression extends Expression {
 				}
 				ClassType classType = (ClassType)newExpression.type;
 				newExpression.constructor = classType.constructor;
-				newExpression.parameters = parameters;
 				return newExpression;
 			}
 			throw new CompileError("there is no constructor");
@@ -58,5 +64,21 @@ public class FunctionCallExpression extends Expression {
 			return new FunctionCallExpression(function.type, false, function, parameters);
 		}
 		throw new CompileError("I guess there it's not a function");
+	}
+
+	public void emit(ArrayList<Instruction> instructions) {
+		// TODO
+		ArrayList<Operand> operands = new ArrayList<>();
+		for (Expression parameter : parameters) {
+			parameter.emit(instructions);
+			parameter.load(instructions);
+			operands.add(parameter.operand);
+		}
+		if (type instanceof VoidType) {
+			instructions.add(FunctionCallInstruction.getInstruction(null, function, operands));
+		} else {
+			operand = Environment.registerTable.addTemporaryRegister(null);
+			instructions.add(FunctionCallInstruction.getInstruction((VirtualRegister) operand, function, operands));
+		}
 	}
 }

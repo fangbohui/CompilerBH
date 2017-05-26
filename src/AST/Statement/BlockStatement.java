@@ -1,5 +1,7 @@
 package AST.Statement;
 
+import CFG.Instruction.ControlInstruction.OtherControlInstruction.JumpInstruction;
+import CFG.Instruction.Instruction;
 import Environment.Scope;
 
 import java.util.ArrayList;
@@ -20,5 +22,11 @@ public class BlockStatement extends Statement implements Scope {
 
 	public void addStatement(Statement statement) {
 		statements.add(statement);
+	}
+
+	public void emit(ArrayList<Instruction> instructions) {
+		for (Statement statement : statements) {
+			statement.emit(instructions);
+		}
 	}
 }

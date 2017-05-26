@@ -4,7 +4,16 @@ import AST.Expression.ConstantExpression.IntConstant;
 import AST.Expression.Expression;
 import AST.Type.BasicType.IntType;
 import AST.Type.Type;
+import CFG.Instruction.ComputingInstruction.BinaryInstruction.OtherBinaryInstructions.MinusInstruction;
+import CFG.Instruction.Instruction;
+import CFG.Instruction.MemoryInstruction.MoveInstruction;
+import CFG.Operand.Address;
+import CFG.Operand.ImmediatelyNumber;
+import CFG.Operand.VirtualRegister;
+import Environment.Environment;
 import Error.CompileError;
+
+import java.util.ArrayList;
 
 /**
  * Created by fangbohui on 17-4-2.
@@ -22,5 +31,9 @@ public class UnaryAddExpression extends UnaryExpression {
 			return IntConstant.getConstant(value);
 		}
 		return new UnaryAddExpression(IntType.getType(), false, expression);
+	}
+
+	public void emit(ArrayList<Instruction> instructions) {
+		operand = expression.operand;
 	}
 }

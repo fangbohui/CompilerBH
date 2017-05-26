@@ -3,6 +3,8 @@ package AST;
 import AST.Statement.BlockStatement;
 import AST.Type.*;
 import AST.Type.BasicType.IntType;
+import CFG.Graph;
+import CFG.Instruction.LabelInstruction;
 import Environment.*;
 import Error.CompileError;
 import java.util.ArrayList;
@@ -13,6 +15,9 @@ public class Function extends Type implements Node, Scope {
 	public Type type;
 	public List<Symbol> parameters;
 	public BlockStatement statements;
+
+	public LabelInstruction beginning, entry, exit;
+	public Graph graph;
 
 	private Function(String name, Type type, List<Symbol> parameters) {
 		this.name = name;

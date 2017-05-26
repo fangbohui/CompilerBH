@@ -3,8 +3,12 @@ package AST.Statement;
 import AST.Expression.Expression;
 import AST.Function;
 import AST.Type.BasicType.VoidType;
+import CFG.Instruction.Instruction;
+import CFG.Instruction.MemoryInstruction.MoveInstruction;
 import Environment.Symbol;
 import Error.CompileError;
+
+import java.util.ArrayList;
 
 /**
  * Created by fangbohui on 17-4-2.
@@ -28,4 +32,11 @@ public class VarStatement extends Statement {
 		throw new CompileError("you're using 2 different types to var");
 	}
 
+	public void emit(ArrayList<Instruction> instructions) {
+		if (expression != null) {
+			expression.emit(instructions);
+			expression.load(instructions);
+			instructions.add(MoveInstruction.getInstruction(symbol.register, expression.operand));
+		}
+	}
 }

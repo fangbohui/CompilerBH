@@ -14,7 +14,7 @@ public class ClassTable {
 
 	public void put(String name, ClassType classType) {
 		if (classTypeHashMap.containsKey(name)) {
-			throw new CompileError("you're asking for 2 same-name classes");
+			throw new CompileError("you're asking for 2 same-id classes");
 		}
 		classTypeHashMap.put(name, classType);
 	}

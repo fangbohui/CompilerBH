@@ -30,7 +30,7 @@ public class DefinitionGetterListener extends BaseListener {
 			}
 			name = ctx.type(0).getText();
 			if (!name.equals(classType.name)) {
-				throw new CompileError("constructor should have the same name with the class");
+				throw new CompileError("constructor should have the same id with the class");
 			}
 		} else {
 			name = ctx.IDEN(0).getText();
@@ -63,7 +63,7 @@ public class DefinitionGetterListener extends BaseListener {
 				classType.addMember(name, function);
 			}
 		}
-		Environment.program.addfunction(function);
+		Environment.program.addFunction(function);
 		propertyTree.put(ctx, function);
 	}
 

@@ -10,8 +10,11 @@ import AST.Type.Type;
 public class MemberVar extends Member {
 	public Type type;
 	public Expression expression;
+	public int offset;
 	public MemberVar(ClassType classType, String name, Type type) {
 		super(name);
 		this.type = type;
+		this.offset = classType.totalSize;
+		classType.totalSize += 8; //TODO
 	}
 }

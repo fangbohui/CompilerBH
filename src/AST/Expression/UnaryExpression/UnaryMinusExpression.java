@@ -4,7 +4,14 @@ import AST.Expression.ConstantExpression.IntConstant;
 import AST.Expression.Expression;
 import AST.Type.BasicType.IntType;
 import AST.Type.Type;
+import CFG.Instruction.ComputingInstruction.BinaryInstruction.OtherBinaryInstructions.MinusInstruction;
+import CFG.Instruction.ComputingInstruction.UnaryInstruction.OtherUnaryInstruction.UnaryMinusInstruction;
+import CFG.Instruction.Instruction;
+import CFG.Operand.VirtualRegister;
+import Environment.Environment;
 import Error.CompileError;
+
+import java.util.ArrayList;
 
 /**
  * Created by fangbohui on 17-4-2.
@@ -22,5 +29,12 @@ public class UnaryMinusExpression extends UnaryExpression {
 			return IntConstant.getConstant(-value);
 		}
 		return new UnaryMinusExpression(IntType.getType(), false, expression);
+	}
+
+	public void emit(ArrayList<Instruction> instructions) {
+		expression.emit(instructions);
+		expression.load(instructions);
+		operand = Environment.registerTable.addTemporaryRegister(null);
+		instructions.add(UnaryMinusInstruction.getInstruction((VirtualRegister) operand, expression.operand));
 	}
 }

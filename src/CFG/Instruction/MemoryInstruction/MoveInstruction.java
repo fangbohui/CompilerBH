@@ -5,6 +5,8 @@ import CFG.Operand.Operand;
 import CFG.Operand.VirtualRegister;
 import Error.InternalError;
 
+import java.util.ArrayList;
+
 /**
  * Created by fangbohui on 17-5-17.
  */
@@ -23,5 +25,19 @@ public class MoveInstruction extends MemoryInstruction {
 		} else {
 			throw new InternalError();
 		}
+	}
+
+	@Override
+	public ArrayList<Operand> getDestOperands() {
+		ArrayList<Operand> operands = new ArrayList<>();
+		operands.add(dest);
+		return operands;
+	}
+
+	@Override
+	public ArrayList<Operand> getSrcOperands() {
+		ArrayList<Operand> operands = new ArrayList<>();
+		operands.add(src);
+		return operands;
 	}
 }
