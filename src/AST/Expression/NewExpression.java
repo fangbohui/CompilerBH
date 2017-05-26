@@ -45,6 +45,7 @@ public class NewExpression extends Expression {
 	}
 
 	public void emit(ArrayList<Instruction> instructions) {
+		return;
 		for (Expression expression : expressions) {
 			if (expression != null) {
 				expression.emit(instructions);
