@@ -166,9 +166,7 @@ public class NASM_Naive_Translator extends NASM_Translator {
 								load(NASMRegister.rcx, callInstruction.parameters.get(3));
 							}
 						} else {
-							//output.printf("\tsub\t\trsp, %d\n", callInstruction.parameters.size() * 8);
 							for (int p = callInstruction.parameters.size() - 1; p >= 0; p--) {
-								//int offset = graph.frame.getOffset(callInstruction.parameters.get(p));
 								load(NASMRegister.rax, callInstruction.parameters.get(p));
 								output.printf("\tpush\trax\n");
 							}
@@ -177,7 +175,6 @@ public class NASM_Naive_Translator extends NASM_Translator {
 						if (callInstruction.dest != null) {
 							store(NASMRegister.rax, callInstruction.dest);
 						}
-						//output.printf("\tadd\t\trsp, %d\n", callInstruction.parameters.size() * 8);
 					}
 				} else if (instruction instanceof MemoryInstruction) {
 					if (instruction instanceof AllocateInstruction) {
