@@ -185,7 +185,7 @@ public class NASM_Naive_Translator extends NASM_Translator {
 						LoadInstruction loadInstruction = (LoadInstruction) instruction;
 						load(NASMRegister.rax, loadInstruction.src.base);
 						load(NASMRegister.rdx, loadInstruction.src.index);
-						output.printf("\tmov\t\trax [rax + rdx*4]\n");
+						output.printf("\tmov\t\trax, [rax + rdx*4]\n");
 						store(NASMRegister.rax, loadInstruction.dest);
 					} else if (instruction instanceof MoveInstruction) {
 						MoveInstruction moveInstruction = (MoveInstruction) instruction;
@@ -195,7 +195,7 @@ public class NASM_Naive_Translator extends NASM_Translator {
 						StoreInstruction storeInstruction = (StoreInstruction) instruction;
 						load(NASMRegister.rax, storeInstruction.dest.base);
 						load(NASMRegister.rdx, storeInstruction.dest.index);
-						output.printf("\tmov\t\trax [rax + rdx*4]\n");
+						output.printf("\tmov\t\trax, [rax + rdx*4]\n");
 						store(NASMRegister.rax, storeInstruction.dest.base);
 					}
 				}

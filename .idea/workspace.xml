@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="130622e1-2e91-4c8e-b79c-317a8b8f5b0c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/NewExpression.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/NewExpression.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/NewExpression.java" afterPath="$PROJECT_DIR$/src/AST/Expression/NewExpression.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/test.txt" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/test.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Translator/NASM_Naive_Translator.java" afterPath="$PROJECT_DIR$/src/Translator/NASM_Naive_Translator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test.txt" afterPath="$PROJECT_DIR$/src/test.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -32,11 +34,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="NASM_Naive_Translator.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="NASM_Naive_Translator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Translator/NASM_Naive_Translator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="89" column="50" lean-forward="false" selection-start-line="89" selection-start-column="50" selection-end-line="89" selection-end-column="50" />
+            <state relative-caret-position="181">
+              <caret line="179" column="46" lean-forward="true" selection-start-line="179" selection-start-column="46" selection-end-line="179" selection-end-column="46" />
               <folding>
                 <element signature="e#1428#1429#0" expanded="true" />
                 <element signature="e#1448#1449#0" expanded="true" />
@@ -48,18 +50,8 @@
       <file leaf-file-name="test.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2508">
-              <caret line="132" column="23" lean-forward="true" selection-start-line="132" selection-start-column="23" selection-end-line="132" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NewExpression.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/AST/Expression/NewExpression.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="69" column="33" lean-forward="false" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
+            <state relative-caret-position="513">
+              <caret line="27" column="1" lean-forward="false" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -68,8 +60,8 @@
       <file leaf-file-name="fbh.asm" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fbh.asm">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="589">
-              <caret line="55" column="29" lean-forward="false" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
+            <state relative-caret-position="361">
+              <caret line="172" column="15" lean-forward="false" selection-start-line="172" selection-start-column="15" selection-end-line="172" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -252,9 +244,9 @@
         <option value="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/AddExpression.java" />
         <option value="$PROJECT_DIR$/src/CFG/Instruction/LabelInstruction.java" />
         <option value="$PROJECT_DIR$/src/Translator/NASM_Translator.java" />
-        <option value="$PROJECT_DIR$/src/Translator/NASM_Naive_Translator.java" />
-        <option value="$PROJECT_DIR$/src/test.txt" />
         <option value="$PROJECT_DIR$/src/AST/Expression/NewExpression.java" />
+        <option value="$PROJECT_DIR$/src/test.txt" />
+        <option value="$PROJECT_DIR$/src/Translator/NASM_Naive_Translator.java" />
       </list>
     </option>
   </component>
@@ -1056,7 +1048,7 @@
       <workItem from="1495799820078" duration="12442000" />
       <workItem from="1495861915584" duration="6273000" />
       <workItem from="1495874169553" duration="1074000" />
-      <workItem from="1495885171339" duration="39867000" />
+      <workItem from="1495885171339" duration="40341000" />
     </task>
     <task id="LOCAL-00001" summary="bug fixed">
       <created>1491286707260</created>
@@ -1191,11 +1183,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495968484702</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="I'm still a fool...">
+      <created>1495968626551</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1495968626551</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="270258000" />
+    <option name="totallyTimeSpent" value="270732000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1698,22 +1697,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Frame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="27" column="16" lean-forward="false" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fbh.asm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="55" column="29" lean-forward="false" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AST/Expression/BinaryExpression/AddExpression.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -1734,21 +1717,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Translator/NASM_Naive_Translator.java">
+    <entry file="file://$PROJECT_DIR$/src/CFG/Frame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="89" column="50" lean-forward="false" selection-start-line="89" selection-start-column="50" selection-end-line="89" selection-end-column="50" />
-          <folding>
-            <element signature="e#1428#1429#0" expanded="true" />
-            <element signature="e#1448#1449#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2508">
-          <caret line="132" column="23" lean-forward="true" selection-start-line="132" selection-start-column="23" selection-end-line="132" selection-end-column="23" />
+        <state relative-caret-position="448">
+          <caret line="27" column="16" lean-forward="false" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -1758,6 +1730,33 @@
         <state relative-caret-position="425">
           <caret line="69" column="33" lean-forward="false" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fbh.asm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="172" column="15" lean-forward="false" selection-start-line="172" selection-start-column="15" selection-end-line="172" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="27" column="1" lean-forward="false" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Translator/NASM_Naive_Translator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="179" column="46" lean-forward="true" selection-start-line="179" selection-start-column="46" selection-end-line="179" selection-end-column="46" />
+          <folding>
+            <element signature="e#1428#1429#0" expanded="true" />
+            <element signature="e#1448#1449#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
