@@ -46,9 +46,10 @@ public class IndexExpression extends Expression {
 		index.emit(instructions);
 		index.load(instructions);
 		VirtualRegister offset = Environment.registerTable.addTemporaryRegister(null);
-		instructions.add(MultiplyInstruction.getInstruction(offset, index.operand, new ImmediatelyNumber(4)));
+		instructions.add(MultiplyInstruction.getInstruction(offset, index.operand, new ImmediatelyNumber(8)));
 		VirtualRegister address = Environment.registerTable.addTemporaryRegister(null);
 		instructions.add(AddInstruction.getInstruction(address, array.operand, offset));
+		instructions.add(AddInstruction.getInstruction(address, array.operand, new ImmediatelyNumber(8)));
 		operand = new Address(address, 8);
 	}
 

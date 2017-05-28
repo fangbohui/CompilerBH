@@ -21,6 +21,7 @@ public class Environment {
 	public static ClassTable classTable;
 	public static RegisterTable registerTable;
 	public static boolean hasMain;
+	public static int newCnt;
 
 	public static void inintiallize() {
 		hasMain = false;
@@ -30,6 +31,7 @@ public class Environment {
 		registerTable = new RegisterTable();
 		enterScope(program = Program.getProgram());
 		getBuiltinFunctions();
+		newCnt = 0;
 	}
 
 	public static void enterScope(Scope scope) {

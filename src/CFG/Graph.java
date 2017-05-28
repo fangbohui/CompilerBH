@@ -51,13 +51,14 @@ public class Graph {
 			}
 		}
 		frame = new Frame();
-		frame.size += 16 * 8; // registers' size;
-		for (VirtualRegister register : registers) {
-			frame.temporary.put(register, frame.size);
-			frame.size += 8;
-		}
+		// TODO i dont need to save the registers now
+		// frame.size += 16 * 8;
 		for (Symbol parameter : function.parameters) {
 			frame.parameters.put(parameter.register, frame.size);
+			frame.size += 8;
+		}
+		for (VirtualRegister register : registers) {
+			frame.temporary.put(register, frame.size);
 			frame.size += 8;
 		}
 	}
