@@ -37,11 +37,11 @@ public class SucDecExpression extends UnaryExpression {
 		expression.load(instructions);
 		operand = Environment.registerTable.addTemporaryRegister(null);
 		instructions.add(MoveInstruction.getInstruction(operand, expression.operand));
-		instructions.add(MinusInstruction.getInstruction((VirtualRegister) operand, operand, new ImmediatelyNumber(1)));
+		instructions.add(MinusInstruction.getInstruction((VirtualRegister) expression.operand, operand, new ImmediatelyNumber(1)));
 		if (expression.operand instanceof Address) {
 			Address address = (Address) expression.operand;
 			address = new Address(address.base, address.index, address.scale);
-			instructions.add(StoreInstruction.getInstruction(operand, address));
+			instructions.add(StoreInstruction.getInstruction(expression.operand, address));
 		}
 	}
 }

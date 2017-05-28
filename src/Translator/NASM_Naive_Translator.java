@@ -151,7 +151,8 @@ public class NASM_Naive_Translator extends NASM_Translator {
 						output.printf("\tret\n");
 					} else if (instruction instanceof FunctionCallInstruction) {
 						FunctionCallInstruction callInstruction = (FunctionCallInstruction) instruction;
-
+						int totoalSize = callInstruction.parameters.size() * 8;
+						totoalSize += totoalSize % 16;
 						if (callInstruction.function.name.startsWith("FBH")) {
 							if (callInstruction.parameters.size() >= 1) {
 								load(NASMRegister.rdi, callInstruction.parameters.get(0));
@@ -166,14 +167,18 @@ public class NASM_Naive_Translator extends NASM_Translator {
 								load(NASMRegister.rcx, callInstruction.parameters.get(3));
 							}
 						} else {
+							output.printf("\tsub\t\trax, %d\n", totoalSize);
 							for (int p = callInstruction.parameters.size() - 1; p >= 0; p--) {
 								load(NASMRegister.rax, callInstruction.parameters.get(p));
-								output.printf("\tpush\trax\n");
+								output.printf("\tmov\t\tqword[rsp+%d], rax\n", p * 8);
 							}
 						}
 						output.printf("\tcall\t%s\n", callInstruction.function.name);
 						if (callInstruction.dest != null) {
 							store(NASMRegister.rax, callInstruction.dest);
+						}
+						if (!callInstruction.function.name.startsWith("FBH")) {
+							output.printf("\tadd\t\trax, %d\n", totoalSize);
 						}
 					}
 				} else if (instruction instanceof MemoryInstruction) {
