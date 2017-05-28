@@ -42,7 +42,7 @@ public class NASM_Naive_Translator extends NASM_Translator {
 	}
 
 	private String parameterVarName(int offset) {
-		return String.format("qword [rbp+%d]", offset);
+		return String.format("qword [rbp+%d]", offset + 8);
 	}
 
 	private void load(PhysicalRegister dest, Operand src) {
