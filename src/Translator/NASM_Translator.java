@@ -2,6 +2,7 @@ package Translator;
 
 import AST.Function;
 import AST.Statement.VarStatement;
+import CFG.Block;
 import CFG.Operand.StringRegister;
 import CFG.Operand.VirtualRegister;
 import Environment.Environment;
@@ -14,6 +15,10 @@ import java.io.PrintStream;
 public class NASM_Translator extends Translator {
 	public NASM_Translator(PrintStream output) {
 		super(output);
+	}
+
+	public String blockName(Block block) {
+		return String.format("%s_%d_%s", block.function.name, block.id, block.name);
 	}
 
 	public void translate() throws Exception {

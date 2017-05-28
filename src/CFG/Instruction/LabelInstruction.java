@@ -22,7 +22,7 @@ public class LabelInstruction extends Instruction {
 	}
 
 	public String labelName() {
-		return String.format("%s_%s", block.function.name, name);
+		return String.format("%s_%d_%s", block.function.name, block.id, name);
 	}
 
 	@Override

@@ -87,7 +87,7 @@ public class NASM_Naive_Translator extends NASM_Translator {
 
 		for (int i = 0; i < graph.blockList.size(); i ++) {
 			Block block = graph.blockList.get(i);
-			output.printf("%s_%s:\n", graph.function.name, block.name);
+			output.printf("%s:\n", blockName(block));
 			for (Instruction instruction : block.instructions) {
 				if (instruction instanceof ComputingInstruction) {
 					if (instruction instanceof UnaryInstruction) {
@@ -107,7 +107,7 @@ public class NASM_Naive_Translator extends NASM_Translator {
 							load(NASMRegister.rdx, binaryInstruction.src1);
 							load(NASMRegister.rax, binaryInstruction.src2);
 							output.printf("\tcmp\t\trdx, rax\n");
-							output.printf("\teax\t\tal\n");
+							output.printf("\t%s\t\tal\n", binaryInstruction.OPname());
 							output.printf("\tmovzx\teax, al\n");
 							store(NASMRegister.rax, binaryInstruction.dest);
 						} else if (binaryInstruction instanceof DivideInstruction) {
