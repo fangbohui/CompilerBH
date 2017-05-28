@@ -59,8 +59,6 @@ public class NewExpression extends Expression {
 				if (constructor == null) {
 					if (classType.constructor != null) {
 						constructor = classType.constructor;
-					} else {
-						throw new CompileError("this class doesn't have a constructor!");
 					}
 				}
 				if (constructor != null) {
