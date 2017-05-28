@@ -49,7 +49,7 @@ public class IndexExpression extends Expression {
 		instructions.add(MultiplyInstruction.getInstruction(offset, index.operand, new ImmediatelyNumber(8)));
 		VirtualRegister address = Environment.registerTable.addTemporaryRegister(null);
 		instructions.add(AddInstruction.getInstruction(address, array.operand, offset));
-		instructions.add(AddInstruction.getInstruction(address, array.operand, new ImmediatelyNumber(8)));
+		//instructions.add(AddInstruction.getInstruction(address, array.operand, new ImmediatelyNumber(8)));
 		operand = new Address(address, 8);
 	}
 

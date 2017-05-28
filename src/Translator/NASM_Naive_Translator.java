@@ -38,11 +38,11 @@ public class NASM_Naive_Translator extends NASM_Translator {
 	}
 
 	private String temporaryVarName(int offset) {
-		return String.format("qword [rbp-%s]", offset);
+		return String.format("qword [rbp-%d]", offset);
 	}
 
 	private String parameterVarName(int offset) {
-		return String.format("qword [rbp-%s]", offset);
+		return String.format("qword [rbp+%d]", offset);
 	}
 
 	private void load(PhysicalRegister dest, Operand src) {
@@ -84,6 +84,7 @@ public class NASM_Naive_Translator extends NASM_Translator {
 		output.printf("%s:\n", graph.function.name);
 		output.printf("\tpush\trbp\n");
 		output.printf("\tmov\t\trbp, rsp\n");
+		output.printf("\tsub\t\trsp, %d\n", graph.frame.size);
 
 		for (int i = 0; i < graph.blockList.size(); i ++) {
 			Block block = graph.blockList.get(i);
@@ -165,15 +166,18 @@ public class NASM_Naive_Translator extends NASM_Translator {
 								load(NASMRegister.rcx, callInstruction.parameters.get(3));
 							}
 						} else {
+							//output.printf("\tsub\t\trsp, %d\n", callInstruction.parameters.size() * 8);
 							for (int p = callInstruction.parameters.size() - 1; p >= 0; p--) {
-								int offset = graph.frame.getOffset(callInstruction.parameters.get(p));
-								output.printf("\tpush\tqword [rbp-%d]\n", offset);
+								//int offset = graph.frame.getOffset(callInstruction.parameters.get(p));
+								load(NASMRegister.rax, callInstruction.parameters.get(p));
+								output.printf("\tpush\trax\n");
 							}
 						}
 						output.printf("\tcall\t%s\n", callInstruction.function.name);
 						if (callInstruction.dest != null) {
 							store(NASMRegister.rax, callInstruction.dest);
 						}
+						//output.printf("\tadd\t\trsp, %d\n", callInstruction.parameters.size() * 8);
 					}
 				} else if (instruction instanceof MemoryInstruction) {
 					if (instruction instanceof AllocateInstruction) {
@@ -185,7 +189,7 @@ public class NASM_Naive_Translator extends NASM_Translator {
 						LoadInstruction loadInstruction = (LoadInstruction) instruction;
 						load(NASMRegister.rax, loadInstruction.src.base);
 						load(NASMRegister.rdx, loadInstruction.src.index);
-						output.printf("\tmov\t\trax, [rax + rdx*4]\n");
+						output.printf("\tmov\t\trax, [rax + rdx*8]\n");
 						store(NASMRegister.rax, loadInstruction.dest);
 					} else if (instruction instanceof MoveInstruction) {
 						MoveInstruction moveInstruction = (MoveInstruction) instruction;
@@ -195,15 +199,17 @@ public class NASM_Naive_Translator extends NASM_Translator {
 						StoreInstruction storeInstruction = (StoreInstruction) instruction;
 						load(NASMRegister.rax, storeInstruction.dest.base);
 						load(NASMRegister.rdx, storeInstruction.dest.index);
-						output.printf("\tmov\t\trax, [rax + rdx*4]\n");
-						store(NASMRegister.rax, storeInstruction.dest.base);
+						output.printf("\timul\trdx, 8\n");
+						output.printf("\tadd\t\trax, rdx\n");
+						load(NASMRegister.rdx, storeInstruction.src);
+						output.printf("\tmov\t\t[rax], rdx\n");
 					}
 				}
 				output.printf("\n");
 			}
 		}
 
-		output.printf("\tpop \trbp\n");
+		output.printf("\tleave\n");
 		output.printf("\tret\n");
 	}
 }

@@ -44,8 +44,8 @@ public class Main {
 		}
 
 		OutputStream os = new FileOutputStream("/home/fangbohui/IdeaProjects/compiler2017bh/src/fbh.asm");
-		//new NASM_Naive_Translator(new PrintStream(System.out)).translate();
-		new NASM_Naive_Translator(new PrintStream(os)).translate();
+		new NASM_Naive_Translator(new PrintStream(System.out)).translate();
+		//new NASM_Naive_Translator(new PrintStream(os)).translate();
 
 		// Compile : nasm -felf64 fbh.asm && gcc fbh.o && time ./a.out
 	}

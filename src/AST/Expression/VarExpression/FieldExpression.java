@@ -73,7 +73,7 @@ public class FieldExpression extends Expression {
 			className.emit(instructions);
 			className.load(instructions);
 			VirtualRegister base = (VirtualRegister) className.operand;
-			ImmediatelyNumber offset = new ImmediatelyNumber(memberVar.offset);
+			ImmediatelyNumber offset = new ImmediatelyNumber(memberVar.offset / 8);
 			operand = new Address(base, offset, 8);
 		}
 	}
