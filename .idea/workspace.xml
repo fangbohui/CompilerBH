@@ -2,41 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="130622e1-2e91-4c8e-b79c-317a8b8f5b0c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/test.momo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test.momo" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/VarExpression/IndexExpression.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/VarExpression/IndexExpression.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$1.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$10.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$10.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$11.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$11.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$12.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$12.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$13.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$13.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$14.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$14.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$15.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$15.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$2.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$3.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$4.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$5.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$6.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$7.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$8.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$8.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$9.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$9.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Main.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/test.txt" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/test.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/EqualityInstruction.java" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/EqualityInstruction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/EqualToInstruction.java" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/EqualToInstruction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/GreaterEqualInstruction.java" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/GreaterEqualInstruction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/GreaterInstruction.java" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/GreaterInstruction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/LessEqualInstruction.java" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/LessEqualInstruction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/LessInstruction.java" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/LessInstruction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/NotEqualToInstruction.java" afterPath="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/NotEqualToInstruction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CFG/Instruction/LabelInstruction.java" afterPath="$PROJECT_DIR$/src/CFG/Instruction/LabelInstruction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Environment/Environment.java" afterPath="$PROJECT_DIR$/src/Environment/Environment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Translator/NASM_Naive_Translator.java" afterPath="$PROJECT_DIR$/src/Translator/NASM_Naive_Translator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Translator/NASM_Translator.java" afterPath="$PROJECT_DIR$/src/Translator/NASM_Translator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Translator/Translator.java" afterPath="$PROJECT_DIR$/src/Translator/Translator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/AddExpression.java" afterPath="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/AddExpression.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test.txt" afterPath="$PROJECT_DIR$/src/test.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -85,7 +52,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NASM_Naive_Translator.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="NASM_Naive_Translator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Translator/NASM_Naive_Translator.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="133">
@@ -98,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.txt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+            <state relative-caret-position="418">
+              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -111,8 +78,8 @@
       <file leaf-file-name="fbh.asm" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fbh.asm">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="18" column="22" lean-forward="false" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+            <state relative-caret-position="285">
+              <caret line="15" column="18" lean-forward="false" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -146,6 +113,16 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddExpression.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AST/Expression/BinaryExpression/AddExpression.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="29" column="44" lean-forward="false" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -209,7 +186,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/CFG/Frame.java" />
         <option value="$PROJECT_DIR$/src/AST/Program.java" />
         <option value="$PROJECT_DIR$/src/Environment/SymbolTable.java" />
         <option value="$PROJECT_DIR$/src/Listener/BuildTreeListener.java" />
@@ -255,11 +231,12 @@
         <option value="$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/LessInstruction.java" />
         <option value="$PROJECT_DIR$/src/CFG/Instruction/LabelInstruction.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/test.txt" />
         <option value="$PROJECT_DIR$/src/fbh.asm" />
         <option value="$PROJECT_DIR$/src/Translator/NASM_Translator.java" />
         <option value="$PROJECT_DIR$/src/Translator/Translator.java" />
         <option value="$PROJECT_DIR$/src/Translator/NASM_Naive_Translator.java" />
+        <option value="$PROJECT_DIR$/src/test.txt" />
+        <option value="$PROJECT_DIR$/src/AST/Expression/BinaryExpression/AddExpression.java" />
       </list>
     </option>
   </component>
@@ -402,6 +379,72 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Instruction" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="compiler2017bh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="compiler2017bh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AST" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="compiler2017bh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="compiler2017bh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AST" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Expression" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="compiler2017bh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="compiler2017bh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AST" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Expression" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BinaryExpression" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -905,7 +948,7 @@
       <workItem from="1495799820078" duration="12442000" />
       <workItem from="1495861915584" duration="6273000" />
       <workItem from="1495874169553" duration="1074000" />
-      <workItem from="1495885171339" duration="37615000" />
+      <workItem from="1495885171339" duration="37943000" />
     </task>
     <task id="LOCAL-00001" summary="bug fixed">
       <created>1491286707260</created>
@@ -1019,11 +1062,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495950445479</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="I'm still a fool...">
+      <created>1495963453229</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1495963453229</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="268006000" />
+    <option name="totallyTimeSpent" value="268334000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1036,6 +1086,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3007284" sideWeight="0.48262548" order="7" side_tool="false" content_ui="tabs" />
@@ -1058,7 +1109,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.264308" sideWeight="0.44732487" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2580645" sideWeight="0.4804192" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2580645" sideWeight="0.4804192" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882413" sideWeight="0.48262548" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2283508" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882413" sideWeight="0.4958632" order="1" side_tool="false" content_ui="tabs" />
@@ -1120,7 +1171,8 @@
     <MESSAGE value="The work is so huge..." />
     <MESSAGE value="I'm zz..." />
     <MESSAGE value="There are still so many things to do...QAQ" />
-    <option name="LAST_COMMIT_MESSAGE" value="There are still so many things to do...QAQ" />
+    <MESSAGE value="I'm still a fool..." />
+    <option name="LAST_COMMIT_MESSAGE" value="I'm still a fool..." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1141,14 +1193,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/AST/Expression/FunctionCallExpression.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Environment/RegisterTable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
@@ -1547,16 +1591,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fbh.asm">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="22" lean-forward="false" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+        <state relative-caret-position="285">
+          <caret line="15" column="18" lean-forward="false" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
           <folding />
         </state>
       </provider>
@@ -1585,6 +1621,22 @@
             <element signature="e#1428#1429#0" expanded="true" />
             <element signature="e#1448#1449#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AST/Expression/BinaryExpression/AddExpression.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="29" column="44" lean-forward="false" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

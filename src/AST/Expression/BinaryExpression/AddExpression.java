@@ -38,7 +38,7 @@ public class AddExpression extends BinaryExpression {
 				return StringConstant.getConstant(v1 + v2);
 			}
 			return FunctionCallExpression.getExpression(
-					(Function)Environment.symbolTable.get("FBH_string_+").type,
+					(Function)Environment.symbolTable.get("FBH_string_connect").type,
 					new ArrayList<Expression>() {{
 						add(leftExpression);
 						add(rightExpression);
