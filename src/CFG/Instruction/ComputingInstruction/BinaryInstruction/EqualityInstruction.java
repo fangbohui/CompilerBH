@@ -1,5 +1,6 @@
 package CFG.Instruction.ComputingInstruction.BinaryInstruction;
 
+import CFG.Instruction.Instruction;
 import CFG.Operand.Operand;
 import CFG.Operand.VirtualRegister;
 
@@ -10,4 +11,5 @@ public abstract class EqualityInstruction extends BinaryInstruction {
 	public EqualityInstruction(VirtualRegister dest, Operand src1, Operand src2) {
 		super(dest, src1, src2);
 	}
+	public abstract String symbolName();
 }

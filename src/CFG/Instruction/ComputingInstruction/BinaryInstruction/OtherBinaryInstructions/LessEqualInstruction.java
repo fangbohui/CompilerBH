@@ -21,4 +21,8 @@ public class LessEqualInstruction extends EqualityInstruction {
 	public String OPname() {
 		return "setle";
 	}
+
+	public String symbolName() {
+		return  "le";
+	}
 }

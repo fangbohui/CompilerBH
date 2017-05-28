@@ -21,4 +21,8 @@ public class NotEqualToInstruction extends EqualityInstruction {
 	public String OPname() {
 		return "setne";
 	}
+
+	public String symbolName() {
+		return  "ne";
+	}
 }

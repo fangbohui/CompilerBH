@@ -21,6 +21,10 @@ public class LabelInstruction extends Instruction {
 		return new LabelInstruction(name);
 	}
 
+	public String labelName() {
+		return String.format("%s_%s", block.function.name, name);
+	}
+
 	@Override
 	public ArrayList<Operand> getDestOperands() {
 		ArrayList<Operand> operands = new ArrayList<>();

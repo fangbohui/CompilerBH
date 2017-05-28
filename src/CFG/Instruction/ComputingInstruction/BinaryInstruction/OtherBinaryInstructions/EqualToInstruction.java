@@ -21,4 +21,8 @@ public class EqualToInstruction extends EqualityInstruction {
 	public String OPname() {
 		return "sete";
 	}
+
+	public String symbolName() {
+		return  "e";
+	}
 }

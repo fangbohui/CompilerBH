@@ -90,43 +90,43 @@ public class Environment {
 				add(new Symbol("ord", IntType.getType()));
 			}
 		}));
-		symbolTable.add("FBH_string_<", Function.getFunction("FBH_string_<", BoolType.getType(), new ArrayList<Symbol>() {
+		symbolTable.add("FBH_string_l", Function.getFunction("FBH_string_l", BoolType.getType(), new ArrayList<Symbol>() {
 			{
 				add(new Symbol("string1", StringType.getType()));
 				add(new Symbol("string2", StringType.getType()));
 			}
 		}));
-		symbolTable.add("FBH_string_<=", Function.getFunction("FBH_string_<=", BoolType.getType(), new ArrayList<Symbol>() {
+		symbolTable.add("FBH_string_le", Function.getFunction("FBH_string_le", BoolType.getType(), new ArrayList<Symbol>() {
 			{
 				add(new Symbol("string1", StringType.getType()));
 				add(new Symbol("string2", StringType.getType()));
 			}
 		}));
-		symbolTable.add("FBH_string_>", Function.getFunction("FBH_string_>", BoolType.getType(), new ArrayList<Symbol>() {
+		symbolTable.add("FBH_string_g", Function.getFunction("FBH_string_g", BoolType.getType(), new ArrayList<Symbol>() {
 			{
 				add(new Symbol("string1", StringType.getType()));
 				add(new Symbol("string2", StringType.getType()));
 			}
 		}));
-		symbolTable.add("FBH_string_>=", Function.getFunction("FBH_string_>=", BoolType.getType(), new ArrayList<Symbol>() {
+		symbolTable.add("FBH_string_ge", Function.getFunction("FBH_string_ge", BoolType.getType(), new ArrayList<Symbol>() {
 			{
 				add(new Symbol("string1", StringType.getType()));
 				add(new Symbol("string2", StringType.getType()));
 			}
 		}));
-		symbolTable.add("FBH_string_==", Function.getFunction("FBH_string_==", BoolType.getType(), new ArrayList<Symbol>() {
+		symbolTable.add("FBH_string_e", Function.getFunction("FBH_string_e", BoolType.getType(), new ArrayList<Symbol>() {
 			{
 				add(new Symbol("string1", StringType.getType()));
 				add(new Symbol("string2", StringType.getType()));
 			}
 		}));
-		symbolTable.add("FBH_string_!=", Function.getFunction("FBH_string_!=", BoolType.getType(), new ArrayList<Symbol>() {
+		symbolTable.add("FBH_string_ne", Function.getFunction("FBH_string_ne", BoolType.getType(), new ArrayList<Symbol>() {
 			{
 				add(new Symbol("string1", StringType.getType()));
 				add(new Symbol("string2", StringType.getType()));
 			}
 		}));
-		symbolTable.add("FBH_string_+", Function.getFunction("FBH_string_+", StringType.getType(), new ArrayList<Symbol>() {
+		symbolTable.add("FBH_string_connect", Function.getFunction("FBH_string_connect", StringType.getType(), new ArrayList<Symbol>() {
 			{
 				add(new Symbol("string1", StringType.getType()));
 				add(new Symbol("string2", StringType.getType()));

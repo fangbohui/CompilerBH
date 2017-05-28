@@ -34,7 +34,7 @@ public class NASM_Naive_Translator extends NASM_Translator {
 	}
 
 	private String globalVarName(GlobalRegister register) {
-		return String.format("qword [rel global_var_%s]", register.symbol.name);
+		return String.format("qword [global_var_%s]", register.symbol.name);
 	}
 
 	private String temporaryVarName(int offset) {
@@ -83,7 +83,7 @@ public class NASM_Naive_Translator extends NASM_Translator {
 		output.printf("\n");
 		output.printf("%s:\n", graph.function.name);
 		output.printf("\tpush\trbp\n");
-		output.printf("\tmov \trbp\n");
+		output.printf("\tmov\t\trbp, rsp\n");
 
 		for (int i = 0; i < graph.blockList.size(); i ++) {
 			Block block = graph.blockList.get(i);
@@ -138,10 +138,10 @@ public class NASM_Naive_Translator extends NASM_Translator {
 					if (instruction instanceof BranchInstruction) {
 						load(NASMRegister.rax, ((BranchInstruction) instruction).condition);
 						output.printf("\ttest\trax, rax\n");
-						output.printf("\tjz\t\t%s\n", ((BranchInstruction) instruction).falseDest);
-						output.printf("\tjmp\t\t%s\n", ((BranchInstruction) instruction).trueDest.name);
+						output.printf("\tjz\t\t%s\n", ((BranchInstruction) instruction).falseDest.labelName());
+						output.printf("\tjmp\t\t%s\n", ((BranchInstruction) instruction).trueDest.labelName());
 					} else if (instruction instanceof JumpInstruction) {
-						output.printf("\tjmp\t\t%s\n", ((JumpInstruction) instruction).dest.name);
+						output.printf("\tjmp\t\t%s\n", ((JumpInstruction) instruction).dest.labelName());
 					}
 				} else if (instruction instanceof FunctionInstruction) {
 					if (instruction instanceof ReturnInstruction) {
@@ -150,9 +150,25 @@ public class NASM_Naive_Translator extends NASM_Translator {
 						output.printf("\tret\n");
 					} else if (instruction instanceof FunctionCallInstruction) {
 						FunctionCallInstruction callInstruction = (FunctionCallInstruction) instruction;
-						for (int p = callInstruction.parameters.size() - 1; p >= 0; p --) {
-							int offset = graph.frame.getOffset(callInstruction.parameters.get(p));
-							output.printf("\tpush\tqword [rbp-%d]\n", offset);
+
+						if (callInstruction.function.name.startsWith("FBH")) {
+							if (callInstruction.parameters.size() >= 1) {
+								load(NASMRegister.rdi, callInstruction.parameters.get(0));
+							}
+							if (callInstruction.parameters.size() >= 2) {
+								load(NASMRegister.rsi, callInstruction.parameters.get(1));
+							}
+							if (callInstruction.parameters.size() >= 3) {
+								load(NASMRegister.rdx, callInstruction.parameters.get(2));
+							}
+							if (callInstruction.parameters.size() >= 4) {
+								load(NASMRegister.rcx, callInstruction.parameters.get(3));
+							}
+						} else {
+							for (int p = callInstruction.parameters.size() - 1; p >= 0; p--) {
+								int offset = graph.frame.getOffset(callInstruction.parameters.get(p));
+								output.printf("\tpush\tqword [rbp-%d]\n", offset);
+							}
 						}
 						output.printf("\tcall\t%s\n", callInstruction.function.name);
 						if (callInstruction.dest != null) {
@@ -183,6 +199,7 @@ public class NASM_Naive_Translator extends NASM_Translator {
 						store(NASMRegister.rax, storeInstruction.dest.base);
 					}
 				}
+				output.printf("\n");
 			}
 		}
 

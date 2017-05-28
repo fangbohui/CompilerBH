@@ -21,4 +21,8 @@ public class GreaterInstruction extends EqualityInstruction {
 	public String OPname() {
 		return "setg";
 	}
+
+	public String symbolName() {
+		return  "g";
+	}
 }
