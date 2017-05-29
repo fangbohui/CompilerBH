@@ -46,8 +46,8 @@ public class Main {
 		OutputStream os = new FileOutputStream("/home/fangbohui/IdeaProjects/compiler2017bh/src/fbh.asm");
 
 		int LOCAL;
-		LOCAL = 1;
-		if (LOCAL == 1) {
+		LOCAL = 0;
+		if (LOCAL == 0) {
 			new NASM_Naive_Translator(new PrintStream(System.out)).translate();
 		} else {
 			new NASM_Naive_Translator(new PrintStream(os)).translate();

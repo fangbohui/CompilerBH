@@ -178,7 +178,7 @@ public class NASM_Naive_Translator extends NASM_Translator {
 							store(NASMRegister.rax, callInstruction.dest);
 						}
 						if (!callInstruction.function.name.startsWith("FBH")) {
-							output.printf("\tadd\t\trax, %d\n", totoalSize);
+							output.printf("\tadd\t\trsp, %d\n", totoalSize);
 						}
 					}
 				} else if (instruction instanceof MemoryInstruction) {
