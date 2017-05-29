@@ -1,127 +1,112 @@
-int[][] c;
+class Edge{
+    int to;
+    int next;
+}
+
+Edge[] e;
+int ne = 0;
+int n = 0;
+int[] head;
 int ans = 0;
-int[] visit = new int[110];
-int[] pre = new int[110];
-int[] f = new int[110];
-int i;
-int j;
-int open;
-int closed;
+int size = 0;
+int i = 0;
 
-void origin(int N)
-{
-	c = new int[N][];
-    for (i = 0; i < N; i ++ ) {
-		c[i] = new int[N];
-        for (j = 0; j < N; j ++ )
-        c[i][j] = 0;
+void add(int from, int to){
+    ++ne;
+    e[ne].to = to;
+    e[ne].next = head[from];
+    head[from] = ne;
+}
+
+bool[] visit;
+int[] son;
+int[] maxson;
+
+void init(){
+    e = new Edge[100];
+    ne = 0;
+    ans = 0;
+    size = n;
+    visit = new bool[100];
+    son = new int[100];
+    maxson = new int[100];
+    head = new int[100];
+    for (i = 0; i <= n; ++ i){
+        visit[i] = false;
+        son[i] = 0;
+        maxson[i] = 0;
+        head[i] = 0;
     }
 }
 
-int build(int start, int ending) {
-    for (i = 1; i <= 2; i++) {
-        for (j = 3; j <= 4; j++) {
-            c[i][j] = 1;
+int max(int a, int b){
+    if (a > b) return a;
+    else return b;
+}
+
+void dfs(int u){
+    int tmp = 0;
+    visit[u] = true;
+    int i;
+    for (i = head[u]; i != 0; i = e[i].next){
+        int v = e[i].to;
+        if (visit[v]==false) {
+            dfs(v);
+            son[u] = son[u] + (son[v] + 1);
+            tmp = max(tmp, son[v] + 1);
         }
     }
-    for (i = 1; i <= 2; i++)
-        c[start][i] = 1;
-    for (i = 3; i <= 4; i++)
-        c[i][ending] = 1;
-
-
-    for (i = 1; i <= 6; i ++) {
-        for (j = 1; j <= 6; j ++)
-            print(toString(c[i][j]) + " ");
-        println("");
-    }
-    return 0;
+    tmp = max(tmp, n - son[u] - 1);
+    if (tmp < size || (tmp == size && u < ans)){
+       ans = u;
+       size = tmp;
+       }
 }
 
-int find(int ending, int start, int flag) {
-    open = 0;
-    closed = 1;
-    for (i = 1; i <= ending; i++) {
-        visit[i] = 0;
-    }
-    f[1]=start;
-    visit[start]=1;
-    pre[start]=0;
-    flag=0;
-    while (open<closed && flag==0) {
-        open++;
-        i=f[open];
-        for (j = 1; j <= ending; j++)
-            if (c[i][j]>0 && visit[j]==0) {
-                visit[j]=1;
-                closed++;
-                f[closed]=j;
-                pre[j]=i;
-                if (closed==ending) flag=1;
-            }
-    }
-    return flag;
-}
-
-int improve(int ending) {
-    i=ending;
-    ans++;
-    while (pre[i]>0) {
-        j=pre[i];
-
-
-        print(toString(i) + " " + toString(j));
-    println("");
-
-        c[j][i]--;
-        c[i][j]++;
-        i=j;
-    }
-    return 0;
-}
-
-int main() {
-	origin(110);
-    int k;
-	int start;
-	int ending;
-    int flag;
-    int i1;
-
-    k = 0;
-    start = 5;
-    ending = 6;
-    flag = 0;
-
-    build(start, ending);
-    if (find(ending, start, flag)>0) {
-        improve(ending);
-        println("");
-        for (i = 1; i <= 6; i ++) {
-            for (j = 1; j <= 6; j ++)
-                print(toString(c[i][j]) + " ");
-            println("");
+int main(){
+    int t;
+    t = getInt();
+    while((t--) != 0){
+        n = getInt();
+        init();
+        for (i = 0; i < n-1; ++i){
+            int u;
+            int v;
+            u = getInt();
+            v = getInt();
+            add(u,v);
+            add(v,u);
         }
+        dfs(1);
+        println(toString(ans));
+        println(toString(size));
     }
-	println(toString(ans));
+
+
     return 0;
 }
-
-
 
 /*!! metadata:
 === comment ===
-maxflow-5100379110-daibo.mx
+dfs-515021910153-sshengpeiyao.txt
 === input ===
-
+1
+7
+2 6
+1 2
+1 4
+4 5
+3 7
+3 1
 === assert ===
 output
 === timeout ===
-0.3
+1.0
 === output ===
-49
+1
+2
 === phase ===
-codegen pretest
+codegen extended
 === is_public ===
 True
 
