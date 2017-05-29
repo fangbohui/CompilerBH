@@ -18,7 +18,6 @@ public class RegisterAllocator {
 	public RegisterAllocator(Function function) {
 		this.function = function;
 		allocating = new HashMap<>();
-		function.graph.livenessAnalysis();
 		InterferenceGraph interferenceGraph = new InterferenceGraph();
 
 		for (Block block : function.graph.blockList) {
@@ -48,10 +47,12 @@ public class RegisterAllocator {
 					liveout.remove(defined);
 				}
 				for (VirtualRegister used : instruction.getSrcRegisters()) {
-					liveout.remove(used);
+					liveout.add(used);
 				}
 			}
 		}
+
+		function.graph.livenessAnalysis();
 
 		allocating = new BruteColoring(interferenceGraph).analysis();
 	}

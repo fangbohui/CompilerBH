@@ -5,3 +5,23 @@ int main() {
     println(toString(x));
     return 0;
 }
+
+
+/*!! metadata:
+=== comment ===
+ssa1.mx
+=== assert ===
+exitcode
+=== timeout ===
+0.1
+=== input ===
+
+=== phase ===
+codegen pretest
+=== is_public ===
+True
+=== exitcode ===
+20
+
+!!*/
+
