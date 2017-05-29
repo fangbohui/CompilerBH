@@ -69,39 +69,17 @@ public class NewExpression extends Expression {
 			instructions.add(StoreInstruction.getInstruction(vr, (Address) operand));
 		}
 
-
 		if (curDimension == expressions.size() - 1) {
-			if (arrayType.reduce() instanceof ClassType) {
-				VirtualRegister tmp = Environment.registerTable.addTemporaryRegister(null);
-				ClassType classType = (ClassType) arrayType.reduce();
-				instructions.add(AllocateInstruction.getInstruction(tmp, new ImmediatelyNumber(classType.totalSize)));
-				if (operand instanceof Address) {
-					instructions.add(StoreInstruction.getInstruction(tmp, (Address) operand));
-				} else {
-					instructions.add(MoveInstruction.getInstruction(operand, tmp));
-				}
-				if (constructor == null) {
-					if (classType.constructor != null) {
-						constructor = classType.constructor;
-					}
-				}
-				if (constructor != null) {
-					ArrayList<Operand> parameters = new ArrayList<>();
-					parameters.add(operand);
-					instructions.add(FunctionCallInstruction.getInstruction(null, constructor, parameters));
-				}
+			if (!(arrayType.reduce() instanceof ClassType)) {
+				return;
 			}
-			return;
 		}
-
 
 		VirtualRegister dest = Environment.registerTable.addTemporaryRegister(null);
 		instructions.add(AddInstruction.getInstruction(dest, vr, size));
 		VirtualRegister condition = Environment.registerTable.addTemporaryRegister(null);
 
-		//store the size && a[i] means a[i + 1]
 
-		// do the rest job
 		LabelInstruction whileBody = (LabelInstruction) LabelInstruction.getInstruction("whileBody");
 		LabelInstruction loopBegin = (LabelInstruction) LabelInstruction.getInstruction("whileCondition");
 		LabelInstruction loopMerge = (LabelInstruction) LabelInstruction.getInstruction("whileMerge");
@@ -115,6 +93,16 @@ public class NewExpression extends Expression {
 		instructions.add(whileBody);
 		if (curDimension != dimension - 1) {
 			dealWithDimension(arrayType.reduce(), new Address(vr, new ImmediatelyNumber(0), 8), curDimension + 1, dimension, instructions);
+		} else if (curDimension == expressions.size() - 1) {
+			ClassType classType = (ClassType) arrayType.reduce();
+			VirtualRegister tmp = Environment.registerTable.addTemporaryRegister(null);
+			instructions.add(AllocateInstruction.getInstruction(tmp, new ImmediatelyNumber(classType.totalSize)));
+			instructions.add(StoreInstruction.getInstruction(tmp, new Address(vr, new ImmediatelyNumber(0), 8)));
+			if (classType.constructor != null) {
+				ArrayList<Operand> parameters = new ArrayList<>();
+				parameters.add(tmp);
+				instructions.add(FunctionCallInstruction.getInstruction(null, classType.constructor, parameters));
+			}
 		}
 		instructions.add(AddInstruction.getInstruction(vr, vr, new ImmediatelyNumber(8)));
 		instructions.add(JumpInstruction.getInstruction(loopBegin));
@@ -149,6 +137,9 @@ public class NewExpression extends Expression {
 				}
 			}
 			return;
+		}
+		if (dimension == 0) {
+			throw new CompileError("there should be at least a expression");
 		}
 		dealWithDimension(type, operand, 0, dimension, instructions);
 	}
