@@ -45,14 +45,14 @@ public class LogicOrExpression extends BinaryExpression {
 		leftExpression.load(instructions);
 		instructions.add(BranchInstruction.getInstruction(leftExpression.operand, leftTrue, leftFalse));
 
-		instructions.add(leftTrue);
-		instructions.add(MoveInstruction.getInstruction(operand, new ImmediatelyNumber(1)));
-		instructions.add(JumpInstruction.getInstruction(mergeBranch));
-
 		instructions.add(leftFalse);
 		rightExpression.emit(instructions);
 		rightExpression.load(instructions);
 		operand = rightExpression.operand;
+		instructions.add(JumpInstruction.getInstruction(mergeBranch));
+
+		instructions.add(leftTrue);
+		instructions.add(MoveInstruction.getInstruction(operand, new ImmediatelyNumber(1)));
 		instructions.add(JumpInstruction.getInstruction(mergeBranch));
 
 		instructions.add(mergeBranch);
