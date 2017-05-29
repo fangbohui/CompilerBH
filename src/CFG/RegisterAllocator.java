@@ -55,4 +55,15 @@ public class RegisterAllocator {
 
 		allocating = new BruteColoring(interferenceGraph).analysis();
 	}
+
+	public HashSet<PhysicalRegister> getUsedRegisters() {
+		HashSet<PhysicalRegister> registers = new HashSet<>();
+		for (VirtualRegister register : allocating.keySet()) {
+			PhysicalRegister physicalRegister = allocating.get(register);
+			if (physicalRegister != null) {
+				registers.add(physicalRegister);
+			}
+		}
+		return registers;
+	}
 }

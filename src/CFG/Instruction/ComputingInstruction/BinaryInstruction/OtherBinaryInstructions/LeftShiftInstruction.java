@@ -18,6 +18,6 @@ public class LeftShiftInstruction extends BinaryInstruction {
 	}
 
 	public String OPname() {
-		return "shl";
+		return "sal";
 	}
 }

@@ -40,10 +40,12 @@ public class BruteColoring {
 	}
 
 	private void dfs(VirtualRegister node) {
+		visit.add(node);
 		color(node);
 		for (VirtualRegister neighbor : interferenceGraph.banned.get(node)) {
 			if (!visit.contains(neighbor)) {
 				visit.add(neighbor);
+				dfs(neighbor);
 			}
 		}
 	}
@@ -51,9 +53,9 @@ public class BruteColoring {
 	public HashMap<VirtualRegister, PhysicalRegister> analysis() {
 		for (VirtualRegister node : interferenceGraph.nodes) {
 			if (!visit.contains(node)) {
-				visit.add(node);
 				dfs(node);
 			}
+			//System.out.printf("%s\n", allocating.get(node).name);
 		}
 		return allocating;
 	}
