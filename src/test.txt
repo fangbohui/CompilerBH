@@ -1,10 +1,7 @@
-int min(int a, int b) {
-    if (a <= b) return a;
-    return b;
-}
-
 int main() {
     int x = 10;
-    int y = 20;
-    return min(x, y);
+    if (x == 10) x = 20;
+    else x = 30;
+    println(toString(x));
+    return 0;
 }

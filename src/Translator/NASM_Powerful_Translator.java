@@ -85,19 +85,19 @@ public class NASM_Powerful_Translator extends NASM_Translator {
 		return dest;
 	}
 
-	private void store(PhysicalRegister src, VirtualRegister dest) {
-		if (dest instanceof VarRegister) {
-			if (dest instanceof GlobalRegister) {
-				output.printf("\tmov\t\t%s, %s\n", globalVarName((GlobalRegister) dest), src.name);
+	private void store(PhysicalRegister dest, VirtualRegister src) {
+		if (src instanceof VarRegister) {
+			if (src instanceof GlobalRegister) {
+				output.printf("\tmov\t\t%s, %s\n", globalVarName((GlobalRegister) src), dest.name);
 			}
-			if (dest instanceof TemporaryRegister) {
+			if (src instanceof TemporaryRegister) {
 				PhysicalRegister register = allocator.allocating.get(src);
 				if (register == null) {
-					output.printf("\tmov\t\t%s, %s\n", temporaryVarName(graph.frame.getOffset(dest)), src.name);
+					output.printf("\tmov\t\t%s, %s\n", temporaryVarName(graph.frame.getOffset(src)), dest.name);
 				}
 			}
-			if (dest instanceof ParameterRegister) {
-				output.printf("\tmov\t\t%s, %s\n", parameterVarName(graph.frame.getOffset(dest)), src.name);
+			if (src instanceof ParameterRegister) {
+				output.printf("\tmov\t\t%s, %s\n", parameterVarName(graph.frame.getOffset(src)), dest.name);
 			}
 		}
 	}
