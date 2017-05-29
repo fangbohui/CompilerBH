@@ -167,7 +167,7 @@ public class NASM_Naive_Translator extends NASM_Translator {
 								load(NASMRegister.rcx, callInstruction.parameters.get(3));
 							}
 						} else {
-							output.printf("\tsub\t\trax, %d\n", totoalSize);
+							output.printf("\tsub\t\trsp, %d\n", totoalSize);
 							for (int p = callInstruction.parameters.size() - 1; p >= 0; p--) {
 								load(NASMRegister.rax, callInstruction.parameters.get(p));
 								output.printf("\tmov\t\tqword[rsp+%d], rax\n", p * 8);
