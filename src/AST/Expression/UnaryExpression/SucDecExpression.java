@@ -34,14 +34,18 @@ public class SucDecExpression extends UnaryExpression {
 
 	public void emit(ArrayList<Instruction> instructions) {
 		expression.emit(instructions);
-		expression.load(instructions);
 		operand = Environment.registerTable.addTemporaryRegister(null);
-		instructions.add(MoveInstruction.getInstruction(operand, expression.operand));
-		instructions.add(MinusInstruction.getInstruction((VirtualRegister) expression.operand, operand, new ImmediatelyNumber(1)));
 		if (expression.operand instanceof Address) {
 			Address address = (Address) expression.operand;
 			address = new Address(address.base, address.index, address.scale);
+			expression.load(instructions);
+			instructions.add(MoveInstruction.getInstruction(operand, expression.operand));
+			instructions.add(MinusInstruction.getInstruction((VirtualRegister) expression.operand, operand, new ImmediatelyNumber(1)));
 			instructions.add(StoreInstruction.getInstruction(expression.operand, address));
+		} else {
+			expression.load(instructions);
+			instructions.add(MoveInstruction.getInstruction(operand, expression.operand));
+			instructions.add(MinusInstruction.getInstruction((VirtualRegister) expression.operand, operand, new ImmediatelyNumber(1)));
 		}
 	}
 }
