@@ -5,7 +5,10 @@ import AST.Expression.ConstantExpression.IntConstant;
 import AST.Expression.ConstantExpression.NullConstant;
 import AST.Expression.ConstantExpression.StringConstant;
 import AST.Expression.Expression;
+import AST.Expression.FunctionCallExpression;
+import AST.Function;
 import AST.Type.BasicType.BoolType;
+import AST.Type.BasicType.StringType;
 import AST.Type.Type;
 import CFG.Instruction.ComputingInstruction.BinaryInstruction.OtherBinaryInstructions.AddInstruction;
 import CFG.Instruction.ComputingInstruction.BinaryInstruction.OtherBinaryInstructions.NotEqualToInstruction;
@@ -41,6 +44,11 @@ public class NotEqualToExpression extends BinaryExpression {
 			String s1 = ((StringConstant) leftExpression).string;
 			String s2 = ((StringConstant) rightExpression).string;
 			return BoolConstant.getConstant(!s1.equals(s2));
+		} else if (leftExpression.type instanceof StringType && rightExpression.type instanceof StringType) {
+			ArrayList<Expression> parameters = new ArrayList<>();
+			parameters.add(leftExpression);
+			parameters.add(rightExpression);
+			return FunctionCallExpression.getExpression((Function) Environment.symbolTable.get("FBH_string_ne").type, parameters);
 		} else {
 			return new NotEqualToExpression(BoolType.getType(), false, leftExpression, rightExpression);
 		}

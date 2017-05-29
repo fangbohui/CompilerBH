@@ -34,13 +34,17 @@ public class PreIncExpression extends UnaryExpression {
 
 	public void emit(ArrayList<Instruction> instructions) {
 		expression.emit(instructions);
-		expression.load(instructions);
-		operand = expression.operand;
-		instructions.add(AddInstruction.getInstruction((VirtualRegister) operand, operand, new ImmediatelyNumber(1)));
 		if (expression.operand instanceof Address) {
 			Address address = (Address) expression.operand;
 			address = new Address(address.base, address.index, address.scale);
+			expression.load(instructions);
+			operand = expression.operand;
+			instructions.add(AddInstruction.getInstruction((VirtualRegister) operand, operand, new ImmediatelyNumber(1)));
 			instructions.add(StoreInstruction.getInstruction(operand, address));
+		} else {
+			expression.load(instructions);
+			operand = expression.operand;
+			instructions.add(AddInstruction.getInstruction((VirtualRegister) operand, operand, new ImmediatelyNumber(1)));
 		}
 	}
 }

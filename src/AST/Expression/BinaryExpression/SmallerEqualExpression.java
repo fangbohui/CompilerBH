@@ -4,6 +4,8 @@ import AST.Expression.ConstantExpression.BoolConstant;
 import AST.Expression.ConstantExpression.IntConstant;
 import AST.Expression.ConstantExpression.StringConstant;
 import AST.Expression.Expression;
+import AST.Expression.FunctionCallExpression;
+import AST.Function;
 import AST.Type.BasicType.BoolType;
 import AST.Type.BasicType.IntType;
 import AST.Type.BasicType.StringType;
@@ -39,7 +41,10 @@ public class SmallerEqualExpression extends BinaryExpression {
 				String s2 = ((StringConstant) rightExpression).string;
 				return BoolConstant.getConstant(s1.compareTo(s2) <= 0);
 			} else {
-				return new SmallerEqualExpression(BoolType.getType(), false, leftExpression, rightExpression);
+				ArrayList<Expression> parameters = new ArrayList<>();
+				parameters.add(leftExpression);
+				parameters.add(rightExpression);
+				return FunctionCallExpression.getExpression((Function) Environment.symbolTable.get("FBH_string_le").type, parameters);
 			}
 		}
 		throw new CompileError("> is between strings and ints");
