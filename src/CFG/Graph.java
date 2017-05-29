@@ -3,6 +3,7 @@ package CFG;
 import AST.Function;
 import AST.Statement.VarStatement;
 import CFG.Instruction.ControlInstruction.ControlInstruction;
+import CFG.Instruction.ControlInstruction.OtherControlInstruction.BranchInstruction;
 import CFG.Instruction.ControlInstruction.OtherControlInstruction.JumpInstruction;
 import CFG.Instruction.Instruction;
 import CFG.Instruction.LabelInstruction;
@@ -34,6 +35,50 @@ public class Graph {
 		return block;
 	}
 
+	public void livenessAnalysis() {
+		for (Block block : blockList) {
+			for (Instruction instruction : block.instructions) {
+				for (VirtualRegister virtualRegister : instruction.getSrcRegisters()) {
+					block.liveness.usedRegisters.add(virtualRegister);
+				}
+				for (VirtualRegister virtualRegister : instruction.getDestRegisters()) {
+					block.liveness.definedRegisters.add(virtualRegister);
+				}
+			}
+		}
+		boolean changed = true;
+		while (changed) {
+			changed = false;
+			for (Block block : blockList) {
+				HashSet<VirtualRegister> last = block.liveness.livein;
+				for (VirtualRegister virtualRegister : block.liveness.liveout) {
+					block.liveness.livein.add(virtualRegister);
+				}
+				for (VirtualRegister virtualRegister : block.liveness.definedRegisters) {
+					block.liveness.livein.remove(virtualRegister);
+				}
+				for (VirtualRegister virtualRegister : block.liveness.usedRegisters) {
+					block.liveness.livein.add(virtualRegister);
+				}
+				if (!block.liveness.livein.equals(last)) {
+					changed = true;
+				}
+			}
+			for (Block block : blockList) {
+				HashSet<VirtualRegister> last = block.liveness.liveout;
+				for (Block succBlock : block.succ) {
+					for (VirtualRegister virtualRegister : succBlock.liveness.livein) {
+						block.liveness.liveout.add(virtualRegister);
+					}
+					if (!block.liveness.liveout.equals(last)) {
+						changed = true;
+					}
+				}
+			}
+		}
+
+	}
+
 	private void computingFrame() {
 		HashSet<VirtualRegister> registers = new HashSet<>();
 		for (Block block : blockList) {
@@ -51,8 +96,6 @@ public class Graph {
 			}
 		}
 		frame = new Frame();
-		// TODO i dont need to save the registers now
-		// frame.size += 16 * 8;
 		for (Symbol parameter : function.parameters) {
 			frame.size += 8;
 			frame.parameters.put(parameter.register, frame.size);
@@ -61,6 +104,7 @@ public class Graph {
 			frame.size += 8;
 			frame.temporary.put(register, frame.size);
 		}
+		frame.size += 16 * 8;
 		if (frame.size % 16 != 0) {
 			frame.size += 16 - frame.size % 16;
 		}
@@ -116,6 +160,28 @@ public class Graph {
 				beginning = entry;
 			} else if (block.name.equals("exit")) {
 				beginning = exit;
+			}
+		}
+
+		for (Block block : blockList) {
+			if (block.instructions.size() == 0) {
+				continue;
+			}
+			Instruction lastInstruction = block.instructions.get(block.instructions.size() - 1);
+			if (!(lastInstruction instanceof ControlInstruction)) {
+				continue;
+			}
+			if (lastInstruction instanceof JumpInstruction) {
+				Block block1 = ((JumpInstruction) lastInstruction).dest.block;
+				block.succ.add(block1);
+				block1.pred.add(block);
+			} else if (lastInstruction instanceof BranchInstruction) {
+				Block block1 = ((BranchInstruction) lastInstruction).trueDest.block;
+				Block block2 = ((BranchInstruction) lastInstruction).falseDest.block;
+				block.succ.add(block1);
+				block1.pred.add(block);
+				block.succ.add(block2);
+				block2.pred.add(block);
 			}
 		}
 

@@ -2,6 +2,7 @@ import java.io.*;
 
 import AST.Function;
 import CFG.Graph;
+import CFG.RegisterAllocator;
 import Environment.Environment;
 import Listener.BuildTreeListener;
 import Listener.ClassGetterListener;
@@ -41,6 +42,7 @@ public class Main {
 
 		for (Function function : Environment.program.functionList) {
 			function.graph = new Graph(function);
+			function.allocator = new RegisterAllocator(function);
 		}
 
 		OutputStream os = new FileOutputStream("/home/fangbohui/IdeaProjects/compiler2017bh/src/fbh.asm");
