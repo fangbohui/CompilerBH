@@ -37,6 +37,8 @@ public class Graph {
 
 	public void livenessAnalysis() {
 		for (Block block : blockList) {
+			block.liveness.usedRegisters = new ArrayList<>();
+			block.liveness.definedRegisters = new ArrayList<>();
 			for (Instruction instruction : block.instructions) {
 				for (VirtualRegister virtualRegister : instruction.getSrcRegisters()) {
 					block.liveness.usedRegisters.add(virtualRegister);
@@ -46,11 +48,15 @@ public class Graph {
 				}
 			}
 		}
+		for (Block block : blockList) {
+			block.liveness.livein = new HashSet<>();
+			block.liveness.liveout = new HashSet<>();
+		}
 		boolean changed = true;
 		while (changed) {
 			changed = false;
 			for (Block block : blockList) {
-				HashSet<VirtualRegister> last = block.liveness.livein;
+				block.liveness.livein = new HashSet<>();
 				for (VirtualRegister virtualRegister : block.liveness.liveout) {
 					block.liveness.livein.add(virtualRegister);
 				}
@@ -60,19 +66,17 @@ public class Graph {
 				for (VirtualRegister virtualRegister : block.liveness.usedRegisters) {
 					block.liveness.livein.add(virtualRegister);
 				}
-				if (!block.liveness.livein.equals(last)) {
-					changed = true;
-				}
 			}
 			for (Block block : blockList) {
 				HashSet<VirtualRegister> last = block.liveness.liveout;
+				block.liveness.liveout = new HashSet<>();
 				for (Block succBlock : block.succ) {
 					for (VirtualRegister virtualRegister : succBlock.liveness.livein) {
 						block.liveness.liveout.add(virtualRegister);
 					}
-					if (!block.liveness.liveout.equals(last)) {
-						changed = true;
-					}
+				}
+				if (!block.liveness.liveout.equals(last)) {
+					changed = true;
 				}
 			}
 		}
