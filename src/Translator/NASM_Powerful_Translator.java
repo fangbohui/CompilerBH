@@ -117,7 +117,7 @@ public class NASM_Powerful_Translator extends NASM_Translator {
 					output.printf("\tmov\t\t%s, %s\n", dest.name, temporaryVarName(graph.frame.getOffset(src)));
 				} else {
 					if (register != dest) {
-						output.printf("\tmov\t\t%s, %s\n", dest, register.name);
+						output.printf("\tmov\t\t%s, %s\n", dest.name, register.name);
 					}
 				}
 			}
@@ -220,13 +220,9 @@ public class NASM_Powerful_Translator extends NASM_Translator {
 						loadToSrc(NASMRegister.rax, ((BranchInstruction) instruction).condition);
 						output.printf("\ttest\trax, rax\n");
 						output.printf("\tjz\t\t%s\n", ((BranchInstruction) instruction).falseDest.labelName());
-						if (cnt + 1 == graph.blockList.size() || graph.blockList.get(cnt + 1) != ((BranchInstruction) instruction).trueDest.block) {
-							output.printf("\tjmp\t\t%s\n", ((BranchInstruction) instruction).trueDest.labelName());
-						}
+						output.printf("\tjmp\t\t%s\n", ((BranchInstruction) instruction).trueDest.labelName());
 					} else if (instruction instanceof JumpInstruction) {
-						if (cnt + 1 == graph.blockList.size() || graph.blockList.get(cnt + 1) != ((JumpInstruction) instruction).dest.block) {
-							output.printf("\tjmp\t\t%s\n", ((JumpInstruction) instruction).dest.labelName());
-						}
+						output.printf("\tjmp\t\t%s\n", ((JumpInstruction) instruction).dest.labelName());
 					}
 				} else if (instruction instanceof FunctionInstruction) {
 					if (instruction instanceof ReturnInstruction) {
@@ -259,7 +255,7 @@ public class NASM_Powerful_Translator extends NASM_Translator {
 						}
 						output.printf("\tcall\t%s\n", callInstruction.function.name);
 						if (callInstruction.dest != null) {
-							move(NASMRegister.rax, callInstruction.dest);
+							move(callInstruction.dest, NASMRegister.rax);
 						}
 						if (!callInstruction.function.name.startsWith("FBH")) {
 							output.printf("\tadd\t\trsp, %d\n", totalSize);
