@@ -62,7 +62,7 @@ public class ForStatement extends LoopStatement {
 			addCondition(null);
 		}
 		condition.emit(instructions);
-		instructions.add(BranchInstruction.getInstruction(condition.operand, loopBegin, loopMerge));
+		instructions.add(BranchInstruction.getInstruction(condition.operand, forBody, loopMerge));
 
 		instructions.add(forBody);
 		if (statement != null) {

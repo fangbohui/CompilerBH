@@ -169,6 +169,7 @@ public class BuildTreeListener extends BaseListener {
 	@Override
 	public void exitForStatement(MomoParser.ForStatementContext ctx) {
 		ForStatement forStatement = (ForStatement) propertyTree.get(ctx);
+		forStatement.addStatement((Statement) propertyTree.get(ctx.statement()));
 		int semi = 0;
 		for (ParseTree parseTree : ctx.children) {
 			if (parseTree.getText().equals(";")) {

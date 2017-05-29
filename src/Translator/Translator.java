@@ -128,7 +128,7 @@ public class Translator {
 		//println_Int
 		str.append(Translator.getNASMprint("println_Int"));
 		//print
-		str.append(Translator.getNASMprint("print"));
+		str.append(Translator.getNASMprint("FBH_print"));
 		//println
 		str.append(Translator.getNASMprintln());
 		//getInt
@@ -167,7 +167,7 @@ public class Translator {
 		str.append(Format + ":\n");
 		rsp_offset = 1;
 		str.append(Translator.getInstruction("mov", "rsi", "rdi"));
-		str.append(Translator.getInstruction("mov", "rdi", "__" + Format + "Format"));
+		str.append(Translator.getInstruction("mov", "rdi", "__" + "print" + "Format"));
 		str.append(Translator.getCall("printf"));
 		str.append(Translator.getInstruction("ret"));
 

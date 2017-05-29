@@ -1,3 +1,4 @@
+// input: 1 2 3 4
 
 int[] a = new int[4];
 int main()
@@ -10,7 +11,7 @@ int main()
 	b[3] = a;
 	println(toString(b.size()));
 	for (i = 0; i < b[0].size(); i++)
-		b[0][i] = getInt();
+		b[0][i] = i + 1;
 	for (i = 0; i < b[1].size(); i++)
 		print(toString(b[1][i]));
 	println("");
@@ -20,3 +21,4 @@ int main()
 		print(toString(b[3][i]));
     return 0;
 }
+
