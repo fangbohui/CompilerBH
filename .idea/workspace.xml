@@ -1,164 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="130622e1-2e91-4c8e-b79c-317a8b8f5b0c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/AddExpression$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/AddExpression.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/AndExpression.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/AssignExpression.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/BinaryExpression.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/DivideExpression.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/EqualToExpression.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/GreaterEqualExpression.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/GreaterExpression.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/LeftShiftExpression.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/LogicAndExpression.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/LogicOrExpression.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/MinusExpression.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/ModExpression.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/MultiExpression.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/NotEqualToExpression.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/OrExpression.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/RightShiftExpression.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/SmallerEqualExpression.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/SmallerExpression.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/BinaryExpression/XorExpression.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/ConstantExpression/BoolConstant.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/ConstantExpression/Constant.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/ConstantExpression/IntConstant.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/ConstantExpression/NullConstant.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/ConstantExpression/StringConstant.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/Expression.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/FunctionCallExpression.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/NewExpression.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/UnaryExpression/BoolNotExpression.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/UnaryExpression/IntNotExpression.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/UnaryExpression/PreDecExpression.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/UnaryExpression/PreIncExpression.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/UnaryExpression/SucDecExpression.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/UnaryExpression/SucIncExpression.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/UnaryExpression/UnaryAddExpression.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/UnaryExpression/UnaryExpression.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/UnaryExpression/UnaryMinusExpression.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/VarExpression/FieldExpression.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/VarExpression/IdenExpression.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Expression/VarExpression/IndexExpression.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Function.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Node.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Program.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Statement/BlockStatement.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Statement/BreakStatement.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Statement/ContinueStatement.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Statement/ExpressionStatement.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Statement/IfStatement.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Statement/LoopStatement/ForStatement.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Statement/LoopStatement/LoopStatement.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Statement/LoopStatement/WhileStatement.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Statement/ReturnStatement.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Statement/Statement.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Statement/VarStatement.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Type/ArrayType.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Type/BasicType/BoolType.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Type/BasicType/IntType.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Type/BasicType/NullType.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Type/BasicType/StringType.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Type/BasicType/VoidType.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Type/ClassType.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Type/MemberClass/Member.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Type/MemberClass/MemberFunction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Type/MemberClass/MemberVar.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/AST/Type/Type.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/ClassTable.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$10.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$11.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$12.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$13.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$14.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$15.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$5.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$6.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$7.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$8.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment$9.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Environment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Scope.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/ScopeTable.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/Symbol.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Environment/SymbolTable.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Error/CompileError.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Error/InternalError.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Listener/BaseListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Listener/BuildTreeListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Listener/ClassGetterListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Listener/DefinitionGetterListener$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Listener/DefinitionGetterListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Main.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/Momo.g4" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/Momo.tokens" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoBaseListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoBaseVisitor.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoLexer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoLexer.tokens" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$AddExpressionContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ArrayTypeContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$AssignExpressionContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$BitExpressionContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$BlockStatementContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$BoolTypeContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$BreakStatementContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ClassDefinitionContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ClassTypeContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$CmpExpressionContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ConditionStatementContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ConstantContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ConstantExpressionContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ContinueStatementContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ControlStatementContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$EqualExpressionContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ExpressionContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ExpressionStatementContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$FalseConstantContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$FieldExpressionContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ForStatementContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$FunctionDefinitionContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$FunctionExpressionContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$IdenExpressionContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$IndexExpressionContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$IntConstantContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$IntTypeContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$LogicExpressionContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$LoopStatementContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$MultiExpressionContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$NewExpressionContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$NullConstantContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$PostfixExpressionContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ProgramContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ReturnStatementContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$ShiftExpressionContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$StatementContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$StringConstantContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$StringTypeContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$SubExpressionContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$TrueConstantContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$TypeContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$UnaryExpressionContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$VarDefinitionContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$VoidTypeContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser$WhileStatementContext.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoParser.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Parser/MomoVisitor.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/test.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Compiler2017BH.iml" afterPath="$PROJECT_DIR$/Compiler2017BH.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Translator/NASM_Powerful_Translator.java" afterPath="$PROJECT_DIR$/src/Translator/NASM_Powerful_Translator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test.txt" afterPath="$PROJECT_DIR$/src/test.txt" />
-    </list>
+    <list default="true" id="130622e1-2e91-4c8e-b79c-317a8b8f5b0c" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -1117,7 +960,7 @@
       <workItem from="1496163686768" duration="144000" />
       <workItem from="1496163871189" duration="68000" />
       <workItem from="1496163982657" duration="116000" />
-      <workItem from="1496167013198" duration="348000" />
+      <workItem from="1496167013198" duration="493000" />
     </task>
     <task id="LOCAL-00014" summary="I'm zz...">
       <created>1495809048906</created>
@@ -1466,7 +1309,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="392265000" />
+    <option name="totallyTimeSpent" value="392410000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1478,7 +1321,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-11" width="1857" height="1092" extended-state="7" />
+    <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3007284" sideWeight="0.48262548" order="8" side_tool="false" content_ui="tabs" />

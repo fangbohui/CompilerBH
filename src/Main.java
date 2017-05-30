@@ -22,7 +22,14 @@ public class Main {
 
 	public static void main(String[] args) throws Exception {
 
-		InputStream is = new FileInputStream("/home/fangbohui/IdeaProjects/compiler2017bh/src/test.txt");
+		int LOCAL;
+		LOCAL = 1;
+		InputStream is;
+		if (LOCAL == 1) {
+			is = new FileInputStream("/home/xzj/下载/fangbohui-compiler2017bh-56b699b20866/src/test.txt");
+		} else {
+			is = new FileInputStream("/home/fangbohui/IdeaProjects/compiler2017bh/src/test.txt");
+		}
 
 		Environment.inintiallize();
 		ANTLRInputStream input = new ANTLRInputStream(is);
@@ -46,10 +53,14 @@ public class Main {
 			function.allocator = new RegisterAllocator(function);
 		}
 
-		OutputStream os = new FileOutputStream("/home/fangbohui/IdeaProjects/compiler2017bh/src/fbh.asm");
+		OutputStream os;
 
-		int LOCAL;
-		LOCAL = 1;
+		if (LOCAL == 1) {
+			os = new FileOutputStream("/home/xzj/下载/fangbohui-compiler2017bh-56b699b20866/src/fbh.asm");
+		} else {
+			os = new FileOutputStream("/home/fangbohui/IdeaProjects/compiler2017bh/src/test.txt");
+		}
+
 /*
 		if (LOCAL == 0) {
 			new NASM_Naive_Translator(new PrintStream(System.out)).translate();

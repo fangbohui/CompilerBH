@@ -149,10 +149,18 @@ public class NASM_Powerful_Translator extends NASM_Translator {
 
 	private void callerSave() {
 		for (PhysicalRegister register : allocator.getUsedRegisters()) {
-			if (register.id % 2 == 1) {
-				continue;
+			if (register.name.equals("r8") || register.name.equals("r9") || register.name.equals("r10") || register.name.equals("r11")) {
+				output.printf("\tmov\t\tqword[rsp-%d], %s\n", register.id * 8, register.name);
 			}
-			output.printf("\tmov\t\tqword[rsp-%d], %s\n", register.id * 8, register.name);
+		}
+		output.printf("\tsub\t\trsp, %d\n", 16 * 8);
+	}
+
+	private void calleeSave() {
+		for (PhysicalRegister register : allocator.getUsedRegisters()) {
+			if (register.name.equals("rbx") || register.name.equals("r12") || register.name.equals("r13") || register.name.equals("r14") || register.name.equals("r15")) {
+				output.printf("\tmov\t\tqword[rsp-%d], %s\n", register.id * 8, register.name);
+			}
 		}
 		output.printf("\tsub\t\trsp, %d\n", 16 * 8);
 	}
@@ -160,32 +168,16 @@ public class NASM_Powerful_Translator extends NASM_Translator {
 	private void callerResume() {
 		output.printf("\tadd\t\trsp, %d\n", 16 * 8);
 		for (PhysicalRegister register : allocator.getUsedRegisters()) {
-			if (register.id % 2 == 1) {
-				continue;
+			if (register.name.equals("r8") || register.name.equals("r9") || register.name.equals("r10") || register.name.equals("r11")) {
+				output.printf("\tmov\t\t%s, qword[rsp-%d]\n", register.name, register.id * 8);
 			}
-			output.printf("\tmov\t\t%s, qword[rsp-%d]\n", register.name, register.id * 8);
-		}
-	}
-
-	private void calleeSave() {
-		if (!graph.function.name.equals("main")) {
-			for (PhysicalRegister register : allocator.getUsedRegisters()) {
-				if (register.id % 2 == 0) {
-					continue;
-				}
-				output.printf("\tmov\t\tqword[rsp-%d], %s\n", register.id * 8, register.name);
-			}
-			output.printf("\tsub\t\trsp, %d\n", 16 * 8);
 		}
 	}
 
 	private void calleeResume() {
-		if (!graph.function.name.equals("main")) {
-			output.printf("\tadd\t\trsp, %d\n", 16 * 8);
-			for (PhysicalRegister register : allocator.getUsedRegisters()) {
-				if (register.id % 2 == 0) {
-					continue;
-				}
+		output.printf("\tadd\t\trsp, %d\n", 16 * 8);
+		for (PhysicalRegister register : allocator.getUsedRegisters()) {
+			if (register.name.equals("rbx") || register.name.equals("r12") || register.name.equals("r13") || register.name.equals("r14") || register.name.equals("r15")) {
 				output.printf("\tmov\t\t%s, qword[rsp-%d]\n", register.name, register.id * 8);
 			}
 		}
@@ -212,17 +204,12 @@ public class NASM_Powerful_Translator extends NASM_Translator {
 				if (instruction instanceof ComputingInstruction) {
 					if (instruction instanceof UnaryInstruction) {
 						UnaryInstruction unaryInstruction = (UnaryInstruction) instruction;
-						PhysicalRegister rax = loadToSrc(NASMRegister.rax, unaryInstruction.src);
+						PhysicalRegister rax = loadToSrc(NASMRegister.rax, unaryInstruction.dest);
 						if (unaryInstruction instanceof UnaryMinusInstruction || unaryInstruction instanceof BitNotInstruction) {
-							output.printf("\tmov\t\trax, %s\n", rax.name);
-							output.printf("\t%s \trax\n", unaryInstruction.OPname());
-							move(unaryInstruction.dest, NASMRegister.rax);
-						}/* else {
-							output.printf("\ttest\t%s, %s\n", rax.name, rax.name);
-							output.printf("\tsete\tal\n");
-							output.printf("\tmovzx\trax, al\n");
-							move(unaryInstruction.dest, NASMRegister.rax);
-						}*/
+							move(rax, unaryInstruction.src);
+							output.printf("\t%s \t%s\n", unaryInstruction.OPname(), rax.name);
+							move(unaryInstruction.dest, rax);
+						}
 					} else if (instruction instanceof BinaryInstruction) {
 						BinaryInstruction binaryInstruction = (BinaryInstruction) instruction;
 						if (binaryInstruction instanceof EqualityInstruction) {
@@ -259,51 +246,18 @@ public class NASM_Powerful_Translator extends NASM_Translator {
 							}
 							if (rcx != NASMRegister.rcx) {
 								output.printf("\tmov\t\trcx, %s\n", rcx.name);
-							}e
+							}
 							output.printf("\t%s\t\trax, cl\n", binaryInstruction.OPname());
 							move(binaryInstruction.dest, NASMRegister.rax);
 						} else {
-
 							PhysicalRegister rax = loadToSrc(NASMRegister.rax, binaryInstruction.src1);
 							PhysicalRegister rcx = loadToSrc(NASMRegister.rcx, binaryInstruction.src2);
-
-							if (rax != NASMRegister.rax) {
-								output.printf("\tmov\t\trax, %s\n", rax.name);
+							PhysicalRegister rdx = loadToDest(NASMRegister.rdx, binaryInstruction.dest);
+							if (rdx != rax) {
+								output.printf("\tmov\t\t%s, %s\n", rdx.name, rax.name);
 							}
-
-							output.printf("\t%s\t\trax, %s\n", binaryInstruction.OPname(), rcx.name);
-							move(binaryInstruction.dest, NASMRegister.rax);
-
-
-
-/*
-							PhysicalRegister dest = allocator.allocating.get(binaryInstruction.dest);
-							if (dest == null) {
-								if (rax != NASMRegister.rax) {
-									output.printf("\tmov\t\trax, %s\n", rax.name);
-								}
-								output.printf("\t%s\t\trax, %s\n", binaryInstruction.OPname(), rcx.name);
-								move(binaryInstruction.dest, NASMRegister.rax);
-							} else if (dest == rax) {
-								output.printf("\t%s\t\t%s, %s\n", binaryInstruction.OPname(), rax.name, rcx.name);
-							} else if (dest == rcx) {
-								if (rax != NASMRegister.rax) {
-									output.printf("\tmov\t\trax, %s\n", rax.name);
-								}
-								output.printf("\t%s\t\trax, %s\n", binaryInstruction.OPname(), rcx.name);
-								move(binaryInstruction.dest, NASMRegister.rax);
-							} else {
-								if (rax != NASMRegister.rax) {
-									output.printf("\tmov\t\trax, %s\n", rax.name);
-								}
-								output.printf("\t%s\t\trax, %s\n", binaryInstruction.OPname(), rcx.name);
-								move(binaryInstruction.dest, NASMRegister.rax);
-
-								//output.printf("\tmov\t\t%s, %s\n", dest.name, rax.name);
-								//output.printf("\t%s\t\t%s, %s\n", binaryInstruction.OPname(), dest.name, rcx.name);
-							}
-*/
-
+							output.printf("\t%s\t\t%s, %s\n", binaryInstruction.OPname(), rdx.name, rcx.name);
+							move(binaryInstruction.dest, rdx);
 						}
 					}
 				} else if (instruction instanceof ControlInstruction) {

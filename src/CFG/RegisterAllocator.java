@@ -1,6 +1,7 @@
 package CFG;
 
 import AST.Function;
+import CFG.Instruction.ComputingInstruction.BinaryInstruction.BinaryInstruction;
 import CFG.Instruction.Instruction;
 import CFG.Operand.VirtualRegister;
 import Translator.PhysicalRegister;
@@ -39,16 +40,33 @@ public class RegisterAllocator {
 			}
 			for (int i = block.instructions.size() - 1; i >= 0; i --) {
 				Instruction instruction = block.instructions.get(i);
-				for (VirtualRegister defined : instruction.getDestRegisters()) {
+				if (instruction instanceof BinaryInstruction) {
 					for (VirtualRegister out : liveout) {
-						interferenceGraph.ban(defined, out);
+						interferenceGraph.ban(((BinaryInstruction) instruction).dest, out);
 					}
-				}
-				for (VirtualRegister defined : instruction.getDestRegisters()) {
-					liveout.remove(defined);
-				}
-				for (VirtualRegister used : instruction.getSrcRegisters()) {
-					liveout.add(used);
+					liveout.remove(((BinaryInstruction) instruction).dest);
+					if (((BinaryInstruction) instruction).src2 instanceof VirtualRegister){
+						liveout.add((VirtualRegister) ((BinaryInstruction) instruction).src2);
+					}
+					for (VirtualRegister out : liveout) {
+						interferenceGraph.ban(((BinaryInstruction) instruction).dest, out);
+					}
+					liveout.remove(((BinaryInstruction) instruction).dest);
+					if (((BinaryInstruction) instruction).src1 instanceof VirtualRegister){
+						liveout.add((VirtualRegister) ((BinaryInstruction) instruction).src1);
+					}
+				} else {
+					for (VirtualRegister defined : instruction.getDestRegisters()) {
+						for (VirtualRegister out : liveout) {
+							interferenceGraph.ban(defined, out);
+						}
+					}
+					for (VirtualRegister defined : instruction.getDestRegisters()) {
+						liveout.remove(defined);
+					}
+					for (VirtualRegister used : instruction.getSrcRegisters()) {
+						liveout.add(used);
+					}
 				}
 			}
 		}
