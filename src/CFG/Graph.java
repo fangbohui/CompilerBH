@@ -54,9 +54,7 @@ public class Graph {
 			block.liveness.livein = new HashSet<>();
 			block.liveness.liveout = new HashSet<>();
 		}
-		boolean changed = true;
-		while (changed) {
-			changed = false;
+		while (true) {
 			for (Block block : blockList) {
 				block.liveness.livein = new HashSet<>();
 				for (VirtualRegister virtualRegister : block.liveness.liveout) {
@@ -69,6 +67,7 @@ public class Graph {
 					block.liveness.livein.add(virtualRegister);
 				}
 			}
+			boolean changed = false;
 			for (Block block : blockList) {
 				HashSet<VirtualRegister> last = block.liveness.liveout;
 				block.liveness.liveout = new HashSet<>();
@@ -81,8 +80,10 @@ public class Graph {
 					changed = true;
 				}
 			}
+			if (!changed) {
+				break;
+			}
 		}
-
 	}
 
 	private void computingFrame() {

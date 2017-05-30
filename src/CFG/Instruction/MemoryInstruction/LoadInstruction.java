@@ -33,7 +33,7 @@ public class LoadInstruction extends MemoryInstruction {
 	@Override
 	public ArrayList<Operand> getSrcOperands() {
 		ArrayList<Operand> operands = new ArrayList<>();
-		operands.add(src);
+		operands.add(src.base);
 		return operands;
 	}
 }

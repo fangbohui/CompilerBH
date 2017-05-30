@@ -288,7 +288,6 @@ public class NASM_Powerful_Translator extends NASM_Translator {
 						LoadInstruction loadInstruction = (LoadInstruction) instruction;
 						PhysicalRegister src = loadToSrc(NASMRegister.rax, loadInstruction.src.base);
 						PhysicalRegister dest = loadToDest(NASMRegister.rdx, loadInstruction.dest);
-						loadToSrc(NASMRegister.rdx, loadInstruction.src.index);
 						output.printf("\tmov\t\t%s, [%s + %s*8]\n", dest.name, src.name, ((ImmediatelyNumber)(loadInstruction.src.index)).value);
 						store(dest, loadInstruction.dest);
 					} else if (instruction instanceof MoveInstruction) {
