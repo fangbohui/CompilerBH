@@ -83,19 +83,19 @@ public class NASM_Powerful_Translator extends NASM_Translator {
 		return dest;
 	}
 
-	private void store(PhysicalRegister src, VirtualRegister dest) {
-		if (dest instanceof VarRegister) {
-			if (dest instanceof GlobalRegister) {
-				output.printf("\tmov\t\t%s, %s\n", globalVarName((GlobalRegister) dest), src.name);
+	private void store(PhysicalRegister dest, VirtualRegister src) {
+		if (src instanceof VarRegister) {
+			if (src instanceof GlobalRegister) {
+				output.printf("\tmov\t\t%s, %s\n", dest.name, globalVarName((GlobalRegister) src));
 			}
-			if (dest instanceof TemporaryRegister) {
-				PhysicalRegister register = allocator.allocating.get(dest);
+			if (src instanceof TemporaryRegister) {
+				PhysicalRegister register = allocator.allocating.get(src);
 				if (register == null) {
-					output.printf("\tmov\t\t%s, %s\n", temporaryVarName(graph.frame.getOffset(dest)), src.name);
+					output.printf("\tmov\t\t%s, %s\n", dest.name, temporaryVarName(graph.frame.getOffset(src)));
 				}
 			}
-			if (dest instanceof ParameterRegister) {
-				output.printf("\tmov\t\t%s, %s\n", parameterVarName(graph.frame.getOffset(dest)), src.name);
+			if (src instanceof ParameterRegister) {
+				output.printf("\tmov\t\t%s, %s\n", dest.name, parameterVarName(graph.frame.getOffset(src)));
 			}
 		}
 	}
@@ -171,7 +171,7 @@ public class NASM_Powerful_Translator extends NASM_Translator {
 					if (instruction instanceof UnaryInstruction) {
 						UnaryInstruction unaryInstruction = (UnaryInstruction) instruction;
 						PhysicalRegister rax = loadToSrc(NASMRegister.rax, unaryInstruction.src);
-						PhysicalRegister rdx = loadToDest(NASMRegister.rdx, unaryInstruction.dest);
+						//PhysicalRegister rdx = loadToDest(NASMRegister.rdx, unaryInstruction.dest);
 						if (unaryInstruction instanceof UnaryMinusInstruction) {
 							output.printf("\t%s \t%s\n", unaryInstruction.OPname(), rax.name);
 						} else {
@@ -185,10 +185,11 @@ public class NASM_Powerful_Translator extends NASM_Translator {
 						if (binaryInstruction instanceof EqualityInstruction) {
 							PhysicalRegister rdx = loadToSrc(NASMRegister.rdx, binaryInstruction.src1);
 							PhysicalRegister rax = loadToSrc(NASMRegister.rax, binaryInstruction.src2);
+							PhysicalRegister rcx = loadToDest(NASMRegister.rcx, binaryInstruction.dest);
 							output.printf("\tcmp\t\t%s, %s\n", rdx.name, rax.name);
 							output.printf("\t%s\t\tal\n", binaryInstruction.OPname());
-							output.printf("\tmovzx\t%s, al\n", rax.name);
-							store(rax, binaryInstruction.dest);
+							output.printf("\tmovzx\t%s, al\n", rcx.name);
+							store(rcx, binaryInstruction.dest);
 						} else if (binaryInstruction instanceof DivideInstruction) {
 							PhysicalRegister rax = loadToSrc(NASMRegister.rax, binaryInstruction.src1);
 							if (rax != NASMRegister.rax) {
@@ -197,7 +198,10 @@ public class NASM_Powerful_Translator extends NASM_Translator {
 							PhysicalRegister rcx = loadToSrc(NASMRegister.rcx, binaryInstruction.src2);
 							output.printf("\tcqo\n");
 							output.printf("\tidiv\t%s\n", rcx.name);
-							store(NASMRegister.rax, binaryInstruction.dest);
+							if (rax != NASMRegister.rax) {
+								output.printf("\tmov\t\t%s, rax\n", rax.name);
+							}
+							store(rax, binaryInstruction.dest);
 						} else if (binaryInstruction instanceof ModInstruction) {
 							PhysicalRegister rax = loadToSrc(NASMRegister.rax, binaryInstruction.src1);
 							if (rax != NASMRegister.rax) {
@@ -206,7 +210,10 @@ public class NASM_Powerful_Translator extends NASM_Translator {
 							PhysicalRegister rcx = loadToSrc(NASMRegister.rcx, binaryInstruction.src2);
 							output.printf("\tcqo\n");
 							output.printf("\tidiv\t%s\n", rcx.name);
-							store(NASMRegister.rdx, binaryInstruction.dest);
+							if (rax != NASMRegister.rax) {
+								output.printf("\tmov\t\t%s, rax\n", rax.name);
+							}
+							store(rax, binaryInstruction.dest);
 						} else if (binaryInstruction instanceof LeftShiftInstruction || binaryInstruction instanceof RightShiftInstruction) {
 							PhysicalRegister rax = loadToSrc(NASMRegister.rax, binaryInstruction.src1);
 							PhysicalRegister rcx = loadToSrc(NASMRegister.rcx, binaryInstruction.src2);

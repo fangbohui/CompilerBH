@@ -41,7 +41,9 @@ public class Graph {
 			block.liveness.definedRegisters = new ArrayList<>();
 			for (Instruction instruction : block.instructions) {
 				for (VirtualRegister virtualRegister : instruction.getSrcRegisters()) {
-					block.liveness.usedRegisters.add(virtualRegister);
+					if (!block.liveness.definedRegisters.contains(virtualRegister)) {
+						block.liveness.usedRegisters.add(virtualRegister);
+					}
 				}
 				for (VirtualRegister virtualRegister : instruction.getDestRegisters()) {
 					block.liveness.definedRegisters.add(virtualRegister);
@@ -70,8 +72,8 @@ public class Graph {
 			for (Block block : blockList) {
 				HashSet<VirtualRegister> last = block.liveness.liveout;
 				block.liveness.liveout = new HashSet<>();
-				for (Block succBlock : block.succ) {
-					for (VirtualRegister virtualRegister : succBlock.liveness.livein) {
+				for (Block succ : block.succ) {
+					for (VirtualRegister virtualRegister : succ.liveness.livein) {
 						block.liveness.liveout.add(virtualRegister);
 					}
 				}
