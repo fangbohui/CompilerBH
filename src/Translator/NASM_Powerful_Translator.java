@@ -4,10 +4,7 @@ import CFG.Block;
 import CFG.Graph;
 import CFG.Instruction.ComputingInstruction.BinaryInstruction.BinaryInstruction;
 import CFG.Instruction.ComputingInstruction.BinaryInstruction.EqualityInstruction;
-import CFG.Instruction.ComputingInstruction.BinaryInstruction.OtherBinaryInstructions.DivideInstruction;
-import CFG.Instruction.ComputingInstruction.BinaryInstruction.OtherBinaryInstructions.LeftShiftInstruction;
-import CFG.Instruction.ComputingInstruction.BinaryInstruction.OtherBinaryInstructions.ModInstruction;
-import CFG.Instruction.ComputingInstruction.BinaryInstruction.OtherBinaryInstructions.RightShiftInstruction;
+import CFG.Instruction.ComputingInstruction.BinaryInstruction.OtherBinaryInstructions.*;
 import CFG.Instruction.ComputingInstruction.ComputingInstruction;
 import CFG.Instruction.ComputingInstruction.UnaryInstruction.OtherUnaryInstruction.BitNotInstruction;
 import CFG.Instruction.ComputingInstruction.UnaryInstruction.OtherUnaryInstruction.UnaryMinusInstruction;
@@ -249,6 +246,12 @@ public class NASM_Powerful_Translator extends NASM_Translator {
 							}
 							output.printf("\t%s\t\trax, cl\n", binaryInstruction.OPname());
 							move(binaryInstruction.dest, NASMRegister.rax);
+						} else if (binaryInstruction instanceof AddInstruction) {
+							PhysicalRegister rax = loadToSrc(NASMRegister.rax, binaryInstruction.src1);
+							PhysicalRegister rcx = loadToSrc(NASMRegister.rcx, binaryInstruction.src2);
+							PhysicalRegister rdx = loadToDest(NASMRegister.rdx, binaryInstruction.dest);
+							output.printf("\tlea\t\t%s, [%s + %s]\n", rdx.name, rax.name, rcx.name);
+							move(binaryInstruction.dest, rdx);
 						} else {
 							PhysicalRegister rax = loadToSrc(NASMRegister.rax, binaryInstruction.src1);
 							PhysicalRegister rcx = loadToSrc(NASMRegister.rcx, binaryInstruction.src2);

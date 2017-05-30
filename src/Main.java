@@ -22,12 +22,11 @@ public class Main {
 
 	public static void main(String[] args) throws Exception {
 
-		int x;
 		int LOCAL;
-		LOCAL = 0;
+		LOCAL = 1;
 		InputStream is;
 		if (LOCAL == 1) {
-			is = new FileInputStream("/home/xzj/Download/fangbohui-compiler2017bh-56b699b20866/src/test.txt");
+			is = new FileInputStream("/home/xzj/下载/fangbohui-compiler2017bh-56b699b20866/src/test.txt");
 		} else {
 			is = new FileInputStream("/home/fangbohui/IdeaProjects/compiler2017bh/src/test.txt");
 		}
@@ -57,7 +56,7 @@ public class Main {
 		OutputStream os;
 
 		if (LOCAL == 1) {
-			os = new FileOutputStream("/home/xzj/Download/fangbohui-compiler2017bh-56b699b20866/src/fbh.asm");
+			os = new FileOutputStream("/home/xzj/下载/fangbohui-compiler2017bh-56b699b20866/src/fbh.asm");
 		} else {
 			os = new FileOutputStream("/home/fangbohui/IdeaProjects/compiler2017bh/src/test.txt");
 		}
@@ -74,6 +73,7 @@ public class Main {
 		} else {
 			new NASM_Powerful_Translator(new PrintStream(os)).translate();
 		}
+
 
 
 		// Compile : nasm -felf64 fbh.asm && gcc fbh.o && time ./a.out

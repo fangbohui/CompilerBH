@@ -1,3251 +1,976 @@
 	default rel
 
-	global hex2int
-	global int2chr
-	global toStringHex
-	global rotate_left
-	global add
-	global lohi
-	global sha1
-	global computeSHA1
-	global nextLetter
-	global nextText
-	global array_equal
-	global crackSHA1
 	global main
 
 extern printf, malloc, strcpy, scanf, strlen, sscanf, sprintf, memcpy, strcmp, puts
 
 	SECTION .text
 
-hex2int:
-	push	rbp
-	mov		rbp, rsp
-	sub		rsp, 336
-	mov		qword[rsp-96], r12
-	mov		qword[rsp-120], r15
-	mov		qword[rsp-104], r13
-	mov		qword[rsp-112], r14
-	sub		rsp, 128
-hex2int_0_beginning:
-	jmp		hex2int_1_entry
-
-hex2int_1_entry:
-	mov		r15, 0
-
-	mov		r13, 0
-
-	jmp		hex2int_2_forCondition
-
-hex2int_2_forCondition:
-	sub		rsp, 128
-	mov		rdi, qword [rbp+16]
-	call	FBH_string_length
-	add		rsp, 128
-	mov		r12, rax
-
-	cmp		r13, r12
-	setl		al
-	movzx	r14, al
-
-	test	r14, r14
-	jz		hex2int_23_forMerge
-	jmp		hex2int_3_forBody
-
-hex2int_3_forBody:
-	sub		rsp, 128
-	mov		rdi, qword [rbp+16]
-	mov		rsi, r13
-	call	FBH_string_ord
-	add		rsp, 128
-	mov		r12, rax
-
-	mov		r14, r12
-
-	mov		rax, 48
-	cmp		r14, rax
-	setge		al
-	movzx	r12, al
-
-	test	r12, r12
-	jz		hex2int_5_leftFalse
-	jmp		hex2int_4_leftTrue
-
-hex2int_4_leftTrue:
-	mov		rax, 57
-	cmp		r14, rax
-	setle		al
-	movzx	r12, al
-
-	jmp		hex2int_6_mergeBranch
-
-hex2int_5_leftFalse:
-	mov		r12, 0
-
-	jmp		hex2int_6_mergeBranch
-
-hex2int_6_mergeBranch:
-	test	r12, r12
-	jz		hex2int_8_ifFalse
-	jmp		hex2int_7_ifTrue
-
-hex2int_7_ifTrue:
-	mov		rcx, 16
-	mov		r12, r15
-	imul		r12, rcx
-
-	add		r12, r14
-
-	mov		rcx, 48
-	sub		r12, rcx
-
-	mov		r15, r12
-
-	jmp		hex2int_21_ifMerge
-
-hex2int_8_ifFalse:
-	mov		rax, 65
-	cmp		r14, rax
-	setge		al
-	movzx	r12, al
-
-	test	r12, r12
-	jz		hex2int_10_leftFalse
-	jmp		hex2int_9_leftTrue
-
-hex2int_9_leftTrue:
-	mov		rax, 70
-	cmp		r14, rax
-	setle		al
-	movzx	r12, al
-
-	jmp		hex2int_11_mergeBranch
-
-hex2int_10_leftFalse:
-	mov		r12, 0
-
-	jmp		hex2int_11_mergeBranch
-
-hex2int_11_mergeBranch:
-	test	r12, r12
-	jz		hex2int_13_ifFalse
-	jmp		hex2int_12_ifTrue
-
-hex2int_12_ifTrue:
-	mov		rcx, 16
-	mov		r12, r15
-	imul		r12, rcx
-
-	add		r12, r14
-
-	mov		rcx, 65
-	sub		r12, rcx
-
-	mov		rcx, 10
-	add		r12, rcx
-
-	mov		r15, r12
-
-	jmp		hex2int_20_ifMerge
-
-hex2int_13_ifFalse:
-	mov		rax, 97
-	cmp		r14, rax
-	setge		al
-	movzx	r12, al
-
-	test	r12, r12
-	jz		hex2int_15_leftFalse
-	jmp		hex2int_14_leftTrue
-
-hex2int_14_leftTrue:
-	mov		rax, 102
-	cmp		r14, rax
-	setle		al
-	movzx	r12, al
-
-	jmp		hex2int_16_mergeBranch
-
-hex2int_15_leftFalse:
-	mov		r12, 0
-
-	jmp		hex2int_16_mergeBranch
-
-hex2int_16_mergeBranch:
-	test	r12, r12
-	jz		hex2int_18_ifFalse
-	jmp		hex2int_17_ifTrue
-
-hex2int_17_ifTrue:
-	mov		rcx, 16
-	mov		r12, r15
-	imul		r12, rcx
-
-	add		r12, r14
-
-	mov		rcx, 97
-	sub		r12, rcx
-
-	mov		rcx, 10
-	add		r12, rcx
-
-	mov		r15, r12
-
-	jmp		hex2int_19_ifMerge
-
-hex2int_18_ifFalse:
-	mov		rax, 0
-	add		rsp, 128
-	mov		r12, qword[rsp-96]
-	mov		r15, qword[rsp-120]
-	mov		r13, qword[rsp-104]
-	mov		r14, qword[rsp-112]
-	leave
-	ret
-
-	jmp		hex2int_24_exit
-
-hex2int_19_ifMerge:
-	jmp		hex2int_20_ifMerge
-
-hex2int_20_ifMerge:
-	jmp		hex2int_21_ifMerge
-
-hex2int_21_ifMerge:
-	jmp		hex2int_22_forIncrease
-
-hex2int_22_forIncrease:
-	mov		r12, r13
-
-	mov		rcx, 1
-	add		r13, rcx
-
-	jmp		hex2int_2_forCondition
-
-hex2int_23_forMerge:
-	mov		rax, r15
-	add		rsp, 128
-	mov		r12, qword[rsp-96]
-	mov		r15, qword[rsp-120]
-	mov		r13, qword[rsp-104]
-	mov		r14, qword[rsp-112]
-	leave
-	ret
-
-	jmp		hex2int_24_exit
-
-hex2int_24_exit:
-	add		rsp, 128
-	mov		r12, qword[rsp-96]
-	mov		r15, qword[rsp-120]
-	mov		r13, qword[rsp-104]
-	mov		r14, qword[rsp-112]
-	leave
-	ret
-
-
-int2chr:
-	push	rbp
-	mov		rbp, rsp
-	sub		rsp, 176
-	mov		qword[rsp-96], r12
-	mov		qword[rsp-104], r13
-	sub		rsp, 128
-int2chr_0_beginning:
-	jmp		int2chr_1_entry
-
-int2chr_1_entry:
-	mov		rdx, qword [rbp+16]
-	mov		rax, 32
-	cmp		rdx, rax
-	setge		al
-	movzx	r12, al
-
-	test	r12, r12
-	jz		int2chr_3_leftFalse
-	jmp		int2chr_2_leftTrue
-
-int2chr_2_leftTrue:
-	mov		rdx, qword [rbp+16]
-	mov		rax, 126
-	cmp		rdx, rax
-	setle		al
-	movzx	r12, al
-
-	jmp		int2chr_4_mergeBranch
-
-int2chr_3_leftFalse:
-	mov		r12, 0
-
-	jmp		int2chr_4_mergeBranch
-
-int2chr_4_mergeBranch:
-	test	r12, r12
-	jz		int2chr_6_ifFalse
-	jmp		int2chr_5_ifTrue
-
-int2chr_5_ifTrue:
-	mov		rax, qword [rbp+16]
-	mov		rcx, 32
-	mov		r13, rax
-	sub		r13, rcx
-
-	mov		rax, qword [rbp+16]
-	mov		rcx, 32
-	mov		r12, rax
-	sub		r12, rcx
-
-	sub		rsp, 128
-	mov		rdi, qword [global_var_asciiTable]
-	mov		rsi, r13
-	mov		rdx, r12
-	call	FBH_string_substring
-	add		rsp, 128
-	mov		r12, rax
-
-	mov		rax, r12
-	add		rsp, 128
-	mov		r12, qword[rsp-96]
-	mov		r13, qword[rsp-104]
-	leave
-	ret
-
-	jmp		int2chr_8_exit
-
-int2chr_6_ifFalse:
-	jmp		int2chr_7_ifMerge
-
-int2chr_7_ifMerge:
-	mov		rax, ___message___85
-	add		rsp, 128
-	mov		r12, qword[rsp-96]
-	mov		r13, qword[rsp-104]
-	leave
-	ret
-
-	jmp		int2chr_8_exit
-
-int2chr_8_exit:
-	add		rsp, 128
-	mov		r12, qword[rsp-96]
-	mov		r13, qword[rsp-104]
-	leave
-	ret
-
-
-toStringHex:
-	push	rbp
-	mov		rbp, rsp
-	sub		rsp, 256
-	mov		qword[rsp-96], r12
-	mov		qword[rsp-120], r15
-	mov		qword[rsp-104], r13
-	mov		qword[rsp-112], r14
-	sub		rsp, 128
-toStringHex_0_beginning:
-	jmp		toStringHex_1_entry
-
-toStringHex_1_entry:
-	mov		rax, ___message___86
-	mov		r15, rax
-
-	mov		r13, 28
-
-	jmp		toStringHex_2_forCondition
-
-toStringHex_2_forCondition:
-	mov		rax, 0
-	cmp		r13, rax
-	setge		al
-	movzx	r12, al
-
-	test	r12, r12
-	jz		toStringHex_8_forMerge
-	jmp		toStringHex_3_forBody
-
-toStringHex_3_forBody:
-	mov		rax, qword [rbp+16]
-	mov		rcx, r13
-	sar		rax, cl
-	mov		r12, rax
-
-	mov		rcx, 15
-	and		r12, rcx
-
-
-	mov		rax, 10
-	cmp		r12, rax
-	setl		al
-	movzx	r14, al
-
-	test	r14, r14
-	jz		toStringHex_5_ifFalse
-	jmp		toStringHex_4_ifTrue
-
-toStringHex_4_ifTrue:
-	mov		rax, 48
-	mov		r14, rax
-	add		r14, r12
-
-	sub		rsp, 128
-	sub		rsp, 16
-	mov		qword[rsp+0], r14
-	call	int2chr
-	add		rsp, 16
-	add		rsp, 128
-	mov		r12, rax
-
-	sub		rsp, 128
-	mov		rdi, r15
-	mov		rsi, r12
-	call	FBH_string_connect
-	add		rsp, 128
-	mov		r12, rax
-
-	mov		r15, r12
-
-	jmp		toStringHex_6_ifMerge
-
-toStringHex_5_ifFalse:
-	mov		rax, 65
-	mov		r14, rax
-	add		r14, r12
-
-	mov		rcx, 10
-	mov		r12, r14
-	sub		r12, rcx
-
-	sub		rsp, 128
-	sub		rsp, 16
-	mov		qword[rsp+0], r12
-	call	int2chr
-	add		rsp, 16
-	add		rsp, 128
-	mov		r12, rax
-
-	sub		rsp, 128
-	mov		rdi, r15
-	mov		rsi, r12
-	call	FBH_string_connect
-	add		rsp, 128
-	mov		r12, rax
-
-	mov		r15, r12
-
-	jmp		toStringHex_6_ifMerge
-
-toStringHex_6_ifMerge:
-	jmp		toStringHex_7_forIncrease
-
-toStringHex_7_forIncrease:
-	mov		rcx, 4
-	mov		r12, r13
-	sub		r12, rcx
-
-	mov		r13, r12
-
-	jmp		toStringHex_2_forCondition
-
-toStringHex_8_forMerge:
-	mov		rax, r15
-	add		rsp, 128
-	mov		r12, qword[rsp-96]
-	mov		r15, qword[rsp-120]
-	mov		r13, qword[rsp-104]
-	mov		r14, qword[rsp-112]
-	leave
-	ret
-
-	jmp		toStringHex_9_exit
-
-toStringHex_9_exit:
-	add		rsp, 128
-	mov		r12, qword[rsp-96]
-	mov		r15, qword[rsp-120]
-	mov		r13, qword[rsp-104]
-	mov		r14, qword[rsp-112]
-	leave
-	ret
-
-
-rotate_left:
-	push	rbp
-	mov		rbp, rsp
-	sub		rsp, 336
-	mov		qword[rsp-96], r12
-	mov		qword[rsp-104], r13
-	mov		qword[rsp-112], r14
-	sub		rsp, 128
-rotate_left_0_beginning:
-	jmp		rotate_left_1_entry
-
-rotate_left_1_entry:
-	mov		rdx, qword [rbp+24]
-	mov		rax, 1
-	cmp		rdx, rax
-	sete		al
-	movzx	r12, al
-
-	test	r12, r12
-	jz		rotate_left_3_ifFalse
-	jmp		rotate_left_2_ifTrue
-
-rotate_left_2_ifTrue:
-	mov		rax, qword [rbp+16]
-	mov		rcx, 2147483647
-	mov		r12, rax
-	and		r12, rcx
-
-	mov		rcx, 1
-	mov		rax, r12
-	sal		rax, cl
-	mov		r13, rax
-
-	mov		rax, qword [rbp+16]
-	mov		rcx, 31
-	sar		rax, cl
-	mov		r12, rax
-
-	mov		rcx, 1
-	and		r12, rcx
-
-	or		r13, r12
-
-	mov		rax, r13
-	add		rsp, 128
-	mov		r12, qword[rsp-96]
-	mov		r13, qword[rsp-104]
-	mov		r14, qword[rsp-112]
-	leave
-	ret
-
-	jmp		rotate_left_8_exit
-
-rotate_left_3_ifFalse:
-	jmp		rotate_left_4_ifMerge
-
-rotate_left_4_ifMerge:
-	mov		rdx, qword [rbp+24]
-	mov		rax, 31
-	cmp		rdx, rax
-	sete		al
-	movzx	r12, al
-
-	test	r12, r12
-	jz		rotate_left_6_ifFalse
-	jmp		rotate_left_5_ifTrue
-
-rotate_left_5_ifTrue:
-	mov		rax, qword [rbp+16]
-	mov		rcx, 1
-	mov		r12, rax
-	and		r12, rcx
-
-	mov		rcx, 31
-	mov		rax, r12
-	sal		rax, cl
-	mov		r13, rax
-
-	mov		rax, qword [rbp+16]
-	mov		rcx, 1
-	sar		rax, cl
-	mov		r12, rax
-
-	mov		rcx, 2147483647
-	and		r12, rcx
-
-	or		r13, r12
-
-	mov		rax, r13
-	add		rsp, 128
-	mov		r12, qword[rsp-96]
-	mov		r13, qword[rsp-104]
-	mov		r14, qword[rsp-112]
-	leave
-	ret
-
-	jmp		rotate_left_8_exit
-
-rotate_left_6_ifFalse:
-	jmp		rotate_left_7_ifMerge
-
-rotate_left_7_ifMerge:
-	mov		rax, 32
-	mov		rcx, qword [rbp+24]
-	mov		r13, rax
-	sub		r13, rcx
-
-	mov		rax, 1
-	mov		rcx, r13
-	sal		rax, cl
-	mov		r12, rax
-
-	mov		rcx, 1
-	sub		r12, rcx
-
-	mov		rax, qword [rbp+16]
-	mov		r13, rax
-	and		r13, r12
-
-	mov		rcx, qword [rbp+24]
-	mov		rax, r13
-	sal		rax, cl
-	mov		r13, rax
-
-	mov		rax, 32
-	mov		rcx, qword [rbp+24]
-	mov		r14, rax
-	sub		r14, rcx
-
-	mov		rax, qword [rbp+16]
-	mov		rcx, r14
-	sar		rax, cl
-	mov		r12, rax
-
-	mov		rax, 1
-	mov		rcx, qword [rbp+24]
-	sal		rax, cl
-	mov		r14, rax
-
-	mov		rcx, 1
-	sub		r14, rcx
-
-	and		r12, r14
-
-	or		r13, r12
-
-	mov		rax, r13
-	add		rsp, 128
-	mov		r12, qword[rsp-96]
-	mov		r13, qword[rsp-104]
-	mov		r14, qword[rsp-112]
-	leave
-	ret
-
-	jmp		rotate_left_8_exit
-
-rotate_left_8_exit:
-	add		rsp, 128
-	mov		r12, qword[rsp-96]
-	mov		r13, qword[rsp-104]
-	mov		r14, qword[rsp-112]
-	leave
-	ret
-
-
-add:
-	push	rbp
-	mov		rbp, rsp
-	sub		rsp, 272
-	mov		qword[rsp-96], r12
-	mov		qword[rsp-104], r13
-	mov		qword[rsp-112], r14
-	sub		rsp, 128
-add_0_beginning:
-	jmp		add_1_entry
-
-add_1_entry:
-	mov		rax, qword [rbp+16]
-	mov		rcx, 65535
-	mov		r12, rax
-	and		r12, rcx
-
-	mov		rax, qword [rbp+24]
-	mov		rcx, 65535
-	mov		r13, rax
-	and		r13, rcx
-
-	add		r12, r13
-
-	mov		r13, r12
-
-	mov		rax, qword [rbp+16]
-	mov		rcx, 16
-	sar		rax, cl
-	mov		r12, rax
-
-	mov		rcx, 65535
-	and		r12, rcx
-
-	mov		rax, qword [rbp+24]
-	mov		rcx, 16
-	sar		rax, cl
-	mov		r14, rax
-
-	mov		rcx, 65535
-	and		r14, rcx
-
-	add		r12, r14
-
-	mov		rcx, 16
-	mov		rax, r13
-	sar		rax, cl
-	mov		r14, rax
-
-	add		r12, r14
-
-	mov		rcx, 65535
-	and		r12, rcx
-
-
-	mov		rcx, 16
-	mov		rax, r12
-	sal		rax, cl
-	mov		r12, rax
-
-	mov		rcx, 65535
-	and		r13, rcx
-
-	or		r12, r13
-
-	mov		rax, r12
-	add		rsp, 128
-	mov		r12, qword[rsp-96]
-	mov		r13, qword[rsp-104]
-	mov		r14, qword[rsp-112]
-	leave
-	ret
-
-	jmp		add_2_exit
-
-add_2_exit:
-	add		rsp, 128
-	mov		r12, qword[rsp-96]
-	mov		r13, qword[rsp-104]
-	mov		r14, qword[rsp-112]
-	leave
-	ret
-
-
-lohi:
-	push	rbp
-	mov		rbp, rsp
-	sub		rsp, 160
-	mov		qword[rsp-96], r12
-	mov		qword[rsp-104], r13
-	sub		rsp, 128
-lohi_0_beginning:
-	jmp		lohi_1_entry
-
-lohi_1_entry:
-	mov		rax, qword [rbp+24]
-	mov		rcx, 16
-	sal		rax, cl
-	mov		r13, rax
-
-	mov		rax, qword [rbp+16]
-	mov		r12, rax
-	or		r12, r13
-
-	mov		rax, r12
-	add		rsp, 128
-	mov		r12, qword[rsp-96]
-	mov		r13, qword[rsp-104]
-	leave
-	ret
-
-	jmp		lohi_2_exit
-
-lohi_2_exit:
-	add		rsp, 128
-	mov		r12, qword[rsp-96]
-	mov		r13, qword[rsp-104]
-	leave
-	ret
-
-
-sha1:
-	push	rbp
-	mov		rbp, rsp
-	sub		rsp, 1712
-	mov		qword[rsp-96], r12
-	mov		qword[rsp-120], r15
-	mov		qword[rsp-104], r13
-	mov		qword[rsp-24], rbx
-	mov		qword[rsp-112], r14
-	sub		rsp, 128
-sha1_0_beginning:
-	jmp		sha1_1_entry
-
-sha1_1_entry:
-	mov		rax, qword [rbp+24]
-	mov		rcx, 64
-	mov		r12, rax
-	add		r12, rcx
-
-	mov		rcx, 56
-	sub		r12, rcx
-
-	mov		rax, r12
-	mov		rcx, 64
-	cqo
-	idiv	rcx
-	mov		r12, rax
-
-	mov		rcx, 1
-	add		r12, rcx
-
-	mov		r14, r12
-
-	mov		rax, qword [global_var_MAXCHUNK]
-	cmp		r14, rax
-	setg		al
-	movzx	r12, al
-
-	test	r12, r12
-	jz		sha1_3_ifFalse
-	jmp		sha1_2_ifTrue
-
-sha1_2_ifTrue:
-	mov		qword[rsp-80], r10
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-64], r8
-	mov		qword[rsp-88], r11
-	sub		rsp, 128
-	mov		rdi, ___message___143
-	call	FBH_println
-	add		rsp, 128
-	mov		r10, qword[rsp-80]
-	mov		r9, qword[rsp-72]
-	mov		r8, qword[rsp-64]
-	mov		r11, qword[rsp-88]
-
-	mov		rax, 0
-	add		rsp, 128
-	mov		r12, qword[rsp-96]
-	mov		r15, qword[rsp-120]
-	mov		r13, qword[rsp-104]
-	mov		rbx, qword[rsp-24]
-	mov		r14, qword[rsp-112]
-	leave
-	ret
-
-	jmp		sha1_38_exit
-
-sha1_3_ifFalse:
-	jmp		sha1_4_ifMerge
-
-sha1_4_ifMerge:
-	mov		r15, 0
-
-	jmp		sha1_5_forCondition
-
-sha1_5_forCondition:
-	cmp		r15, r14
-	setl		al
-	movzx	r12, al
-
-	test	r12, r12
-	jz		sha1_12_forMerge
-	jmp		sha1_6_forBody
-
-sha1_6_forBody:
-	mov		rax, qword [rbp-656]
-	mov		rax, 0
-	mov		qword [rbp-656], rax
-
-	jmp		sha1_7_forCondition
-
-sha1_7_forCondition:
-	mov		rdx, qword [rbp-656]
-	mov		rax, 80
-	cmp		rdx, rax
-	setl		al
-	movzx	r12, al
-
-	test	r12, r12
-	jz		sha1_10_forMerge
-	jmp		sha1_8_forBody
-
-sha1_8_forBody:
-	mov		rcx, 8
-	mov		r13, r15
-	imul		r13, rcx
-
-	mov		rax, qword [global_var_chunks]
-	mov		r12, rax
-	add		r12, r13
-
-	mov		r12, [r12 + 0*8]
-
-	mov		rax, qword [rbp-656]
-	mov		rcx, 8
-	mov		r13, rax
-	imul		r13, rcx
-
-	add		r12, r13
-
-	mov		rdx, 0
-	mov		[r12 + 0 * 8], rdx
-
-	mov		r12, [r12 + 0*8]
-
-	jmp		sha1_9_forIncrease
-
-sha1_9_forIncrease:
-	mov		rax, qword [rbp-656]
-	mov		r12, rax
-
-	mov		rax, qword [rbp-656]
-	mov		rcx, 1
-	mov		rdx, qword [rbp-656]
-	mov		rdx, rax
-	add		rdx, rcx
-	mov		qword [rbp-656], rdx
-
-	jmp		sha1_7_forCondition
-
-sha1_10_forMerge:
-	jmp		sha1_11_forIncrease
-
-sha1_11_forIncrease:
-	mov		r12, r15
-
-	mov		rcx, 1
-	add		r15, rcx
-
-	jmp		sha1_5_forCondition
-
-sha1_12_forMerge:
-	mov		r15, 0
-
-	jmp		sha1_13_forCondition
-
-sha1_13_forCondition:
-	mov		rax, qword [rbp+24]
-	cmp		r15, rax
-	setl		al
-	movzx	r12, al
-
-	test	r12, r12
-	jz		sha1_16_forMerge
-	jmp		sha1_14_forBody
-
-sha1_14_forBody:
-	mov		rax, r15
-	mov		rcx, 64
-	cqo
-	idiv	rcx
-	mov		r12, rax
-
-	mov		rcx, 8
-	imul		r12, rcx
-
-	mov		rax, qword [global_var_chunks]
-	mov		r13, rax
-	add		r13, r12
-
-	mov		r13, [r13 + 0*8]
-
-	mov		rax, r15
-	mov		rcx, 64
-	cqo
-	idiv	rcx
-	mov		r12, rdx
-
-	mov		rax, r12
-	mov		rcx, 4
-	cqo
-	idiv	rcx
-	mov		r12, rax
-
-	mov		rcx, 8
-	imul		r12, rcx
-
-	mov		r9, r13
-	add		r9, r12
-
-	mov		rax, r15
-	mov		rcx, 64
-	cqo
-	idiv	rcx
-	mov		r12, rax
-
-	mov		rcx, 8
-	mov		r13, r12
-	imul		r13, rcx
-
-	mov		rax, qword [global_var_chunks]
-	mov		r12, rax
-	add		r12, r13
-
-	mov		r13, [r12 + 0*8]
-
-	mov		rax, r15
-	mov		rcx, 64
-	cqo
-	idiv	rcx
-	mov		r12, rdx
-
-	mov		rax, r12
-	mov		rcx, 4
-	cqo
-	idiv	rcx
-	mov		r12, rax
-
-	mov		rcx, 8
-	imul		r12, rcx
-
-	add		r13, r12
-
-	mov		rbx, [r13 + 0*8]
-
-	mov		rcx, 8
-	mov		r13, r15
-	imul		r13, rcx
-
-	mov		rax, qword [rbp+16]
-	mov		r12, rax
-	add		r12, r13
-
-	mov		r8, [r12 + 0*8]
-
-	mov		rax, r15
-	mov		rcx, 4
-	cqo
-	idiv	rcx
-	mov		r12, rdx
-
-	mov		rax, 3
-	mov		r13, rax
-	sub		r13, r12
-
-	mov		rcx, 8
-	mov		r12, r13
-	imul		r12, rcx
-
-	mov		rax, r8
-	mov		rcx, r12
-	sal		rax, cl
-	mov		r13, rax
-
-	mov		r12, rbx
-	or		r12, r13
-
-	mov		[r9 + 0 * 8], r12
-
-	mov		r12, [r9 + 0*8]
-
-	jmp		sha1_15_forIncrease
-
-sha1_15_forIncrease:
-	mov		r12, r15
-
-	mov		rcx, 1
-	add		r15, rcx
-
-	jmp		sha1_13_forCondition
-
-sha1_16_forMerge:
-	mov		rax, r15
-	mov		rcx, 64
-	cqo
-	idiv	rcx
-	mov		r12, rax
-
-	mov		rcx, 8
-	imul		r12, rcx
-
-	mov		rax, qword [global_var_chunks]
-	mov		r13, rax
-	add		r13, r12
-
-	mov		r12, [r13 + 0*8]
-
-	mov		rax, r15
-	mov		rcx, 64
-	cqo
-	idiv	rcx
-	mov		r13, rdx
-
-	mov		rax, r13
-	mov		rcx, 4
-	cqo
-	idiv	rcx
-	mov		r13, rax
-
-	mov		rcx, 8
-	imul		r13, rcx
-
-	add		r12, r13
-
-	mov		rax, r15
-	mov		rcx, 64
-	cqo
-	idiv	rcx
-	mov		r13, rax
-
-	mov		rcx, 8
-	imul		r13, rcx
-
-	mov		rax, qword [global_var_chunks]
-	mov		rbx, rax
-	add		rbx, r13
-
-	mov		r13, [rbx + 0*8]
-
-	mov		rax, r15
-	mov		rcx, 64
-	cqo
-	idiv	rcx
-	mov		rbx, rdx
-
-	mov		rax, rbx
-	mov		rcx, 4
-	cqo
-	idiv	rcx
-	mov		rbx, rax
-
-	mov		rcx, 8
-	imul		rbx, rcx
-
-	add		r13, rbx
-
-	mov		r13, [r13 + 0*8]
-
-	mov		rax, r15
-	mov		rcx, 4
-	cqo
-	idiv	rcx
-	mov		r15, rdx
-
-	mov		rax, 3
-	mov		rbx, rax
-	sub		rbx, r15
-
-	mov		rcx, 8
-	imul		rbx, rcx
-
-	mov		rax, 128
-	mov		rcx, rbx
-	sal		rax, cl
-	mov		r15, rax
-
-	or		r13, r15
-
-	mov		[r12 + 0 * 8], r13
-
-	mov		r12, [r12 + 0*8]
-
-	mov		rcx, 1
-	mov		r12, r14
-	sub		r12, rcx
-
-	mov		rcx, 8
-	imul		r12, rcx
-
-	mov		rax, qword [global_var_chunks]
-	mov		r13, rax
-	add		r13, r12
-
-	mov		r12, [r13 + 0*8]
-
-	mov		rax, 15
-	mov		rcx, 8
-	mov		r13, rax
-	imul		r13, rcx
-
-	add		r12, r13
-
-	mov		rax, qword [rbp+24]
-	mov		rcx, 3
-	sal		rax, cl
-	mov		r13, rax
-
-	mov		[r12 + 0 * 8], r13
-
-	mov		r12, [r12 + 0*8]
-
-	mov		rcx, 1
-	mov		r12, r14
-	sub		r12, rcx
-
-	mov		rcx, 8
-	imul		r12, rcx
-
-	mov		rax, qword [global_var_chunks]
-	mov		r13, rax
-	add		r13, r12
-
-	mov		r12, [r13 + 0*8]
-
-	mov		rax, 14
-	mov		rcx, 8
-	mov		r13, rax
-	imul		r13, rcx
-
-	add		r12, r13
-
-	mov		rax, qword [rbp+24]
-	mov		rcx, 29
-	sar		rax, cl
-	mov		r13, rax
-
-	mov		rcx, 7
-	and		r13, rcx
-
-	mov		[r12 + 0 * 8], r13
-
-	mov		r12, [r12 + 0*8]
-
-	mov		r9, 1732584193
-
-	mov		qword[rsp-80], r10
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-64], r8
-	mov		qword[rsp-88], r11
-	sub		rsp, 128
-	sub		rsp, 16
-	mov		rax, 61389
-	mov		qword[rsp+8], rax
-	mov		rax, 43913
-	mov		qword[rsp+0], rax
-	call	lohi
-	add		rsp, 16
-	add		rsp, 128
-	mov		r10, qword[rsp-80]
-	mov		r9, qword[rsp-72]
-	mov		r8, qword[rsp-64]
-	mov		r11, qword[rsp-88]
-	mov		r12, rax
-
-	mov		r11, r12
-
-	mov		qword[rsp-80], r10
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-64], r8
-	mov		qword[rsp-88], r11
-	sub		rsp, 128
-	sub		rsp, 16
-	mov		rax, 39098
-	mov		qword[rsp+8], rax
-	mov		rax, 56574
-	mov		qword[rsp+0], rax
-	call	lohi
-	add		rsp, 16
-	add		rsp, 128
-	mov		r10, qword[rsp-80]
-	mov		r9, qword[rsp-72]
-	mov		r8, qword[rsp-64]
-	mov		r11, qword[rsp-88]
-	mov		r12, rax
-
-	mov		qword [rbp-176], r12
-
-	mov		rax, qword [rbp-312]
-	mov		rax, 271733878
-	mov		qword [rbp-312], rax
-
-	mov		qword[rsp-80], r10
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-64], r8
-	mov		qword[rsp-88], r11
-	sub		rsp, 128
-	sub		rsp, 16
-	mov		rax, 50130
-	mov		qword[rsp+8], rax
-	mov		rax, 57840
-	mov		qword[rsp+0], rax
-	call	lohi
-	add		rsp, 16
-	add		rsp, 128
-	mov		r10, qword[rsp-80]
-	mov		r9, qword[rsp-72]
-	mov		r8, qword[rsp-64]
-	mov		r11, qword[rsp-88]
-	mov		r12, rax
-
-	mov		r13, r12
-
-	mov		r15, 0
-
-	jmp		sha1_17_forCondition
-
-sha1_17_forCondition:
-	cmp		r15, r14
-	setl		al
-	movzx	r12, al
-
-	test	r12, r12
-	jz		sha1_37_forMerge
-	jmp		sha1_18_forBody
-
-sha1_18_forBody:
-	mov		rax, qword [rbp-656]
-	mov		rax, 16
-	mov		qword [rbp-656], rax
-
-	jmp		sha1_19_forCondition
-
-sha1_19_forCondition:
-	mov		rdx, qword [rbp-656]
-	mov		rax, 80
-	cmp		rdx, rax
-	setl		al
-	movzx	r12, al
-
-	test	r12, r12
-	jz		sha1_22_forMerge
-	jmp		sha1_20_forBody
-
-sha1_20_forBody:
-	mov		rcx, 8
-	mov		r12, r15
-	imul		r12, rcx
-
-	mov		rax, qword [global_var_chunks]
-	mov		rbx, rax
-	add		rbx, r12
-
-	mov		rbx, [rbx + 0*8]
-
-	mov		rax, qword [rbp-656]
-	mov		rcx, 8
-	mov		r12, rax
-	imul		r12, rcx
-
-	mov		r10, rbx
-	add		r10, r12
-
-	mov		rcx, 8
-	mov		rbx, r15
-	imul		rbx, rcx
-
-	mov		rax, qword [global_var_chunks]
-	mov		r12, rax
-	add		r12, rbx
-
-	mov		r12, [r12 + 0*8]
-
-	mov		rax, qword [rbp-656]
-	mov		rcx, 3
-	mov		rbx, rax
-	sub		rbx, rcx
-
-	mov		rcx, 8
-	imul		rbx, rcx
-
-	add		r12, rbx
-
-	mov		r12, [r12 + 0*8]
-
-	mov		rcx, 8
-	mov		rbx, r15
-	imul		rbx, rcx
-
-	mov		rax, qword [global_var_chunks]
-	mov		r8, rax
-	add		r8, rbx
-
-	mov		r8, [r8 + 0*8]
-
-	mov		rax, qword [rbp-656]
-	mov		rcx, 8
-	mov		rbx, rax
-	sub		rbx, rcx
-
-	mov		rcx, 8
-	imul		rbx, rcx
-
-	add		r8, rbx
-
-	mov		rbx, [r8 + 0*8]
-
-	mov		r8, r12
-	xor		r8, rbx
-
-	mov		rcx, 8
-	mov		rbx, r15
-	imul		rbx, rcx
-
-	mov		rax, qword [global_var_chunks]
-	mov		r12, rax
-	add		r12, rbx
-
-	mov		rbx, [r12 + 0*8]
-
-	mov		rax, qword [rbp-656]
-	mov		rcx, 14
-	mov		r12, rax
-	sub		r12, rcx
-
-	mov		rcx, 8
-	imul		r12, rcx
-
-	add		rbx, r12
-
-	mov		r12, [rbx + 0*8]
-
-	mov		rbx, r8
-	xor		rbx, r12
-
-	mov		rcx, 8
-	mov		r8, r15
-	imul		r8, rcx
-
-	mov		rax, qword [global_var_chunks]
-	mov		r12, rax
-	add		r12, r8
-
-	mov		r8, [r12 + 0*8]
-
-	mov		rax, qword [rbp-656]
-	mov		rcx, 16
-	mov		r12, rax
-	sub		r12, rcx
-
-	mov		rcx, 8
-	imul		r12, rcx
-
-	add		r8, r12
-
-	mov		r12, [r8 + 0*8]
-
-	xor		rbx, r12
-
-	mov		qword[rsp-80], r10
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-64], r8
-	mov		qword[rsp-88], r11
-	sub		rsp, 128
-	sub		rsp, 16
-	mov		rax, 1
-	mov		qword[rsp+8], rax
-	mov		qword[rsp+0], rbx
-	call	rotate_left
-	add		rsp, 16
-	add		rsp, 128
-	mov		r10, qword[rsp-80]
-	mov		r9, qword[rsp-72]
-	mov		r8, qword[rsp-64]
-	mov		r11, qword[rsp-88]
-	mov		r12, rax
-
-	mov		[r10 + 0 * 8], r12
-
-	mov		r12, [r10 + 0*8]
-
-	jmp		sha1_21_forIncrease
-
-sha1_21_forIncrease:
-	mov		rax, qword [rbp-656]
-	mov		r12, rax
-
-	mov		rax, qword [rbp-656]
-	mov		rcx, 1
-	mov		rdx, qword [rbp-656]
-	mov		rdx, rax
-	add		rdx, rcx
-	mov		qword [rbp-656], rdx
-
-	jmp		sha1_19_forCondition
-
-sha1_22_forMerge:
-	mov		qword [rbp-184], r9
-
-	mov		r8, r11
-
-	mov		rax, qword [rbp-176]
-	mov		qword [rbp-1456], rax
-
-	mov		rax, qword [rbp-312]
-	mov		rbx, rax
-
-	mov		qword [rbp-1304], r13
-
-	mov		rax, qword [rbp-656]
-	mov		rax, 0
-	mov		qword [rbp-656], rax
-
-	jmp		sha1_23_forCondition
-
-sha1_23_forCondition:
-	mov		rdx, qword [rbp-656]
-	mov		rax, 80
-	cmp		rdx, rax
-	setl		al
-	movzx	r12, al
-
-	test	r12, r12
-	jz		sha1_35_forMerge
-	jmp		sha1_24_forBody
-
-sha1_24_forBody:
-	mov		rdx, qword [rbp-656]
-	mov		rax, 20
-	cmp		rdx, rax
-	setl		al
-	movzx	r12, al
-
-	test	r12, r12
-	jz		sha1_26_ifFalse
-	jmp		sha1_25_ifTrue
-
-sha1_25_ifTrue:
-	mov		rcx, qword [rbp-1456]
-	mov		r12, r8
-	and		r12, rcx
-
-	mov		r10, r8
-	not 	r10
-
-	and		r10, rbx
-
-	or		r12, r10
-
-	mov		r10, r12
-
-	mov		rax, qword [rbp-808]
-	mov		rax, 1518500249
-	mov		qword [rbp-808], rax
-
-	jmp		sha1_33_ifMerge
-
-sha1_26_ifFalse:
-	mov		rdx, qword [rbp-656]
-	mov		rax, 40
-	cmp		rdx, rax
-	setl		al
-	movzx	r12, al
-
-	test	r12, r12
-	jz		sha1_28_ifFalse
-	jmp		sha1_27_ifTrue
-
-sha1_27_ifTrue:
-	mov		rcx, qword [rbp-1456]
-	mov		r12, r8
-	xor		r12, rcx
-
-	xor		r12, rbx
-
-	mov		r10, r12
-
-	mov		rax, qword [rbp-808]
-	mov		rax, 1859775393
-	mov		qword [rbp-808], rax
-
-	jmp		sha1_32_ifMerge
-
-sha1_28_ifFalse:
-	mov		rdx, qword [rbp-656]
-	mov		rax, 60
-	cmp		rdx, rax
-	setl		al
-	movzx	r12, al
-
-	test	r12, r12
-	jz		sha1_30_ifFalse
-	jmp		sha1_29_ifTrue
-
-sha1_29_ifTrue:
-	mov		rcx, qword [rbp-1456]
-	mov		r12, r8
-	and		r12, rcx
-
-	mov		r10, r8
-	and		r10, rbx
-
-	or		r12, r10
-
-	mov		rax, qword [rbp-1456]
-	mov		r10, rax
-	and		r10, rbx
-
-	or		r12, r10
-
-	mov		r10, r12
-
-	mov		qword[rsp-80], r10
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-64], r8
-	mov		qword[rsp-88], r11
-	sub		rsp, 128
-	sub		rsp, 16
-	mov		rax, 36635
-	mov		qword[rsp+8], rax
-	mov		rax, 48348
-	mov		qword[rsp+0], rax
-	call	lohi
-	add		rsp, 16
-	add		rsp, 128
-	mov		r10, qword[rsp-80]
-	mov		r9, qword[rsp-72]
-	mov		r8, qword[rsp-64]
-	mov		r11, qword[rsp-88]
-	mov		r12, rax
-
-	mov		qword [rbp-808], r12
-
-	jmp		sha1_31_ifMerge
-
-sha1_30_ifFalse:
-	mov		rcx, qword [rbp-1456]
-	mov		r12, r8
-	xor		r12, rcx
-
-	xor		r12, rbx
-
-	mov		r10, r12
-
-	mov		qword[rsp-80], r10
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-64], r8
-	mov		qword[rsp-88], r11
-	sub		rsp, 128
-	sub		rsp, 16
-	mov		rax, 51810
-	mov		qword[rsp+8], rax
-	mov		rax, 49622
-	mov		qword[rsp+0], rax
-	call	lohi
-	add		rsp, 16
-	add		rsp, 128
-	mov		r10, qword[rsp-80]
-	mov		r9, qword[rsp-72]
-	mov		r8, qword[rsp-64]
-	mov		r11, qword[rsp-88]
-	mov		r12, rax
-
-	mov		qword [rbp-808], r12
-
-	jmp		sha1_31_ifMerge
-
-sha1_31_ifMerge:
-	jmp		sha1_32_ifMerge
-
-sha1_32_ifMerge:
-	jmp		sha1_33_ifMerge
-
-sha1_33_ifMerge:
-	mov		qword[rsp-80], r10
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-64], r8
-	mov		qword[rsp-88], r11
-	sub		rsp, 128
-	sub		rsp, 16
-	mov		rax, 5
-	mov		qword[rsp+8], rax
-	mov		rax, qword [rbp-184]
-	mov		qword[rsp+0], rax
-	call	rotate_left
-	add		rsp, 16
-	add		rsp, 128
-	mov		r10, qword[rsp-80]
-	mov		r9, qword[rsp-72]
-	mov		r8, qword[rsp-64]
-	mov		r11, qword[rsp-88]
-	mov		r12, rax
-
-	mov		qword[rsp-80], r10
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-64], r8
-	mov		qword[rsp-88], r11
-	sub		rsp, 128
-	sub		rsp, 16
-	mov		rax, qword [rbp-1304]
-	mov		qword[rsp+8], rax
-	mov		qword[rsp+0], r12
-	call	add
-	add		rsp, 16
-	add		rsp, 128
-	mov		r10, qword[rsp-80]
-	mov		r9, qword[rsp-72]
-	mov		r8, qword[rsp-64]
-	mov		r11, qword[rsp-88]
-	mov		r12, rax
-
-	mov		qword[rsp-80], r10
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-64], r8
-	mov		qword[rsp-88], r11
-	sub		rsp, 128
-	sub		rsp, 16
-	mov		rax, qword [rbp-808]
-	mov		qword[rsp+8], rax
-	mov		qword[rsp+0], r10
-	call	add
-	add		rsp, 16
-	add		rsp, 128
-	mov		r10, qword[rsp-80]
-	mov		r9, qword[rsp-72]
-	mov		r8, qword[rsp-64]
-	mov		r11, qword[rsp-88]
-	mov		r10, rax
-
-	mov		qword[rsp-80], r10
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-64], r8
-	mov		qword[rsp-88], r11
-	sub		rsp, 128
-	sub		rsp, 16
-	mov		qword[rsp+8], r10
-	mov		qword[rsp+0], r12
-	call	add
-	add		rsp, 16
-	add		rsp, 128
-	mov		r10, qword[rsp-80]
-	mov		r9, qword[rsp-72]
-	mov		r8, qword[rsp-64]
-	mov		r11, qword[rsp-88]
-	mov		qword [rbp-424], rax
-
-	mov		rcx, 8
-	mov		r12, r15
-	imul		r12, rcx
-
-	mov		rax, qword [global_var_chunks]
-	mov		r10, rax
-	add		r10, r12
-
-	mov		r12, [r10 + 0*8]
-
-	mov		rax, qword [rbp-656]
-	mov		rcx, 8
-	mov		r10, rax
-	imul		r10, rcx
-
-	add		r12, r10
-
-	mov		r12, [r12 + 0*8]
-
-	mov		qword[rsp-80], r10
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-64], r8
-	mov		qword[rsp-88], r11
-	sub		rsp, 128
-	sub		rsp, 16
-	mov		qword[rsp+8], r12
-	mov		rax, qword [rbp-424]
-	mov		qword[rsp+0], rax
-	call	add
-	add		rsp, 16
-	add		rsp, 128
-	mov		r10, qword[rsp-80]
-	mov		r9, qword[rsp-72]
-	mov		r8, qword[rsp-64]
-	mov		r11, qword[rsp-88]
-	mov		r12, rax
-
-	mov		r10, r12
-
-	mov		qword [rbp-1304], rbx
-
-	mov		rax, qword [rbp-1456]
-	mov		rbx, rax
-
-	mov		qword[rsp-80], r10
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-64], r8
-	mov		qword[rsp-88], r11
-	sub		rsp, 128
-	sub		rsp, 16
-	mov		rax, 30
-	mov		qword[rsp+8], rax
-	mov		qword[rsp+0], r8
-	call	rotate_left
-	add		rsp, 16
-	add		rsp, 128
-	mov		r10, qword[rsp-80]
-	mov		r9, qword[rsp-72]
-	mov		r8, qword[rsp-64]
-	mov		r11, qword[rsp-88]
-	mov		r12, rax
-
-	mov		qword [rbp-1456], r12
-
-	mov		rax, qword [rbp-184]
-	mov		r8, rax
-
-	mov		qword [rbp-184], r10
-
-	jmp		sha1_34_forIncrease
-
-sha1_34_forIncrease:
-	mov		rax, qword [rbp-656]
-	mov		r12, rax
-
-	mov		rax, qword [rbp-656]
-	mov		rcx, 1
-	mov		rdx, qword [rbp-656]
-	mov		rdx, rax
-	add		rdx, rcx
-	mov		qword [rbp-656], rdx
-
-	jmp		sha1_23_forCondition
-
-sha1_35_forMerge:
-	mov		qword[rsp-80], r10
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-64], r8
-	mov		qword[rsp-88], r11
-	sub		rsp, 128
-	sub		rsp, 16
-	mov		rax, qword [rbp-184]
-	mov		qword[rsp+8], rax
-	mov		qword[rsp+0], r9
-	call	add
-	add		rsp, 16
-	add		rsp, 128
-	mov		r10, qword[rsp-80]
-	mov		r9, qword[rsp-72]
-	mov		r8, qword[rsp-64]
-	mov		r11, qword[rsp-88]
-	mov		r12, rax
-
-	mov		r9, r12
-
-	mov		qword[rsp-80], r10
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-64], r8
-	mov		qword[rsp-88], r11
-	sub		rsp, 128
-	sub		rsp, 16
-	mov		qword[rsp+8], r8
-	mov		qword[rsp+0], r11
-	call	add
-	add		rsp, 16
-	add		rsp, 128
-	mov		r10, qword[rsp-80]
-	mov		r9, qword[rsp-72]
-	mov		r8, qword[rsp-64]
-	mov		r11, qword[rsp-88]
-	mov		r12, rax
-
-	mov		r11, r12
-
-	mov		qword[rsp-80], r10
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-64], r8
-	mov		qword[rsp-88], r11
-	sub		rsp, 128
-	sub		rsp, 16
-	mov		rax, qword [rbp-1456]
-	mov		qword[rsp+8], rax
-	mov		rax, qword [rbp-176]
-	mov		qword[rsp+0], rax
-	call	add
-	add		rsp, 16
-	add		rsp, 128
-	mov		r10, qword[rsp-80]
-	mov		r9, qword[rsp-72]
-	mov		r8, qword[rsp-64]
-	mov		r11, qword[rsp-88]
-	mov		r12, rax
-
-	mov		qword [rbp-176], r12
-
-	mov		qword[rsp-80], r10
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-64], r8
-	mov		qword[rsp-88], r11
-	sub		rsp, 128
-	sub		rsp, 16
-	mov		qword[rsp+8], rbx
-	mov		rax, qword [rbp-312]
-	mov		qword[rsp+0], rax
-	call	add
-	add		rsp, 16
-	add		rsp, 128
-	mov		r10, qword[rsp-80]
-	mov		r9, qword[rsp-72]
-	mov		r8, qword[rsp-64]
-	mov		r11, qword[rsp-88]
-	mov		r12, rax
-
-	mov		qword [rbp-312], r12
-
-	mov		qword[rsp-80], r10
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-64], r8
-	mov		qword[rsp-88], r11
-	sub		rsp, 128
-	sub		rsp, 16
-	mov		rax, qword [rbp-1304]
-	mov		qword[rsp+8], rax
-	mov		qword[rsp+0], r13
-	call	add
-	add		rsp, 16
-	add		rsp, 128
-	mov		r10, qword[rsp-80]
-	mov		r9, qword[rsp-72]
-	mov		r8, qword[rsp-64]
-	mov		r11, qword[rsp-88]
-	mov		r12, rax
-
-	mov		r13, r12
-
-	jmp		sha1_36_forIncrease
-
-sha1_36_forIncrease:
-	mov		r12, r15
-
-	mov		rcx, 1
-	add		r15, rcx
-
-	jmp		sha1_17_forCondition
-
-sha1_37_forMerge:
-	mov		rax, 0
-	mov		rcx, 8
-	mov		r12, rax
-	imul		r12, rcx
-
-	mov		rax, qword [global_var_outputBuffer]
-	mov		r14, rax
-	add		r14, r12
-
-	mov		[r14 + 0 * 8], r9
-
-	mov		r12, [r14 + 0*8]
-
-	mov		rax, 1
-	mov		rcx, 8
-	mov		r14, rax
-	imul		r14, rcx
-
-	mov		rax, qword [global_var_outputBuffer]
-	mov		r12, rax
-	add		r12, r14
-
-	mov		[r12 + 0 * 8], r11
-
-	mov		r12, [r12 + 0*8]
-
-	mov		rax, 2
-	mov		rcx, 8
-	mov		r14, rax
-	imul		r14, rcx
-
-	mov		rax, qword [global_var_outputBuffer]
-	mov		r12, rax
-	add		r12, r14
-
-	mov		rdx, qword [rbp-176]
-	mov		[r12 + 0 * 8], rdx
-
-	mov		r12, [r12 + 0*8]
-
-	mov		rax, 3
-	mov		rcx, 8
-	mov		r14, rax
-	imul		r14, rcx
-
-	mov		rax, qword [global_var_outputBuffer]
-	mov		r12, rax
-	add		r12, r14
-
-	mov		rdx, qword [rbp-312]
-	mov		[r12 + 0 * 8], rdx
-
-	mov		r12, [r12 + 0*8]
-
-	mov		rax, 4
-	mov		rcx, 8
-	mov		r12, rax
-	imul		r12, rcx
-
-	mov		rax, qword [global_var_outputBuffer]
-	mov		r14, rax
-	add		r14, r12
-
-	mov		[r14 + 0 * 8], r13
-
-	mov		r12, [r14 + 0*8]
-
-	mov		rax, qword [global_var_outputBuffer]
-	add		rsp, 128
-	mov		r12, qword[rsp-96]
-	mov		r15, qword[rsp-120]
-	mov		r13, qword[rsp-104]
-	mov		rbx, qword[rsp-24]
-	mov		r14, qword[rsp-112]
-	leave
-	ret
-
-	jmp		sha1_38_exit
-
-sha1_38_exit:
-	add		rsp, 128
-	mov		r12, qword[rsp-96]
-	mov		r15, qword[rsp-120]
-	mov		r13, qword[rsp-104]
-	mov		rbx, qword[rsp-24]
-	mov		r14, qword[rsp-112]
-	leave
-	ret
-
-
-computeSHA1:
-	push	rbp
-	mov		rbp, rsp
-	sub		rsp, 288
-	mov		qword[rsp-96], r12
-	mov		qword[rsp-120], r15
-	mov		qword[rsp-104], r13
-	mov		qword[rsp-112], r14
-	sub		rsp, 128
-computeSHA1_0_beginning:
-	jmp		computeSHA1_1_entry
-
-computeSHA1_1_entry:
-	mov		r13, 0
-
-	jmp		computeSHA1_2_forCondition
-
-computeSHA1_2_forCondition:
-	sub		rsp, 128
-	mov		rdi, qword [rbp+16]
-	call	FBH_string_length
-	add		rsp, 128
-	mov		r12, rax
-
-	cmp		r13, r12
-	setl		al
-	movzx	r14, al
-
-	test	r14, r14
-	jz		computeSHA1_5_forMerge
-	jmp		computeSHA1_3_forBody
-
-computeSHA1_3_forBody:
-	mov		rcx, 8
-	mov		r12, r13
-	imul		r12, rcx
-
-	mov		rax, qword [global_var_inputBuffer]
-	mov		r14, rax
-	add		r14, r12
-
-	sub		rsp, 128
-	mov		rdi, qword [rbp+16]
-	mov		rsi, r13
-	call	FBH_string_ord
-	add		rsp, 128
-	mov		r12, rax
-
-	mov		[r14 + 0 * 8], r12
-
-	mov		r12, [r14 + 0*8]
-
-	jmp		computeSHA1_4_forIncrease
-
-computeSHA1_4_forIncrease:
-	mov		r12, r13
-
-	mov		rcx, 1
-	add		r13, rcx
-
-	jmp		computeSHA1_2_forCondition
-
-computeSHA1_5_forMerge:
-	sub		rsp, 128
-	mov		rdi, qword [rbp+16]
-	call	FBH_string_length
-	add		rsp, 128
-	mov		r12, rax
-
-	sub		rsp, 128
-	sub		rsp, 16
-	mov		qword[rsp+8], r12
-	mov		rax, qword [global_var_inputBuffer]
-	mov		qword[rsp+0], rax
-	call	sha1
-	add		rsp, 16
-	add		rsp, 128
-	mov		r12, rax
-
-	mov		r14, r12
-
-	mov		r13, 0
-
-	jmp		computeSHA1_6_forCondition
-
-computeSHA1_6_forCondition:
-	sub		rsp, 128
-	mov		rdi, r14
-	call	FBH_array_size
-	add		rsp, 128
-	mov		r12, rax
-
-	cmp		r13, r12
-	setl		al
-	movzx	r15, al
-
-	test	r15, r15
-	jz		computeSHA1_9_forMerge
-	jmp		computeSHA1_7_forBody
-
-computeSHA1_7_forBody:
-	mov		rcx, 8
-	mov		r12, r13
-	imul		r12, rcx
-
-	mov		r15, r14
-	add		r15, r12
-
-	mov		r12, [r15 + 0*8]
-
-	sub		rsp, 128
-	sub		rsp, 16
-	mov		qword[rsp+0], r12
-	call	toStringHex
-	add		rsp, 16
-	add		rsp, 128
-	mov		r12, rax
-
-	sub		rsp, 128
-	mov		rdi, r12
-	call	FBH_print
-	add		rsp, 128
-
-	jmp		computeSHA1_8_forIncrease
-
-computeSHA1_8_forIncrease:
-	mov		r12, r13
-
-	mov		rcx, 1
-	add		r13, rcx
-
-	jmp		computeSHA1_6_forCondition
-
-computeSHA1_9_forMerge:
-	sub		rsp, 128
-	mov		rdi, ___message___335
-	call	FBH_println
-	add		rsp, 128
-
-	jmp		computeSHA1_10_exit
-
-computeSHA1_10_exit:
-	add		rsp, 128
-	mov		r12, qword[rsp-96]
-	mov		r15, qword[rsp-120]
-	mov		r13, qword[rsp-104]
-	mov		r14, qword[rsp-112]
-	leave
-	ret
-
-
-nextLetter:
-	push	rbp
-	mov		rbp, rsp
-	sub		rsp, 176
-	mov		qword[rsp-96], r12
-	sub		rsp, 128
-nextLetter_0_beginning:
-	jmp		nextLetter_1_entry
-
-nextLetter_1_entry:
-	mov		rdx, qword [rbp+16]
-	mov		rax, 122
-	cmp		rdx, rax
-	sete		al
-	movzx	r12, al
-
-	test	r12, r12
-	jz		nextLetter_3_ifFalse
-	jmp		nextLetter_2_ifTrue
-
-nextLetter_2_ifTrue:
-	mov		rax, -1
-	add		rsp, 128
-	mov		r12, qword[rsp-96]
-	leave
-	ret
-
-	jmp		nextLetter_11_exit
-
-nextLetter_3_ifFalse:
-	jmp		nextLetter_4_ifMerge
-
-nextLetter_4_ifMerge:
-	mov		rdx, qword [rbp+16]
-	mov		rax, 90
-	cmp		rdx, rax
-	sete		al
-	movzx	r12, al
-
-	test	r12, r12
-	jz		nextLetter_6_ifFalse
-	jmp		nextLetter_5_ifTrue
-
-nextLetter_5_ifTrue:
-	mov		rax, 97
-	add		rsp, 128
-	mov		r12, qword[rsp-96]
-	leave
-	ret
-
-	jmp		nextLetter_11_exit
-
-nextLetter_6_ifFalse:
-	jmp		nextLetter_7_ifMerge
-
-nextLetter_7_ifMerge:
-	mov		rdx, qword [rbp+16]
-	mov		rax, 57
-	cmp		rdx, rax
-	sete		al
-	movzx	r12, al
-
-	test	r12, r12
-	jz		nextLetter_9_ifFalse
-	jmp		nextLetter_8_ifTrue
-
-nextLetter_8_ifTrue:
-	mov		rax, 65
-	add		rsp, 128
-	mov		r12, qword[rsp-96]
-	leave
-	ret
-
-	jmp		nextLetter_11_exit
-
-nextLetter_9_ifFalse:
-	jmp		nextLetter_10_ifMerge
-
-nextLetter_10_ifMerge:
-	mov		rax, qword [rbp+16]
-	mov		rcx, 1
-	mov		r12, rax
-	add		r12, rcx
-
-	mov		rax, r12
-	add		rsp, 128
-	mov		r12, qword[rsp-96]
-	leave
-	ret
-
-	jmp		nextLetter_11_exit
-
-nextLetter_11_exit:
-	add		rsp, 128
-	mov		r12, qword[rsp-96]
-	leave
-	ret
-
-
-nextText:
-	push	rbp
-	mov		rbp, rsp
-	sub		rsp, 288
-	mov		qword[rsp-96], r12
-	mov		qword[rsp-120], r15
-	mov		qword[rsp-104], r13
-	mov		qword[rsp-112], r14
-	sub		rsp, 128
-nextText_0_beginning:
-	jmp		nextText_1_entry
-
-nextText_1_entry:
-	mov		rax, qword [rbp+24]
-	mov		rcx, 1
-	mov		r12, rax
-	sub		r12, rcx
-
-
-	jmp		nextText_2_forCondition
-
-nextText_2_forCondition:
-	mov		rax, 0
-	cmp		r12, rax
-	setge		al
-	movzx	r13, al
-
-	test	r13, r13
-	jz		nextText_8_forMerge
-	jmp		nextText_3_forBody
-
-nextText_3_forBody:
-	mov		rcx, 8
-	mov		r13, r12
-	imul		r13, rcx
-
-	mov		rax, qword [rbp+16]
-	mov		r15, rax
-	add		r15, r13
-
-	mov		rcx, 8
-	mov		r14, r12
-	imul		r14, rcx
-
-	mov		rax, qword [rbp+16]
-	mov		r13, rax
-	add		r13, r14
-
-	mov		r13, [r13 + 0*8]
-
-	sub		rsp, 128
-	sub		rsp, 16
-	mov		qword[rsp+0], r13
-	call	nextLetter
-	add		rsp, 16
-	add		rsp, 128
-	mov		r13, rax
-
-	mov		[r15 + 0 * 8], r13
-
-	mov		r13, [r15 + 0*8]
-
-	mov		rcx, 8
-	mov		r13, r12
-	imul		r13, rcx
-
-	mov		rax, qword [rbp+16]
-	mov		r14, rax
-	add		r14, r13
-
-	mov		r13, [r14 + 0*8]
-
-	mov		rax, -1
-	cmp		r13, rax
-	sete		al
-	movzx	r13, al
-
-	test	r13, r13
-	jz		nextText_5_ifFalse
-	jmp		nextText_4_ifTrue
-
-nextText_4_ifTrue:
-	mov		rcx, 8
-	mov		r14, r12
-	imul		r14, rcx
-
-	mov		rax, qword [rbp+16]
-	mov		r13, rax
-	add		r13, r14
-
-	mov		rdx, 48
-	mov		[r13 + 0 * 8], rdx
-
-	mov		r13, [r13 + 0*8]
-
-	jmp		nextText_6_ifMerge
-
-nextText_5_ifFalse:
-	mov		rax, 1
-	add		rsp, 128
-	mov		r12, qword[rsp-96]
-	mov		r15, qword[rsp-120]
-	mov		r13, qword[rsp-104]
-	mov		r14, qword[rsp-112]
-	leave
-	ret
-
-	jmp		nextText_9_exit
-
-nextText_6_ifMerge:
-	jmp		nextText_7_forIncrease
-
-nextText_7_forIncrease:
-	mov		r13, r12
-
-	mov		rcx, 1
-	sub		r12, rcx
-
-	jmp		nextText_2_forCondition
-
-nextText_8_forMerge:
-	mov		rax, 0
-	add		rsp, 128
-	mov		r12, qword[rsp-96]
-	mov		r15, qword[rsp-120]
-	mov		r13, qword[rsp-104]
-	mov		r14, qword[rsp-112]
-	leave
-	ret
-
-	jmp		nextText_9_exit
-
-nextText_9_exit:
-	add		rsp, 128
-	mov		r12, qword[rsp-96]
-	mov		r15, qword[rsp-120]
-	mov		r13, qword[rsp-104]
-	mov		r14, qword[rsp-112]
-	leave
-	ret
-
-
-array_equal:
-	push	rbp
-	mov		rbp, rsp
-	sub		rsp, 256
-	mov		qword[rsp-96], r12
-	mov		qword[rsp-120], r15
-	mov		qword[rsp-104], r13
-	mov		qword[rsp-112], r14
-	sub		rsp, 128
-array_equal_0_beginning:
-	jmp		array_equal_1_entry
-
-array_equal_1_entry:
-	sub		rsp, 128
-	mov		rdi, qword [rbp+16]
-	call	FBH_array_size
-	add		rsp, 128
-	mov		r12, rax
-
-	sub		rsp, 128
-	mov		rdi, qword [rbp+24]
-	call	FBH_array_size
-	add		rsp, 128
-	mov		r13, rax
-
-	cmp		r12, r13
-	setne		al
-	movzx	r12, al
-
-	test	r12, r12
-	jz		array_equal_3_ifFalse
-	jmp		array_equal_2_ifTrue
-
-array_equal_2_ifTrue:
-	mov		rax, 0
-	add		rsp, 128
-	mov		r12, qword[rsp-96]
-	mov		r15, qword[rsp-120]
-	mov		r13, qword[rsp-104]
-	mov		r14, qword[rsp-112]
-	leave
-	ret
-
-	jmp		array_equal_12_exit
-
-array_equal_3_ifFalse:
-	jmp		array_equal_4_ifMerge
-
-array_equal_4_ifMerge:
-	mov		r12, 0
-
-	jmp		array_equal_5_forCondition
-
-array_equal_5_forCondition:
-	sub		rsp, 128
-	mov		rdi, qword [rbp+16]
-	call	FBH_array_size
-	add		rsp, 128
-	mov		r13, rax
-
-	cmp		r12, r13
-	setl		al
-	movzx	r14, al
-
-	test	r14, r14
-	jz		array_equal_11_forMerge
-	jmp		array_equal_6_forBody
-
-array_equal_6_forBody:
-	mov		rcx, 8
-	mov		r13, r12
-	imul		r13, rcx
-
-	mov		rax, qword [rbp+16]
-	mov		r14, rax
-	add		r14, r13
-
-	mov		r13, [r14 + 0*8]
-
-	mov		rcx, 8
-	mov		r14, r12
-	imul		r14, rcx
-
-	mov		rax, qword [rbp+24]
-	mov		r15, rax
-	add		r15, r14
-
-	mov		r14, [r15 + 0*8]
-
-	cmp		r13, r14
-	setne		al
-	movzx	r13, al
-
-	test	r13, r13
-	jz		array_equal_8_ifFalse
-	jmp		array_equal_7_ifTrue
-
-array_equal_7_ifTrue:
-	mov		rax, 0
-	add		rsp, 128
-	mov		r12, qword[rsp-96]
-	mov		r15, qword[rsp-120]
-	mov		r13, qword[rsp-104]
-	mov		r14, qword[rsp-112]
-	leave
-	ret
-
-	jmp		array_equal_12_exit
-
-array_equal_8_ifFalse:
-	jmp		array_equal_9_ifMerge
-
-array_equal_9_ifMerge:
-	jmp		array_equal_10_forIncrease
-
-array_equal_10_forIncrease:
-	mov		r13, r12
-
-	mov		rcx, 1
-	add		r12, rcx
-
-	jmp		array_equal_5_forCondition
-
-array_equal_11_forMerge:
-	mov		rax, 1
-	add		rsp, 128
-	mov		r12, qword[rsp-96]
-	mov		r15, qword[rsp-120]
-	mov		r13, qword[rsp-104]
-	mov		r14, qword[rsp-112]
-	leave
-	ret
-
-	jmp		array_equal_12_exit
-
-array_equal_12_exit:
-	add		rsp, 128
-	mov		r12, qword[rsp-96]
-	mov		r15, qword[rsp-120]
-	mov		r13, qword[rsp-104]
-	mov		r14, qword[rsp-112]
-	leave
-	ret
-
-
-crackSHA1:
-	push	rbp
-	mov		rbp, rsp
-	sub		rsp, 544
-	mov		qword[rsp-96], r12
-	mov		qword[rsp-120], r15
-	mov		qword[rsp-104], r13
-	mov		qword[rsp-112], r14
-	mov		qword[rsp-24], rbx
-	sub		rsp, 128
-crackSHA1_0_beginning:
-	jmp		crackSHA1_1_entry
-
-crackSHA1_1_entry:
-	mov		rax, 5
-	mov		rcx, 8
-	mov		r12, rax
-	imul		r12, rcx
-
-	mov		rcx, 8
-	add		r12, rcx
-
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-64], r8
-	sub		rsp, 128
-	mov		rdi, r12
-	call	malloc
-	add		rsp, 128
-	mov		r9, qword[rsp-72]
-	mov		r8, qword[rsp-64]
-	mov		r13, rax
-
-	mov		rcx, 8
-	sub		r12, rcx
-
-	mov		rdx, 5
-	mov		[r13 + 0 * 8], rdx
-
-	mov		rcx, 8
-	add		r13, rcx
-
-	mov		r12, r13
-
-	mov		rbx, r12
-
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-64], r8
-	sub		rsp, 128
-	mov		rdi, qword [rbp+16]
-	call	FBH_string_length
-	add		rsp, 128
-	mov		r9, qword[rsp-72]
-	mov		r8, qword[rsp-64]
-	mov		r12, rax
-
-	mov		rax, 40
-	cmp		r12, rax
-	setne		al
-	movzx	r12, al
-
-	test	r12, r12
-	jz		crackSHA1_3_ifFalse
-	jmp		crackSHA1_2_ifTrue
-
-crackSHA1_2_ifTrue:
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-64], r8
-	sub		rsp, 128
-	mov		rdi, ___message___375
-	call	FBH_println
-	add		rsp, 128
-	mov		r9, qword[rsp-72]
-	mov		r8, qword[rsp-64]
-
-	jmp		crackSHA1_34_exit
-
-crackSHA1_3_ifFalse:
-	jmp		crackSHA1_4_ifMerge
-
-crackSHA1_4_ifMerge:
-	mov		r14, 0
-
-	jmp		crackSHA1_5_forCondition
-
-crackSHA1_5_forCondition:
-	mov		rax, 5
-	cmp		r14, rax
-	setl		al
-	movzx	r12, al
-
-	test	r12, r12
-	jz		crackSHA1_8_forMerge
-	jmp		crackSHA1_6_forBody
-
-crackSHA1_6_forBody:
-	mov		rcx, 8
-	mov		r13, r14
-	imul		r13, rcx
-
-	mov		r12, rbx
-	add		r12, r13
-
-	mov		rdx, 0
-	mov		[r12 + 0 * 8], rdx
-
-	mov		r12, [r12 + 0*8]
-
-	jmp		crackSHA1_7_forIncrease
-
-crackSHA1_7_forIncrease:
-	mov		r12, r14
-
-	mov		rcx, 1
-	add		r14, rcx
-
-	jmp		crackSHA1_5_forCondition
-
-crackSHA1_8_forMerge:
-	mov		r14, 0
-
-	jmp		crackSHA1_9_forCondition
-
-crackSHA1_9_forCondition:
-	mov		rax, 40
-	cmp		r14, rax
-	setl		al
-	movzx	r12, al
-
-	test	r12, r12
-	jz		crackSHA1_12_forMerge
-	jmp		crackSHA1_10_forBody
-
-crackSHA1_10_forBody:
-	mov		rax, r14
-	mov		rcx, 8
-	cqo
-	idiv	rcx
-	mov		r12, rax
-
-	mov		rcx, 8
-	imul		r12, rcx
-
-	mov		r8, rbx
-	add		r8, r12
-
-	mov		rax, r14
-	mov		rcx, 8
-	cqo
-	idiv	rcx
-	mov		r12, rax
-
-	mov		rcx, 8
-	mov		r13, r12
-	imul		r13, rcx
-
-	mov		r12, rbx
-	add		r12, r13
-
-	mov		r12, [r12 + 0*8]
-
-	mov		rcx, 3
-	mov		r13, r14
-	add		r13, rcx
-
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-64], r8
-	sub		rsp, 128
-	mov		rdi, qword [rbp+16]
-	mov		rsi, r14
-	mov		rdx, r13
-	call	FBH_string_substring
-	add		rsp, 128
-	mov		r9, qword[rsp-72]
-	mov		r8, qword[rsp-64]
-	mov		r13, rax
-
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-64], r8
-	sub		rsp, 128
-	sub		rsp, 16
-	mov		qword[rsp+0], r13
-	call	hex2int
-	add		rsp, 16
-	add		rsp, 128
-	mov		r9, qword[rsp-72]
-	mov		r8, qword[rsp-64]
-	mov		r15, rax
-
-	mov		rax, r14
-	mov		rcx, 4
-	cqo
-	idiv	rcx
-	mov		r13, rax
-
-	mov		rax, r13
-	mov		rcx, 2
-	cqo
-	idiv	rcx
-	mov		r9, rdx
-
-	mov		rax, 1
-	mov		r13, rax
-	sub		r13, r9
-
-	mov		rcx, 16
-	imul		r13, rcx
-
-	mov		rax, r15
-	mov		rcx, r13
-	sal		rax, cl
-	mov		r15, rax
-
-	or		r12, r15
-
-	mov		[r8 + 0 * 8], r12
-
-	mov		r12, [r8 + 0*8]
-
-	jmp		crackSHA1_11_forIncrease
-
-crackSHA1_11_forIncrease:
-	mov		rcx, 4
-	mov		r12, r14
-	add		r12, rcx
-
-	mov		r14, r12
-
-	jmp		crackSHA1_9_forCondition
-
-crackSHA1_12_forMerge:
-	mov		r12, 4
-
-	mov		r15, 1
-
-	jmp		crackSHA1_13_forCondition
-
-crackSHA1_13_forCondition:
-	cmp		r15, r12
-	setle		al
-	movzx	r13, al
-
-	test	r13, r13
-	jz		crackSHA1_33_forMerge
-	jmp		crackSHA1_14_forBody
-
-crackSHA1_14_forBody:
-	mov		r14, 0
-
-	jmp		crackSHA1_15_forCondition
-
-crackSHA1_15_forCondition:
-	cmp		r14, r15
-	setl		al
-	movzx	r13, al
-
-	test	r13, r13
-	jz		crackSHA1_18_forMerge
-	jmp		crackSHA1_16_forBody
-
-crackSHA1_16_forBody:
-	mov		rcx, 8
-	mov		r8, r14
-	imul		r8, rcx
-
-	mov		rax, qword [global_var_inputBuffer]
-	mov		r13, rax
-	add		r13, r8
-
-	mov		rdx, 48
-	mov		[r13 + 0 * 8], rdx
-
-	mov		r13, [r13 + 0*8]
-
-	jmp		crackSHA1_17_forIncrease
-
-crackSHA1_17_forIncrease:
-	mov		r13, r14
-
-	mov		rcx, 1
-	add		r14, rcx
-
-	jmp		crackSHA1_15_forCondition
-
-crackSHA1_18_forMerge:
-	jmp		crackSHA1_19_whileCondition
-
-crackSHA1_19_whileCondition:
-	mov		rax, 1
-	test	rax, rax
-	jz		crackSHA1_31_whileMerge
-	jmp		crackSHA1_20_whileBody
-
-crackSHA1_20_whileBody:
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-64], r8
-	sub		rsp, 128
-	sub		rsp, 16
-	mov		qword[rsp+8], r15
-	mov		rax, qword [global_var_inputBuffer]
-	mov		qword[rsp+0], rax
-	call	sha1
-	add		rsp, 16
-	add		rsp, 128
-	mov		r9, qword[rsp-72]
-	mov		r8, qword[rsp-64]
-	mov		r13, rax
-
-
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-64], r8
-	sub		rsp, 128
-	sub		rsp, 16
-	mov		qword[rsp+8], rbx
-	mov		qword[rsp+0], r13
-	call	array_equal
-	add		rsp, 16
-	add		rsp, 128
-	mov		r9, qword[rsp-72]
-	mov		r8, qword[rsp-64]
-	mov		r13, rax
-
-	test	r13, r13
-	jz		crackSHA1_26_ifFalse
-	jmp		crackSHA1_21_ifTrue
-
-crackSHA1_21_ifTrue:
-	mov		r14, 0
-
-	jmp		crackSHA1_22_forCondition
-
-crackSHA1_22_forCondition:
-	cmp		r14, r15
-	setl		al
-	movzx	r12, al
-
-	test	r12, r12
-	jz		crackSHA1_25_forMerge
-	jmp		crackSHA1_23_forBody
-
-crackSHA1_23_forBody:
-	mov		rcx, 8
-	mov		r12, r14
-	imul		r12, rcx
-
-	mov		rax, qword [global_var_inputBuffer]
-	mov		r13, rax
-	add		r13, r12
-
-	mov		r12, [r13 + 0*8]
-
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-64], r8
-	sub		rsp, 128
-	sub		rsp, 16
-	mov		qword[rsp+0], r12
-	call	int2chr
-	add		rsp, 16
-	add		rsp, 128
-	mov		r9, qword[rsp-72]
-	mov		r8, qword[rsp-64]
-	mov		r12, rax
-
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-64], r8
-	sub		rsp, 128
-	mov		rdi, r12
-	call	FBH_print
-	add		rsp, 128
-	mov		r9, qword[rsp-72]
-	mov		r8, qword[rsp-64]
-
-	jmp		crackSHA1_24_forIncrease
-
-crackSHA1_24_forIncrease:
-	mov		r12, r14
-
-	mov		rcx, 1
-	add		r14, rcx
-
-	jmp		crackSHA1_22_forCondition
-
-crackSHA1_25_forMerge:
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-64], r8
-	sub		rsp, 128
-	mov		rdi, ___message___414
-	call	FBH_println
-	add		rsp, 128
-	mov		r9, qword[rsp-72]
-	mov		r8, qword[rsp-64]
-
-	jmp		crackSHA1_34_exit
-
-crackSHA1_26_ifFalse:
-	jmp		crackSHA1_27_ifMerge
-
-crackSHA1_27_ifMerge:
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-64], r8
-	sub		rsp, 128
-	sub		rsp, 16
-	mov		qword[rsp+8], r15
-	mov		rax, qword [global_var_inputBuffer]
-	mov		qword[rsp+0], rax
-	call	nextText
-	add		rsp, 16
-	add		rsp, 128
-	mov		r9, qword[rsp-72]
-	mov		r8, qword[rsp-64]
-	mov		r13, rax
-
-	mov		rcx, 1
-	xor		r13, rcx
-
-	test	r13, r13
-	jz		crackSHA1_29_ifFalse
-	jmp		crackSHA1_28_ifTrue
-
-crackSHA1_28_ifTrue:
-	jmp		crackSHA1_31_whileMerge
-
-crackSHA1_29_ifFalse:
-	jmp		crackSHA1_30_ifMerge
-
-crackSHA1_30_ifMerge:
-	jmp		crackSHA1_19_whileCondition
-
-crackSHA1_31_whileMerge:
-	jmp		crackSHA1_32_forIncrease
-
-crackSHA1_32_forIncrease:
-	mov		r13, r15
-
-	mov		rcx, 1
-	add		r15, rcx
-
-	jmp		crackSHA1_13_forCondition
-
-crackSHA1_33_forMerge:
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-64], r8
-	sub		rsp, 128
-	mov		rdi, ___message___418
-	call	FBH_println
-	add		rsp, 128
-	mov		r9, qword[rsp-72]
-	mov		r8, qword[rsp-64]
-
-	jmp		crackSHA1_34_exit
-
-crackSHA1_34_exit:
-	add		rsp, 128
-	mov		r12, qword[rsp-96]
-	mov		r15, qword[rsp-120]
-	mov		r13, qword[rsp-104]
-	mov		r14, qword[rsp-112]
-	mov		rbx, qword[rsp-24]
-	leave
-	ret
-
-
 main:
 	push	rbp
 	mov		rbp, rsp
-	sub		rsp, 320
+	sub		rsp, 624
 	mov		qword[rsp-96], r12
+	mov		qword[rsp-24], rbx
 	mov		qword[rsp-120], r15
 	mov		qword[rsp-104], r13
 	mov		qword[rsp-112], r14
-	mov		qword[rsp-24], rbx
 	sub		rsp, 128
 main_0_beginning:
-	mov		rax, ___message___419
-	mov		qword [global_var_asciiTable], rax
+	mov		rax, 99
+	mov		qword [global_var_h], rax
 
 	mov		rax, 100
-	mov		qword [global_var_MAXCHUNK], rax
+	mov		qword [global_var_i], rax
 
-	mov		rax, qword [global_var_MAXCHUNK]
-	mov		rcx, 1
-	mov		r12, rax
-	sub		r12, rcx
+	mov		rax, 101
+	mov		qword [global_var_j], rax
 
-	mov		rcx, 64
-	imul		r12, rcx
+	mov		rax, 102
+	mov		qword [global_var_k], rax
 
-	mov		rcx, 16
-	sub		r12, rcx
+	mov		rax, 0
+	mov		qword [global_var_total], rax
 
-	mov		qword [global_var_MAXLENGTH], r12
+	jmp		main_1_entry
 
-	mov		rax, qword [global_var_MAXCHUNK]
-	mov		rcx, 8
-	mov		r14, rax
-	imul		r14, rcx
-
-	mov		rcx, 8
-	add		r14, rcx
-
-	sub		rsp, 128
-	mov		rdi, r14
-	call	malloc
-	add		rsp, 128
-	mov		r15, rax
-
-	mov		rcx, 8
-	sub		r14, rcx
-
-	mov		rdx, qword [global_var_MAXCHUNK]
-	mov		[r15 + 0 * 8], rdx
-
-	mov		rcx, 8
-	add		r15, rcx
-
-	mov		r13, r15
-
-	mov		r12, r15
-	add		r12, r14
-
-	jmp		main_1_whileCondition
-
-main_1_whileCondition:
-	cmp		r15, r12
-	setne		al
-	movzx	r14, al
-
-	test	r14, r14
-	jz		main_3_whileMerge
-	jmp		main_2_whileBody
-
-main_2_whileBody:
-	mov		rax, 80
-	mov		rcx, 8
-	mov		rbx, rax
-	imul		rbx, rcx
-
-	mov		rcx, 8
-	add		rbx, rcx
-
-	sub		rsp, 128
-	mov		rdi, rbx
-	call	malloc
-	add		rsp, 128
-	mov		r14, rax
-
-	mov		rcx, 8
-	sub		rbx, rcx
-
-	mov		rdx, 80
-	mov		[r14 + 0 * 8], rdx
-
-	mov		rcx, 8
-	add		r14, rcx
-
-	mov		[r15 + 0 * 8], r14
-
-	mov		rcx, 8
-	add		r15, rcx
-
-	jmp		main_1_whileCondition
-
-main_3_whileMerge:
-	mov		qword [global_var_chunks], r13
-
-	mov		rax, qword [global_var_MAXLENGTH]
-	mov		rcx, 8
-	mov		r12, rax
-	imul		r12, rcx
-
-	mov		rcx, 8
-	add		r12, rcx
-
-	sub		rsp, 128
-	mov		rdi, r12
-	call	malloc
-	add		rsp, 128
-	mov		r13, rax
-
-	mov		rcx, 8
-	sub		r12, rcx
-
-	mov		rdx, qword [global_var_MAXLENGTH]
-	mov		[r13 + 0 * 8], rdx
-
-	mov		rcx, 8
-	add		r13, rcx
-
-	mov		r12, r13
-
-	mov		qword [global_var_inputBuffer], r12
-
-	mov		rax, 5
-	mov		rcx, 8
-	mov		r12, rax
-	imul		r12, rcx
-
-	mov		rcx, 8
-	add		r12, rcx
-
-	sub		rsp, 128
-	mov		rdi, r12
-	call	malloc
-	add		rsp, 128
-	mov		r13, rax
-
-	mov		rcx, 8
-	sub		r12, rcx
-
-	mov		rdx, 5
-	mov		[r13 + 0 * 8], rdx
-
-	mov		rcx, 8
-	add		r13, rcx
-
-	mov		r12, r13
-
-	mov		qword [global_var_outputBuffer], r12
-
-	jmp		main_4_entry
-
-main_4_entry:
-	jmp		main_5_whileCondition
-
-main_5_whileCondition:
-	mov		rax, 1
-	test	rax, rax
-	jz		main_16_whileMerge
-	jmp		main_6_whileBody
-
-main_6_whileBody:
+main_1_entry:
+	mov		qword[rsp-64], r8
+	mov		qword[rsp-72], r9
 	sub		rsp, 128
 	call	FBH_getInt
 	add		rsp, 128
+	mov		r8, qword[rsp-64]
+	mov		r9, qword[rsp-72]
 	mov		r12, rax
 
-	mov		r13, r12
+	mov		qword [global_var_N], r12
 
-	mov		rax, 0
-	cmp		r13, rax
-	sete		al
+	mov		r14, 1
+
+	jmp		main_2_forCondition
+
+main_2_forCondition:
+	mov		rax, qword [global_var_N]
+	cmp		r14, rax
+	setle		al
 	movzx	r12, al
 
 	test	r12, r12
-	jz		main_8_ifFalse
-	jmp		main_7_ifTrue
+	jz		main_148_forMerge
+	jmp		main_3_forBody
 
-main_7_ifTrue:
-	jmp		main_16_whileMerge
+main_3_forBody:
+	mov		r13, 1
 
-main_8_ifFalse:
-	jmp		main_9_ifMerge
+	jmp		main_4_forCondition
 
-main_9_ifMerge:
-	mov		rax, 1
+main_4_forCondition:
+	mov		rax, qword [global_var_N]
 	cmp		r13, rax
-	sete		al
+	setle		al
 	movzx	r12, al
 
 	test	r12, r12
-	jz		main_11_ifFalse
-	jmp		main_10_ifTrue
+	jz		main_146_forMerge
+	jmp		main_5_forBody
 
-main_10_ifTrue:
-	sub		rsp, 128
-	call	FBH_getString
-	add		rsp, 128
-	mov		r12, rax
+main_5_forBody:
+	mov		r9, 1
 
+	jmp		main_6_forCondition
 
-	sub		rsp, 128
-	sub		rsp, 16
-	mov		qword[rsp+0], r12
-	call	computeSHA1
-	add		rsp, 16
-	add		rsp, 128
-
-	jmp		main_15_ifMerge
-
-main_11_ifFalse:
-	mov		rax, 2
-	cmp		r13, rax
-	sete		al
+main_6_forCondition:
+	mov		rax, qword [global_var_N]
+	cmp		r9, rax
+	setle		al
 	movzx	r12, al
 
 	test	r12, r12
-	jz		main_13_ifFalse
-	jmp		main_12_ifTrue
+	jz		main_144_forMerge
+	jmp		main_7_forBody
 
-main_12_ifTrue:
-	sub		rsp, 128
-	call	FBH_getString
-	add		rsp, 128
+main_7_forBody:
+	mov		rbx, 1
+
+	jmp		main_8_forCondition
+
+main_8_forCondition:
+	mov		rax, qword [global_var_N]
+	cmp		rbx, rax
+	setle		al
+	movzx	r12, al
+
+	test	r12, r12
+	jz		main_142_forMerge
+	jmp		main_9_forBody
+
+main_9_forBody:
+	mov		r15, 1
+
+	jmp		main_10_forCondition
+
+main_10_forCondition:
+	mov		rax, qword [global_var_N]
+	cmp		r15, rax
+	setle		al
+	movzx	r12, al
+
+	test	r12, r12
+	jz		main_140_forMerge
+	jmp		main_11_forBody
+
+main_11_forBody:
+	mov		r8, 1
+
+	jmp		main_12_forCondition
+
+main_12_forCondition:
+	mov		rax, qword [global_var_N]
+	cmp		r8, rax
+	setle		al
+	movzx	r12, al
+
+	test	r12, r12
+	jz		main_138_forMerge
+	jmp		main_13_forBody
+
+main_13_forBody:
+	cmp		r14, r13
+	setne		al
+	movzx	r12, al
+
+	test	r12, r12
+	jz		main_15_leftFalse
+	jmp		main_14_leftTrue
+
+main_14_leftTrue:
+	cmp		r14, r9
+	setne		al
+	movzx	r12, al
+
+	jmp		main_16_mergeBranch
+
+main_15_leftFalse:
+	mov		r12, 0
+
+	jmp		main_16_mergeBranch
+
+main_16_mergeBranch:
+	test	r12, r12
+	jz		main_18_leftFalse
+	jmp		main_17_leftTrue
+
+main_17_leftTrue:
+	cmp		r14, rbx
+	setne		al
+	movzx	r12, al
+
+	jmp		main_19_mergeBranch
+
+main_18_leftFalse:
+	mov		r12, 0
+
+	jmp		main_19_mergeBranch
+
+main_19_mergeBranch:
+	test	r12, r12
+	jz		main_21_leftFalse
+	jmp		main_20_leftTrue
+
+main_20_leftTrue:
+	cmp		r14, r15
+	setne		al
+	movzx	r12, al
+
+	jmp		main_22_mergeBranch
+
+main_21_leftFalse:
+	mov		r12, 0
+
+	jmp		main_22_mergeBranch
+
+main_22_mergeBranch:
+	test	r12, r12
+	jz		main_24_leftFalse
+	jmp		main_23_leftTrue
+
+main_23_leftTrue:
+	cmp		r14, r8
+	setne		al
+	movzx	r12, al
+
+	jmp		main_25_mergeBranch
+
+main_24_leftFalse:
+	mov		r12, 0
+
+	jmp		main_25_mergeBranch
+
+main_25_mergeBranch:
+	test	r12, r12
+	jz		main_27_leftFalse
+	jmp		main_26_leftTrue
+
+main_26_leftTrue:
+	mov		rax, qword [global_var_h]
+	cmp		r14, rax
+	setne		al
+	movzx	r12, al
+
+	jmp		main_28_mergeBranch
+
+main_27_leftFalse:
+	mov		r12, 0
+
+	jmp		main_28_mergeBranch
+
+main_28_mergeBranch:
+	test	r12, r12
+	jz		main_30_leftFalse
+	jmp		main_29_leftTrue
+
+main_29_leftTrue:
+	mov		rax, qword [global_var_i]
+	cmp		r14, rax
+	setne		al
+	movzx	r12, al
+
+	jmp		main_31_mergeBranch
+
+main_30_leftFalse:
+	mov		r12, 0
+
+	jmp		main_31_mergeBranch
+
+main_31_mergeBranch:
+	test	r12, r12
+	jz		main_33_leftFalse
+	jmp		main_32_leftTrue
+
+main_32_leftTrue:
+	mov		rax, qword [global_var_j]
+	cmp		r14, rax
+	setne		al
+	movzx	r12, al
+
+	jmp		main_34_mergeBranch
+
+main_33_leftFalse:
+	mov		r12, 0
+
+	jmp		main_34_mergeBranch
+
+main_34_mergeBranch:
+	test	r12, r12
+	jz		main_36_leftFalse
+	jmp		main_35_leftTrue
+
+main_35_leftTrue:
+	mov		rax, qword [global_var_k]
+	cmp		r14, rax
+	setne		al
+	movzx	r12, al
+
+	jmp		main_37_mergeBranch
+
+main_36_leftFalse:
+	mov		r12, 0
+
+	jmp		main_37_mergeBranch
+
+main_37_mergeBranch:
+	test	r12, r12
+	jz		main_39_leftFalse
+	jmp		main_38_leftTrue
+
+main_38_leftTrue:
+	cmp		r13, r9
+	setne		al
+	movzx	r12, al
+
+	jmp		main_40_mergeBranch
+
+main_39_leftFalse:
+	mov		r12, 0
+
+	jmp		main_40_mergeBranch
+
+main_40_mergeBranch:
+	test	r12, r12
+	jz		main_42_leftFalse
+	jmp		main_41_leftTrue
+
+main_41_leftTrue:
+	cmp		r13, rbx
+	setne		al
+	movzx	r12, al
+
+	jmp		main_43_mergeBranch
+
+main_42_leftFalse:
+	mov		r12, 0
+
+	jmp		main_43_mergeBranch
+
+main_43_mergeBranch:
+	test	r12, r12
+	jz		main_45_leftFalse
+	jmp		main_44_leftTrue
+
+main_44_leftTrue:
+	cmp		r13, r15
+	setne		al
+	movzx	r12, al
+
+	jmp		main_46_mergeBranch
+
+main_45_leftFalse:
+	mov		r12, 0
+
+	jmp		main_46_mergeBranch
+
+main_46_mergeBranch:
+	test	r12, r12
+	jz		main_48_leftFalse
+	jmp		main_47_leftTrue
+
+main_47_leftTrue:
+	cmp		r13, r8
+	setne		al
+	movzx	r12, al
+
+	jmp		main_49_mergeBranch
+
+main_48_leftFalse:
+	mov		r12, 0
+
+	jmp		main_49_mergeBranch
+
+main_49_mergeBranch:
+	test	r12, r12
+	jz		main_51_leftFalse
+	jmp		main_50_leftTrue
+
+main_50_leftTrue:
+	mov		rax, qword [global_var_h]
+	cmp		r13, rax
+	setne		al
+	movzx	r12, al
+
+	jmp		main_52_mergeBranch
+
+main_51_leftFalse:
+	mov		r12, 0
+
+	jmp		main_52_mergeBranch
+
+main_52_mergeBranch:
+	test	r12, r12
+	jz		main_54_leftFalse
+	jmp		main_53_leftTrue
+
+main_53_leftTrue:
+	mov		rax, qword [global_var_i]
+	cmp		r13, rax
+	setne		al
+	movzx	r12, al
+
+	jmp		main_55_mergeBranch
+
+main_54_leftFalse:
+	mov		r12, 0
+
+	jmp		main_55_mergeBranch
+
+main_55_mergeBranch:
+	test	r12, r12
+	jz		main_57_leftFalse
+	jmp		main_56_leftTrue
+
+main_56_leftTrue:
+	mov		rax, qword [global_var_j]
+	cmp		r13, rax
+	setne		al
+	movzx	r12, al
+
+	jmp		main_58_mergeBranch
+
+main_57_leftFalse:
+	mov		r12, 0
+
+	jmp		main_58_mergeBranch
+
+main_58_mergeBranch:
+	test	r12, r12
+	jz		main_60_leftFalse
+	jmp		main_59_leftTrue
+
+main_59_leftTrue:
+	mov		rax, qword [global_var_k]
+	cmp		r13, rax
+	setne		al
+	movzx	r12, al
+
+	jmp		main_61_mergeBranch
+
+main_60_leftFalse:
+	mov		r12, 0
+
+	jmp		main_61_mergeBranch
+
+main_61_mergeBranch:
+	test	r12, r12
+	jz		main_63_leftFalse
+	jmp		main_62_leftTrue
+
+main_62_leftTrue:
+	cmp		r9, rbx
+	setne		al
+	movzx	r12, al
+
+	jmp		main_64_mergeBranch
+
+main_63_leftFalse:
+	mov		r12, 0
+
+	jmp		main_64_mergeBranch
+
+main_64_mergeBranch:
+	test	r12, r12
+	jz		main_66_leftFalse
+	jmp		main_65_leftTrue
+
+main_65_leftTrue:
+	cmp		r9, r15
+	setne		al
+	movzx	r12, al
+
+	jmp		main_67_mergeBranch
+
+main_66_leftFalse:
+	mov		r12, 0
+
+	jmp		main_67_mergeBranch
+
+main_67_mergeBranch:
+	test	r12, r12
+	jz		main_69_leftFalse
+	jmp		main_68_leftTrue
+
+main_68_leftTrue:
+	cmp		r9, r8
+	setne		al
+	movzx	r12, al
+
+	jmp		main_70_mergeBranch
+
+main_69_leftFalse:
+	mov		r12, 0
+
+	jmp		main_70_mergeBranch
+
+main_70_mergeBranch:
+	test	r12, r12
+	jz		main_72_leftFalse
+	jmp		main_71_leftTrue
+
+main_71_leftTrue:
+	mov		rax, qword [global_var_h]
+	cmp		r9, rax
+	setne		al
+	movzx	r12, al
+
+	jmp		main_73_mergeBranch
+
+main_72_leftFalse:
+	mov		r12, 0
+
+	jmp		main_73_mergeBranch
+
+main_73_mergeBranch:
+	test	r12, r12
+	jz		main_75_leftFalse
+	jmp		main_74_leftTrue
+
+main_74_leftTrue:
+	mov		rax, qword [global_var_i]
+	cmp		r9, rax
+	setne		al
+	movzx	r12, al
+
+	jmp		main_76_mergeBranch
+
+main_75_leftFalse:
+	mov		r12, 0
+
+	jmp		main_76_mergeBranch
+
+main_76_mergeBranch:
+	test	r12, r12
+	jz		main_78_leftFalse
+	jmp		main_77_leftTrue
+
+main_77_leftTrue:
+	mov		rax, qword [global_var_j]
+	cmp		r9, rax
+	setne		al
+	movzx	r12, al
+
+	jmp		main_79_mergeBranch
+
+main_78_leftFalse:
+	mov		r12, 0
+
+	jmp		main_79_mergeBranch
+
+main_79_mergeBranch:
+	test	r12, r12
+	jz		main_81_leftFalse
+	jmp		main_80_leftTrue
+
+main_80_leftTrue:
+	mov		rax, qword [global_var_k]
+	cmp		r9, rax
+	setne		al
+	movzx	r12, al
+
+	jmp		main_82_mergeBranch
+
+main_81_leftFalse:
+	mov		r12, 0
+
+	jmp		main_82_mergeBranch
+
+main_82_mergeBranch:
+	test	r12, r12
+	jz		main_84_leftFalse
+	jmp		main_83_leftTrue
+
+main_83_leftTrue:
+	cmp		rbx, r15
+	setne		al
+	movzx	r12, al
+
+	jmp		main_85_mergeBranch
+
+main_84_leftFalse:
+	mov		r12, 0
+
+	jmp		main_85_mergeBranch
+
+main_85_mergeBranch:
+	test	r12, r12
+	jz		main_87_leftFalse
+	jmp		main_86_leftTrue
+
+main_86_leftTrue:
+	cmp		rbx, r8
+	setne		al
+	movzx	r12, al
+
+	jmp		main_88_mergeBranch
+
+main_87_leftFalse:
+	mov		r12, 0
+
+	jmp		main_88_mergeBranch
+
+main_88_mergeBranch:
+	test	r12, r12
+	jz		main_90_leftFalse
+	jmp		main_89_leftTrue
+
+main_89_leftTrue:
+	mov		rax, qword [global_var_h]
+	cmp		rbx, rax
+	setne		al
+	movzx	r12, al
+
+	jmp		main_91_mergeBranch
+
+main_90_leftFalse:
+	mov		r12, 0
+
+	jmp		main_91_mergeBranch
+
+main_91_mergeBranch:
+	test	r12, r12
+	jz		main_93_leftFalse
+	jmp		main_92_leftTrue
+
+main_92_leftTrue:
+	mov		rax, qword [global_var_i]
+	cmp		rbx, rax
+	setne		al
+	movzx	r12, al
+
+	jmp		main_94_mergeBranch
+
+main_93_leftFalse:
+	mov		r12, 0
+
+	jmp		main_94_mergeBranch
+
+main_94_mergeBranch:
+	test	r12, r12
+	jz		main_96_leftFalse
+	jmp		main_95_leftTrue
+
+main_95_leftTrue:
+	mov		rax, qword [global_var_j]
+	cmp		rbx, rax
+	setne		al
+	movzx	r12, al
+
+	jmp		main_97_mergeBranch
+
+main_96_leftFalse:
+	mov		r12, 0
+
+	jmp		main_97_mergeBranch
+
+main_97_mergeBranch:
+	test	r12, r12
+	jz		main_99_leftFalse
+	jmp		main_98_leftTrue
+
+main_98_leftTrue:
+	mov		rax, qword [global_var_k]
+	cmp		rbx, rax
+	setne		al
+	movzx	r12, al
+
+	jmp		main_100_mergeBranch
+
+main_99_leftFalse:
+	mov		r12, 0
+
+	jmp		main_100_mergeBranch
+
+main_100_mergeBranch:
+	test	r12, r12
+	jz		main_102_leftFalse
+	jmp		main_101_leftTrue
+
+main_101_leftTrue:
+	cmp		r15, r8
+	setne		al
+	movzx	r12, al
+
+	jmp		main_103_mergeBranch
+
+main_102_leftFalse:
+	mov		r12, 0
+
+	jmp		main_103_mergeBranch
+
+main_103_mergeBranch:
+	test	r12, r12
+	jz		main_105_leftFalse
+	jmp		main_104_leftTrue
+
+main_104_leftTrue:
+	mov		rax, qword [global_var_h]
+	cmp		r15, rax
+	setne		al
+	movzx	r12, al
+
+	jmp		main_106_mergeBranch
+
+main_105_leftFalse:
+	mov		r12, 0
+
+	jmp		main_106_mergeBranch
+
+main_106_mergeBranch:
+	test	r12, r12
+	jz		main_108_leftFalse
+	jmp		main_107_leftTrue
+
+main_107_leftTrue:
+	mov		rax, qword [global_var_i]
+	cmp		r15, rax
+	setne		al
+	movzx	r12, al
+
+	jmp		main_109_mergeBranch
+
+main_108_leftFalse:
+	mov		r12, 0
+
+	jmp		main_109_mergeBranch
+
+main_109_mergeBranch:
+	test	r12, r12
+	jz		main_111_leftFalse
+	jmp		main_110_leftTrue
+
+main_110_leftTrue:
+	mov		rax, qword [global_var_j]
+	cmp		r15, rax
+	setne		al
+	movzx	r12, al
+
+	jmp		main_112_mergeBranch
+
+main_111_leftFalse:
+	mov		r12, 0
+
+	jmp		main_112_mergeBranch
+
+main_112_mergeBranch:
+	test	r12, r12
+	jz		main_114_leftFalse
+	jmp		main_113_leftTrue
+
+main_113_leftTrue:
+	mov		rax, qword [global_var_k]
+	cmp		r15, rax
+	setne		al
+	movzx	r12, al
+
+	jmp		main_115_mergeBranch
+
+main_114_leftFalse:
+	mov		r12, 0
+
+	jmp		main_115_mergeBranch
+
+main_115_mergeBranch:
+	test	r12, r12
+	jz		main_117_leftFalse
+	jmp		main_116_leftTrue
+
+main_116_leftTrue:
+	mov		rax, qword [global_var_h]
+	cmp		r8, rax
+	setne		al
+	movzx	r12, al
+
+	jmp		main_118_mergeBranch
+
+main_117_leftFalse:
+	mov		r12, 0
+
+	jmp		main_118_mergeBranch
+
+main_118_mergeBranch:
+	test	r12, r12
+	jz		main_120_leftFalse
+	jmp		main_119_leftTrue
+
+main_119_leftTrue:
+	mov		rax, qword [global_var_i]
+	cmp		r8, rax
+	setne		al
+	movzx	r12, al
+
+	jmp		main_121_mergeBranch
+
+main_120_leftFalse:
+	mov		r12, 0
+
+	jmp		main_121_mergeBranch
+
+main_121_mergeBranch:
+	test	r12, r12
+	jz		main_123_leftFalse
+	jmp		main_122_leftTrue
+
+main_122_leftTrue:
+	mov		rax, qword [global_var_j]
+	cmp		r8, rax
+	setne		al
+	movzx	r12, al
+
+	jmp		main_124_mergeBranch
+
+main_123_leftFalse:
+	mov		r12, 0
+
+	jmp		main_124_mergeBranch
+
+main_124_mergeBranch:
+	test	r12, r12
+	jz		main_126_leftFalse
+	jmp		main_125_leftTrue
+
+main_125_leftTrue:
+	mov		rax, qword [global_var_k]
+	cmp		r8, rax
+	setne		al
+	movzx	r12, al
+
+	jmp		main_127_mergeBranch
+
+main_126_leftFalse:
+	mov		r12, 0
+
+	jmp		main_127_mergeBranch
+
+main_127_mergeBranch:
+	test	r12, r12
+	jz		main_129_leftFalse
+	jmp		main_128_leftTrue
+
+main_128_leftTrue:
+	mov		rdx, qword [global_var_i]
+	mov		rax, qword [global_var_j]
+	cmp		rdx, rax
+	setne		al
+	movzx	r12, al
+
+	jmp		main_130_mergeBranch
+
+main_129_leftFalse:
+	mov		r12, 0
+
+	jmp		main_130_mergeBranch
+
+main_130_mergeBranch:
+	test	r12, r12
+	jz		main_132_leftFalse
+	jmp		main_131_leftTrue
+
+main_131_leftTrue:
+	mov		rdx, qword [global_var_h]
+	mov		rax, qword [global_var_k]
+	cmp		rdx, rax
+	setne		al
+	movzx	r12, al
+
+	jmp		main_133_mergeBranch
+
+main_132_leftFalse:
+	mov		r12, 0
+
+	jmp		main_133_mergeBranch
+
+main_133_mergeBranch:
+	test	r12, r12
+	jz		main_135_ifFalse
+	jmp		main_134_ifTrue
+
+main_134_ifTrue:
+	mov		rax, qword [global_var_total]
 	mov		r12, rax
 
+	mov		rax, qword [global_var_total]
+	mov		rcx, 1
+	lea		rdx, [rax + rcx]
+	mov		qword [global_var_total], rdx
 
+	jmp		main_136_ifMerge
+
+main_135_ifFalse:
+	jmp		main_136_ifMerge
+
+main_136_ifMerge:
+	jmp		main_137_forIncrease
+
+main_137_forIncrease:
+	mov		r12, r8
+
+	mov		rcx, 1
+	lea		r8, [r8 + rcx]
+
+	jmp		main_12_forCondition
+
+main_138_forMerge:
+	jmp		main_139_forIncrease
+
+main_139_forIncrease:
+	mov		r12, r15
+
+	mov		rcx, 1
+	lea		r15, [r15 + rcx]
+
+	jmp		main_10_forCondition
+
+main_140_forMerge:
+	jmp		main_141_forIncrease
+
+main_141_forIncrease:
+	mov		r12, rbx
+
+	mov		rcx, 1
+	lea		rbx, [rbx + rcx]
+
+	jmp		main_8_forCondition
+
+main_142_forMerge:
+	jmp		main_143_forIncrease
+
+main_143_forIncrease:
+	mov		r12, r9
+
+	mov		rcx, 1
+	lea		r9, [r9 + rcx]
+
+	jmp		main_6_forCondition
+
+main_144_forMerge:
+	jmp		main_145_forIncrease
+
+main_145_forIncrease:
+	mov		r12, r13
+
+	mov		rcx, 1
+	lea		r13, [r13 + rcx]
+
+	jmp		main_4_forCondition
+
+main_146_forMerge:
+	jmp		main_147_forIncrease
+
+main_147_forIncrease:
+	mov		r12, r14
+
+	mov		rcx, 1
+	lea		r14, [r14 + rcx]
+
+	jmp		main_2_forCondition
+
+main_148_forMerge:
+	mov		qword[rsp-64], r8
+	mov		qword[rsp-72], r9
 	sub		rsp, 128
-	sub		rsp, 16
-	mov		qword[rsp+0], r12
-	call	crackSHA1
-	add		rsp, 16
+	mov		rdi, qword [global_var_total]
+	call	FBH_toString
 	add		rsp, 128
+	mov		r8, qword[rsp-64]
+	mov		r9, qword[rsp-72]
+	mov		r12, rax
 
-	jmp		main_14_ifMerge
+	mov		qword[rsp-64], r8
+	mov		qword[rsp-72], r9
+	sub		rsp, 128
+	mov		rdi, r12
+	call	FBH_println
+	add		rsp, 128
+	mov		r8, qword[rsp-64]
+	mov		r9, qword[rsp-72]
 
-main_13_ifFalse:
-	jmp		main_14_ifMerge
-
-main_14_ifMerge:
-	jmp		main_15_ifMerge
-
-main_15_ifMerge:
-	jmp		main_5_whileCondition
-
-main_16_whileMerge:
 	mov		rax, 0
 	add		rsp, 128
 	mov		r12, qword[rsp-96]
+	mov		rbx, qword[rsp-24]
 	mov		r15, qword[rsp-120]
 	mov		r13, qword[rsp-104]
 	mov		r14, qword[rsp-112]
-	mov		rbx, qword[rsp-24]
 	leave
 	ret
 
-	jmp		main_17_exit
+	jmp		main_149_exit
 
-main_17_exit:
+main_149_exit:
 	add		rsp, 128
 	mov		r12, qword[rsp-96]
+	mov		rbx, qword[rsp-24]
 	mov		r15, qword[rsp-120]
 	mov		r13, qword[rsp-104]
 	mov		r14, qword[rsp-112]
-	mov		rbx, qword[rsp-24]
 	leave
 	ret
 
@@ -3441,30 +1166,6 @@ FBH_string_le:
      ret
 
 SECTION .data
-      dq                   10
-___message___418:
-      db      "Not Found!", 0
-      dq                    0
-___message___86:
-      db                "", 0
-      dq                   13
-___message___375:
-      db   "Invalid input", 0
-      dq                    0
-___message___335:
-      db                "", 0
-      dq                   18
-___message___143:
-      db "nChunk > MAXCHUNK!", 0
-      dq                   97
-___message___419:
-      db " !", 34, "#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[", 92, "]^_`abcdefghijklmnopqrstuvwxyz{|}~", 0
-      dq                    0
-___message___85:
-      db                "", 0
-      dq                    0
-___message___414:
-      db                "", 0
 __println_IntFormat:
       db         "%ld", 10, 0
 __print_IntFormat:
@@ -3481,17 +1182,17 @@ __parseIntFormat:
       db             "%ld", 0
 
 SECTION .bss
-global_var_asciiTable:
+global_var_N:
     resq                    1
-global_var_MAXCHUNK:
+global_var_h:
     resq                    1
-global_var_MAXLENGTH:
+global_var_i:
     resq                    1
-global_var_chunks:
+global_var_j:
     resq                    1
-global_var_inputBuffer:
+global_var_k:
     resq                    1
-global_var_outputBuffer:
+global_var_total:
     resq                    1
 @getIntBuf:
     resq                    1

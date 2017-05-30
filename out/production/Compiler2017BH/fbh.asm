@@ -1,1005 +1,1159 @@
 	default rel
 
-	global func
 	global main
 
 extern printf, malloc, strcpy, scanf, strlen, sscanf, sprintf, memcpy, strcmp, puts
 
 	SECTION .text
 
-func:
-	push	rbp
-	mov		rbp, rsp
-	sub		rsp, 176
-	mov		qword[rsp-96], r12
-	sub		rsp, 128
-func_0_beginning:
-	jmp		func_1_entry
-
-func_1_entry:
-	mov		rax, qword [rbp+16]
-	mov		rcx, qword [rbp+24]
-	mov		r12, rax
-	add		r12, rcx
-
-	mov		rcx, qword [rbp+32]
-	add		r12, rcx
-
-	mov		rcx, 1073741823
-	and		r12, rcx
-
-	mov		rax, r12
-	add		rsp, 128
-	mov		r12, qword[rsp-96]
-	leave
-	ret
-
-	jmp		func_2_exit
-
-func_2_exit:
-	add		rsp, 128
-	mov		r12, qword[rsp-96]
-	leave
-	ret
-
-
 main:
 	push	rbp
 	mov		rbp, rsp
-	sub		rsp, 1360
-	mov		qword[rsp-120], r15
-	mov		qword[rsp-24], rbx
-	mov		qword[rsp-96], r12
-	mov		qword[rsp-112], r14
-	mov		qword[rsp-104], r13
-	sub		rsp, 128
+	sub		rsp, 624
 main_0_beginning:
+	mov		rax, 99
+	mov		qword [global_var_h], rax
+
+	mov		rax, 100
+	mov		qword [global_var_i], rax
+
+	mov		rax, 101
+	mov		qword [global_var_j], rax
+
+	mov		rax, 102
+	mov		qword [global_var_k], rax
+
+	mov		rax, 0
+	mov		qword [global_var_total], rax
+
 	jmp		main_1_entry
 
 main_1_entry:
-	mov		qword[rsp-88], r11
-	mov		qword[rsp-64], r8
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-80], r10
-	sub		rsp, 128
 	call	FBH_getInt
-	add		rsp, 128
-	mov		r11, qword[rsp-88]
-	mov		r8, qword[rsp-64]
-	mov		r9, qword[rsp-72]
-	mov		r10, qword[rsp-80]
-	mov		r12, rax
+	mov		qword [rbp-72], rax
 
-	mov		r8, r12
+	mov		rax, qword [rbp-72]
+	mov		qword [global_var_N], rax
 
-	mov		rcx, 8
-	mov		r12, r8
-	imul		r12, rcx
+	mov		rax, 1
+	mov		qword [rbp-16], rax
 
-	mov		rcx, 8
-	add		r12, rcx
+	jmp		main_2_forCondition
 
-	mov		qword[rsp-88], r11
-	mov		qword[rsp-64], r8
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-80], r10
-	sub		rsp, 128
-	mov		rdi, r12
-	call	malloc
-	add		rsp, 128
-	mov		r11, qword[rsp-88]
-	mov		r8, qword[rsp-64]
-	mov		r9, qword[rsp-72]
-	mov		r10, qword[rsp-80]
-	mov		r15, rax
+main_2_forCondition:
+	mov		rdx, qword [rbp-16]
+	mov		rax, qword [global_var_N]
+	cmp		rdx, rax
+	setle		al
+	movzx	eax, al
+	mov		qword [rbp-136], rax
 
-	mov		rcx, 8
-	sub		r12, rcx
+	mov		rax, qword [rbp-136]
+	test	rax, rax
+	jz		main_148_forMerge
+	jmp		main_3_forBody
 
-	mov		[r15 + 0 * 8], r8
+main_3_forBody:
+	mov		rax, 1
+	mov		qword [rbp-160], rax
 
-	mov		rcx, 8
-	add		r15, rcx
+	jmp		main_4_forCondition
 
-	mov		r13, r15
+main_4_forCondition:
+	mov		rdx, qword [rbp-160]
+	mov		rax, qword [global_var_N]
+	cmp		rdx, rax
+	setle		al
+	movzx	eax, al
+	mov		qword [rbp-480], rax
 
-	mov		r14, r15
-	add		r14, r12
+	mov		rax, qword [rbp-480]
+	test	rax, rax
+	jz		main_146_forMerge
+	jmp		main_5_forBody
 
-	jmp		main_2_whileCondition
+main_5_forBody:
+	mov		rax, 1
+	mov		qword [rbp-184], rax
 
-main_2_whileCondition:
-	cmp		r15, r14
+	jmp		main_6_forCondition
+
+main_6_forCondition:
+	mov		rdx, qword [rbp-184]
+	mov		rax, qword [global_var_N]
+	cmp		rdx, rax
+	setle		al
+	movzx	eax, al
+	mov		qword [rbp-8], rax
+
+	mov		rax, qword [rbp-8]
+	test	rax, rax
+	jz		main_144_forMerge
+	jmp		main_7_forBody
+
+main_7_forBody:
+	mov		rax, 1
+	mov		qword [rbp-224], rax
+
+	jmp		main_8_forCondition
+
+main_8_forCondition:
+	mov		rdx, qword [rbp-224]
+	mov		rax, qword [global_var_N]
+	cmp		rdx, rax
+	setle		al
+	movzx	eax, al
+	mov		qword [rbp-296], rax
+
+	mov		rax, qword [rbp-296]
+	test	rax, rax
+	jz		main_142_forMerge
+	jmp		main_9_forBody
+
+main_9_forBody:
+	mov		rax, 1
+	mov		qword [rbp-56], rax
+
+	jmp		main_10_forCondition
+
+main_10_forCondition:
+	mov		rdx, qword [rbp-56]
+	mov		rax, qword [global_var_N]
+	cmp		rdx, rax
+	setle		al
+	movzx	eax, al
+	mov		qword [rbp-144], rax
+
+	mov		rax, qword [rbp-144]
+	test	rax, rax
+	jz		main_140_forMerge
+	jmp		main_11_forBody
+
+main_11_forBody:
+	mov		rax, 1
+	mov		qword [rbp-176], rax
+
+	jmp		main_12_forCondition
+
+main_12_forCondition:
+	mov		rdx, qword [rbp-176]
+	mov		rax, qword [global_var_N]
+	cmp		rdx, rax
+	setle		al
+	movzx	eax, al
+	mov		qword [rbp-376], rax
+
+	mov		rax, qword [rbp-376]
+	test	rax, rax
+	jz		main_138_forMerge
+	jmp		main_13_forBody
+
+main_13_forBody:
+	mov		rdx, qword [rbp-16]
+	mov		rax, qword [rbp-160]
+	cmp		rdx, rax
 	setne		al
-	movzx	r12, al
-
-	test	r12, r12
-	jz		main_4_whileMerge
-	jmp		main_3_whileBody
-
-main_3_whileBody:
-	mov		rcx, 8
-	mov		rbx, r8
-	imul		rbx, rcx
-
-	mov		rcx, 8
-	add		rbx, rcx
-
-	mov		qword[rsp-88], r11
-	mov		qword[rsp-64], r8
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-80], r10
-	sub		rsp, 128
-	mov		rdi, rbx
-	call	malloc
-	add		rsp, 128
-	mov		r11, qword[rsp-88]
-	mov		r8, qword[rsp-64]
-	mov		r9, qword[rsp-72]
-	mov		r10, qword[rsp-80]
-	mov		r12, rax
-
-	mov		rcx, 8
-	sub		rbx, rcx
-
-	mov		[r12 + 0 * 8], r8
-
-	mov		rcx, 8
-	add		r12, rcx
-
-	mov		[r15 + 0 * 8], r12
-
-	mov		rcx, 8
-	add		r15, rcx
-
-	jmp		main_2_whileCondition
-
-main_4_whileMerge:
-	mov		qword [rbp-1144], r13
-
-	mov		rcx, 8
-	mov		r12, r8
-	imul		r12, rcx
-
-	mov		rcx, 8
-	add		r12, rcx
-
-	mov		qword[rsp-88], r11
-	mov		qword[rsp-64], r8
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-80], r10
-	sub		rsp, 128
-	mov		rdi, r12
-	call	malloc
-	add		rsp, 128
-	mov		r11, qword[rsp-88]
-	mov		r8, qword[rsp-64]
-	mov		r9, qword[rsp-72]
-	mov		r10, qword[rsp-80]
-	mov		r13, rax
-
-	mov		rcx, 8
-	sub		r12, rcx
-
-	mov		[r13 + 0 * 8], r8
-
-	mov		rcx, 8
-	add		r13, rcx
-
-	mov		rbx, r13
-
-	mov		r15, r13
-	add		r15, r12
-
-	jmp		main_5_whileCondition
-
-main_5_whileCondition:
-	cmp		r13, r15
-	setne		al
-	movzx	r12, al
-
-	test	r12, r12
-	jz		main_7_whileMerge
-	jmp		main_6_whileBody
-
-main_6_whileBody:
-	mov		rcx, 8
-	mov		r14, r8
-	imul		r14, rcx
-
-	mov		rcx, 8
-	add		r14, rcx
-
-	mov		qword[rsp-88], r11
-	mov		qword[rsp-64], r8
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-80], r10
-	sub		rsp, 128
-	mov		rdi, r14
-	call	malloc
-	add		rsp, 128
-	mov		r11, qword[rsp-88]
-	mov		r8, qword[rsp-64]
-	mov		r9, qword[rsp-72]
-	mov		r10, qword[rsp-80]
-	mov		r12, rax
-
-	mov		rcx, 8
-	sub		r14, rcx
-
-	mov		[r12 + 0 * 8], r8
-
-	mov		rcx, 8
-	add		r12, rcx
-
-	mov		[r13 + 0 * 8], r12
-
-	mov		rcx, 8
-	add		r13, rcx
-
-	jmp		main_5_whileCondition
-
-main_7_whileMerge:
-	mov		r13, rbx
-
-	mov		rcx, 8
-	mov		r12, r8
-	imul		r12, rcx
-
-	mov		rcx, 8
-	add		r12, rcx
-
-	mov		qword[rsp-88], r11
-	mov		qword[rsp-64], r8
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-80], r10
-	sub		rsp, 128
-	mov		rdi, r12
-	call	malloc
-	add		rsp, 128
-	mov		r11, qword[rsp-88]
-	mov		r8, qword[rsp-64]
-	mov		r9, qword[rsp-72]
-	mov		r10, qword[rsp-80]
-	mov		r14, rax
-
-	mov		rcx, 8
-	sub		r12, rcx
-
-	mov		[r14 + 0 * 8], r8
-
-	mov		rcx, 8
-	add		r14, rcx
-
-	mov		rbx, r14
-
-	mov		r9, r14
-	add		r9, r12
-
-	jmp		main_8_whileCondition
-
-main_8_whileCondition:
-	cmp		r14, r9
-	setne		al
-	movzx	r12, al
-
-	test	r12, r12
-	jz		main_10_whileMerge
-	jmp		main_9_whileBody
-
-main_9_whileBody:
-	mov		rcx, 8
-	mov		r15, r8
-	imul		r15, rcx
-
-	mov		rcx, 8
-	add		r15, rcx
-
-	mov		qword[rsp-88], r11
-	mov		qword[rsp-64], r8
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-80], r10
-	sub		rsp, 128
-	mov		rdi, r15
-	call	malloc
-	add		rsp, 128
-	mov		r11, qword[rsp-88]
-	mov		r8, qword[rsp-64]
-	mov		r9, qword[rsp-72]
-	mov		r10, qword[rsp-80]
-	mov		r12, rax
-
-	mov		rcx, 8
-	sub		r15, rcx
-
-	mov		[r12 + 0 * 8], r8
-
-	mov		rcx, 8
-	add		r12, rcx
-
-	mov		[r14 + 0 * 8], r12
-
-	mov		rcx, 8
-	add		r14, rcx
-
-	jmp		main_8_whileCondition
-
-main_10_whileMerge:
-	mov		r11, rbx
-
-	mov		r9, 0
-
-	jmp		main_11_forCondition
-
-main_11_forCondition:
-	cmp		r9, r8
-	setl		al
-	movzx	r12, al
-
-	test	r12, r12
-	jz		main_18_forMerge
-	jmp		main_12_forBody
-
-main_12_forBody:
-	mov		r14, 0
-
-	jmp		main_13_forCondition
-
-main_13_forCondition:
-	cmp		r14, r8
-	setl		al
-	movzx	r12, al
-
-	test	r12, r12
-	jz		main_16_forMerge
-	jmp		main_14_forBody
-
-main_14_forBody:
-	mov		rcx, 8
-	mov		r15, r9
-	imul		r15, rcx
-
-	mov		rax, qword [rbp-1144]
-	mov		r12, rax
-	add		r12, r15
-
-	mov		r15, [r12 + 0*8]
-
-	mov		rcx, 8
-	mov		r12, r14
-	imul		r12, rcx
-
-	add		r15, r12
-
-	mov		r12, r9
-	add		r12, r14
-
-	mov		[r15 + 0 * 8], r12
-
-	mov		r12, [r15 + 0*8]
-
-	jmp		main_15_forIncrease
-
-main_15_forIncrease:
-	mov		rcx, 1
-	add		r14, rcx
-
-	jmp		main_13_forCondition
-
-main_16_forMerge:
-	jmp		main_17_forIncrease
-
-main_17_forIncrease:
-	mov		rcx, 1
-	add		r9, rcx
-
-	jmp		main_11_forCondition
-
-main_18_forMerge:
-	mov		r9, 0
-
-	jmp		main_19_forCondition
-
-main_19_forCondition:
-	cmp		r9, r8
-	setl		al
-	movzx	r12, al
-
-	test	r12, r12
-	jz		main_33_forMerge
-	jmp		main_20_forBody
-
-main_20_forBody:
-	mov		r14, 0
-
-	jmp		main_21_forCondition
-
-main_21_forCondition:
-	cmp		r14, r8
-	setl		al
-	movzx	r12, al
-
-	test	r12, r12
-	jz		main_31_forMerge
-	jmp		main_22_forBody
-
-main_22_forBody:
-	mov		r10, 0
-
-	jmp		main_23_forCondition
-
-main_23_forCondition:
-	cmp		r10, r8
-	setl		al
-	movzx	r12, al
-
-	test	r12, r12
-	jz		main_29_forMerge
-	jmp		main_24_forBody
-
-main_24_forBody:
-	cmp		r14, r9
-	setge		al
-	movzx	r12, al
-
-	test	r12, r12
-	jz		main_26_ifFalse
-	jmp		main_25_ifTrue
-
-main_25_ifTrue:
-	mov		rcx, 8
-	mov		r15, r9
-	imul		r15, rcx
-
-	mov		r12, r13
-	add		r12, r15
-
-	mov		r15, [r12 + 0*8]
-
-	mov		rcx, 8
-	mov		r12, r14
-	imul		r12, rcx
-
-	add		r15, r12
-
-	mov		rcx, 8
-	mov		rbx, r9
-	imul		rbx, rcx
-
-	mov		r12, r13
-	add		r12, rbx
-
-	mov		r12, [r12 + 0*8]
-
-	mov		rcx, 8
-	mov		rbx, r14
-	imul		rbx, rcx
-
-	add		r12, rbx
-
-	mov		rdx, qword [rbp-552]
-	mov		rdx, [r12 + 0*8]
-	mov		qword [rbp-552], rdx
-
-	mov		rcx, 8
-	mov		rbx, r9
-	imul		rbx, rcx
-
-	mov		rax, qword [rbp-1144]
-	mov		r12, rax
-	add		r12, rbx
-
-	mov		r12, [r12 + 0*8]
-
-	mov		rcx, 8
-	mov		rbx, r10
-	imul		rbx, rcx
-
-	add		r12, rbx
-
-	mov		rdx, qword [rbp-368]
-	mov		rdx, [r12 + 0*8]
-	mov		qword [rbp-368], rdx
-
-	mov		rcx, 8
-	mov		rbx, r10
-	imul		rbx, rcx
-
-	mov		rax, qword [rbp-1144]
-	mov		r12, rax
-	add		r12, rbx
-
-	mov		r12, [r12 + 0*8]
-
-	mov		rcx, 8
-	mov		rbx, r14
-	imul		rbx, rcx
-
-	add		r12, rbx
-
-	mov		r12, [r12 + 0*8]
-
-	mov		qword[rsp-88], r11
-	mov		qword[rsp-64], r8
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-80], r10
-	sub		rsp, 128
-	sub		rsp, 32
-	mov		qword[rsp+16], r12
-	mov		rax, qword [rbp-368]
-	mov		qword[rsp+8], rax
-	mov		rax, qword [rbp-552]
-	mov		qword[rsp+0], rax
-	call	func
-	add		rsp, 32
-	add		rsp, 128
-	mov		r11, qword[rsp-88]
-	mov		r8, qword[rsp-64]
-	mov		r9, qword[rsp-72]
-	mov		r10, qword[rsp-80]
-	mov		r12, rax
-
-	mov		[r15 + 0 * 8], r12
-
-	mov		r12, [r15 + 0*8]
-
-	mov		rcx, 8
-	mov		r12, r9
-	imul		r12, rcx
-
-	mov		r15, r11
-	add		r15, r12
-
-	mov		r12, [r15 + 0*8]
-
-	mov		rcx, 8
-	mov		r15, r14
-	imul		r15, rcx
-
-	mov		rdx, qword [rbp-1216]
-	mov		rdx, r12
-	add		rdx, r15
-	mov		qword [rbp-1216], rdx
-
-	mov		rcx, 8
-	mov		r12, r9
-	imul		r12, rcx
-
-	mov		r15, r13
-	add		r15, r12
-
-	mov		r12, [r15 + 0*8]
-
-	mov		rcx, 8
-	mov		r15, r14
-	imul		r15, rcx
-
-	add		r12, r15
-
-	mov		r12, [r12 + 0*8]
-
-	mov		rcx, 8
-	mov		rbx, r9
-	imul		rbx, rcx
-
-	mov		rax, qword [rbp-1144]
-	mov		r15, rax
-	add		r15, rbx
-
-	mov		r15, [r15 + 0*8]
-
-	mov		rcx, 8
-	mov		rbx, r10
-	imul		rbx, rcx
-
-	add		r15, rbx
-
-	mov		rbx, [r15 + 0*8]
-
-	mov		rcx, 8
-	mov		rdx, qword [rbp-744]
-	mov		rdx, r10
-	imul		rdx, rcx
-	mov		qword [rbp-744], rdx
-
-	mov		rax, qword [rbp-1144]
-	mov		rcx, qword [rbp-744]
-	mov		r15, rax
-	add		r15, rcx
-
-	mov		r15, [r15 + 0*8]
-
-	mov		rcx, 8
-	mov		rdx, qword [rbp-792]
-	mov		rdx, r14
-	imul		rdx, rcx
-	mov		qword [rbp-792], rdx
-
-	mov		rcx, qword [rbp-792]
-	add		r15, rcx
-
-	mov		r15, [r15 + 0*8]
-
-	mov		qword[rsp-88], r11
-	mov		qword[rsp-64], r8
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-80], r10
-	sub		rsp, 128
-	sub		rsp, 32
-	mov		qword[rsp+16], r15
-	mov		qword[rsp+8], rbx
-	mov		qword[rsp+0], r12
-	call	func
-	add		rsp, 32
-	add		rsp, 128
-	mov		r11, qword[rsp-88]
-	mov		r8, qword[rsp-64]
-	mov		r9, qword[rsp-72]
-	mov		r10, qword[rsp-80]
-	mov		r12, rax
-
-	mov		rax, qword [rbp-1216]
-	mov		[rax + 0 * 8], r12
-
-	mov		rax, qword [rbp-1216]
-	mov		r12, [rax + 0*8]
-
-	mov		rcx, 8
-	mov		r15, r9
-	imul		r15, rcx
-
-	mov		r12, r11
-	add		r12, r15
-
-	mov		r15, [r12 + 0*8]
-
-	mov		rcx, 8
-	mov		r12, r14
-	imul		r12, rcx
-
-	add		r15, r12
-
-	mov		rcx, 8
-	mov		r12, r9
-	imul		r12, rcx
-
-	mov		rbx, r13
-	add		rbx, r12
-
-	mov		r12, [rbx + 0*8]
-
-	mov		rcx, 8
-	mov		rbx, r14
-	imul		rbx, rcx
-
-	add		r12, rbx
-
-	mov		rdx, qword [rbp-280]
-	mov		rdx, [r12 + 0*8]
-	mov		qword [rbp-280], rdx
-
-	mov		rcx, 8
-	mov		r12, r9
-	imul		r12, rcx
-
-	mov		rax, qword [rbp-1144]
-	mov		rbx, rax
-	add		rbx, r12
-
-	mov		rbx, [rbx + 0*8]
-
-	mov		rcx, 8
-	mov		r12, r10
-	imul		r12, rcx
-
-	add		rbx, r12
-
-	mov		rbx, [rbx + 0*8]
-
-	mov		rcx, 8
-	mov		r12, r10
-	imul		r12, rcx
-
-	mov		rax, qword [rbp-1144]
-	mov		rdx, qword [rbp-1136]
-	mov		rdx, rax
-	add		rdx, r12
-	mov		qword [rbp-1136], rdx
-
-	mov		rax, qword [rbp-1136]
-	mov		r12, [rax + 0*8]
-
-	mov		rcx, 8
-	mov		rdx, qword [rbp-232]
-	mov		rdx, r14
-	imul		rdx, rcx
-	mov		qword [rbp-232], rdx
-
-	mov		rcx, qword [rbp-232]
-	add		r12, rcx
-
-	mov		r12, [r12 + 0*8]
-
-	mov		qword[rsp-88], r11
-	mov		qword[rsp-64], r8
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-80], r10
-	sub		rsp, 128
-	sub		rsp, 32
-	mov		qword[rsp+16], r12
-	mov		qword[rsp+8], rbx
-	mov		rax, qword [rbp-280]
-	mov		qword[rsp+0], rax
-	call	func
-	add		rsp, 32
-	add		rsp, 128
-	mov		r11, qword[rsp-88]
-	mov		r8, qword[rsp-64]
-	mov		r9, qword[rsp-72]
-	mov		r10, qword[rsp-80]
-	mov		r12, rax
-
-	mov		[r15 + 0 * 8], r12
-
-	mov		r12, [r15 + 0*8]
-
-	mov		rcx, 8
-	mov		r15, r9
-	imul		r15, rcx
-
-	mov		r12, r11
-	add		r12, r15
-
-	mov		r12, [r12 + 0*8]
-
-	mov		rcx, 8
-	mov		r15, r14
-	imul		r15, rcx
-
-	add		r12, r15
-
-	mov		rcx, 8
-	mov		rbx, r9
-	imul		rbx, rcx
-
-	mov		r15, r13
-	add		r15, rbx
-
-	mov		r15, [r15 + 0*8]
-
-	mov		rcx, 8
-	mov		rbx, r14
-	imul		rbx, rcx
-
-	add		r15, rbx
-
-	mov		rbx, [r15 + 0*8]
-
-	mov		rcx, 8
-	mov		r15, r9
-	imul		r15, rcx
-
-	mov		rax, qword [rbp-1144]
-	mov		rdx, qword [rbp-448]
-	mov		rdx, rax
-	add		rdx, r15
-	mov		qword [rbp-448], rdx
+	movzx	eax, al
+	mov		qword [rbp-448], rax
 
 	mov		rax, qword [rbp-448]
-	mov		r15, [rax + 0*8]
+	test	rax, rax
+	jz		main_15_leftFalse
+	jmp		main_14_leftTrue
 
-	mov		rcx, 8
-	mov		rdx, qword [rbp-784]
-	mov		rdx, r10
-	imul		rdx, rcx
-	mov		qword [rbp-784], rdx
+main_14_leftTrue:
+	mov		rdx, qword [rbp-16]
+	mov		rax, qword [rbp-184]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-360], rax
 
-	mov		rcx, qword [rbp-784]
-	add		r15, rcx
+	jmp		main_16_mergeBranch
 
-	mov		rdx, qword [rbp-600]
-	mov		rdx, [r15 + 0*8]
-	mov		qword [rbp-600], rdx
+main_15_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-360], rax
 
-	mov		rcx, 8
-	mov		rdx, qword [rbp-272]
-	mov		rdx, r10
-	imul		rdx, rcx
-	mov		qword [rbp-272], rdx
+	jmp		main_16_mergeBranch
 
-	mov		rax, qword [rbp-1144]
-	mov		rcx, qword [rbp-272]
-	mov		r15, rax
-	add		r15, rcx
+main_16_mergeBranch:
+	mov		rax, qword [rbp-360]
+	test	rax, rax
+	jz		main_18_leftFalse
+	jmp		main_17_leftTrue
 
-	mov		r15, [r15 + 0*8]
+main_17_leftTrue:
+	mov		rdx, qword [rbp-16]
+	mov		rax, qword [rbp-224]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-192], rax
 
-	mov		rcx, 8
-	mov		rdx, qword [rbp-704]
-	mov		rdx, r14
-	imul		rdx, rcx
-	mov		qword [rbp-704], rdx
+	jmp		main_19_mergeBranch
 
-	mov		rcx, qword [rbp-704]
-	add		r15, rcx
+main_18_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-192], rax
 
-	mov		r15, [r15 + 0*8]
+	jmp		main_19_mergeBranch
 
-	mov		qword[rsp-88], r11
-	mov		qword[rsp-64], r8
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-80], r10
-	sub		rsp, 128
-	sub		rsp, 32
-	mov		qword[rsp+16], r15
-	mov		rax, qword [rbp-600]
-	mov		qword[rsp+8], rax
-	mov		qword[rsp+0], rbx
-	call	func
-	add		rsp, 32
-	add		rsp, 128
-	mov		r11, qword[rsp-88]
-	mov		r8, qword[rsp-64]
-	mov		r9, qword[rsp-72]
-	mov		r10, qword[rsp-80]
-	mov		r15, rax
+main_19_mergeBranch:
+	mov		rax, qword [rbp-192]
+	test	rax, rax
+	jz		main_21_leftFalse
+	jmp		main_20_leftTrue
 
-	mov		[r12 + 0 * 8], r15
+main_20_leftTrue:
+	mov		rdx, qword [rbp-16]
+	mov		rax, qword [rbp-56]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-96], rax
 
-	mov		r12, [r12 + 0*8]
+	jmp		main_22_mergeBranch
 
-	jmp		main_27_ifMerge
+main_21_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-96], rax
 
-main_26_ifFalse:
-	jmp		main_27_ifMerge
+	jmp		main_22_mergeBranch
 
-main_27_ifMerge:
-	jmp		main_28_forIncrease
+main_22_mergeBranch:
+	mov		rax, qword [rbp-96]
+	test	rax, rax
+	jz		main_24_leftFalse
+	jmp		main_23_leftTrue
 
-main_28_forIncrease:
-	mov		rcx, 1
-	add		r10, rcx
+main_23_leftTrue:
+	mov		rdx, qword [rbp-16]
+	mov		rax, qword [rbp-176]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-456], rax
 
-	jmp		main_23_forCondition
+	jmp		main_25_mergeBranch
 
-main_29_forMerge:
-	jmp		main_30_forIncrease
+main_24_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-456], rax
 
-main_30_forIncrease:
-	mov		rcx, 1
-	add		r14, rcx
+	jmp		main_25_mergeBranch
 
-	jmp		main_21_forCondition
+main_25_mergeBranch:
+	mov		rax, qword [rbp-456]
+	test	rax, rax
+	jz		main_27_leftFalse
+	jmp		main_26_leftTrue
 
-main_31_forMerge:
-	jmp		main_32_forIncrease
+main_26_leftTrue:
+	mov		rdx, qword [rbp-16]
+	mov		rax, qword [global_var_h]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-392], rax
 
-main_32_forIncrease:
-	mov		rcx, 1
-	add		r9, rcx
+	jmp		main_28_mergeBranch
 
-	jmp		main_19_forCondition
+main_27_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-392], rax
 
-main_33_forMerge:
-	mov		r15, 0
+	jmp		main_28_mergeBranch
 
-	mov		r9, 0
+main_28_mergeBranch:
+	mov		rax, qword [rbp-392]
+	test	rax, rax
+	jz		main_30_leftFalse
+	jmp		main_29_leftTrue
 
-	jmp		main_34_forCondition
+main_29_leftTrue:
+	mov		rdx, qword [rbp-16]
+	mov		rax, qword [global_var_i]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-256], rax
 
-main_34_forCondition:
-	cmp		r9, r8
-	setl		al
-	movzx	r12, al
+	jmp		main_31_mergeBranch
 
-	test	r12, r12
-	jz		main_41_forMerge
-	jmp		main_35_forBody
+main_30_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-256], rax
 
-main_35_forBody:
-	mov		r14, 0
+	jmp		main_31_mergeBranch
 
-	jmp		main_36_forCondition
+main_31_mergeBranch:
+	mov		rax, qword [rbp-256]
+	test	rax, rax
+	jz		main_33_leftFalse
+	jmp		main_32_leftTrue
 
-main_36_forCondition:
-	cmp		r14, r8
-	setl		al
-	movzx	r12, al
+main_32_leftTrue:
+	mov		rdx, qword [rbp-16]
+	mov		rax, qword [global_var_j]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-416], rax
 
-	test	r12, r12
-	jz		main_39_forMerge
-	jmp		main_37_forBody
+	jmp		main_34_mergeBranch
 
-main_37_forBody:
-	mov		rcx, 8
-	mov		r12, r9
-	imul		r12, rcx
+main_33_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-416], rax
 
-	mov		rbx, r13
-	add		rbx, r12
+	jmp		main_34_mergeBranch
 
-	mov		rbx, [rbx + 0*8]
+main_34_mergeBranch:
+	mov		rax, qword [rbp-416]
+	test	rax, rax
+	jz		main_36_leftFalse
+	jmp		main_35_leftTrue
 
-	mov		rcx, 8
-	mov		r12, r14
-	imul		r12, rcx
+main_35_leftTrue:
+	mov		rdx, qword [rbp-16]
+	mov		rax, qword [global_var_k]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-496], rax
 
-	add		rbx, r12
+	jmp		main_37_mergeBranch
 
-	mov		rbx, [rbx + 0*8]
+main_36_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-496], rax
 
-	mov		r12, r15
-	add		r12, rbx
+	jmp		main_37_mergeBranch
 
-	mov		rcx, 1073741823
-	and		r12, rcx
+main_37_mergeBranch:
+	mov		rax, qword [rbp-496]
+	test	rax, rax
+	jz		main_39_leftFalse
+	jmp		main_38_leftTrue
 
-	mov		r15, r12
+main_38_leftTrue:
+	mov		rdx, qword [rbp-160]
+	mov		rax, qword [rbp-184]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-472], rax
 
-	jmp		main_38_forIncrease
+	jmp		main_40_mergeBranch
 
-main_38_forIncrease:
-	mov		rcx, 1
-	add		r14, rcx
+main_39_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-472], rax
 
-	jmp		main_36_forCondition
+	jmp		main_40_mergeBranch
 
-main_39_forMerge:
-	jmp		main_40_forIncrease
+main_40_mergeBranch:
+	mov		rax, qword [rbp-472]
+	test	rax, rax
+	jz		main_42_leftFalse
+	jmp		main_41_leftTrue
 
-main_40_forIncrease:
-	mov		rcx, 1
-	add		r9, rcx
+main_41_leftTrue:
+	mov		rdx, qword [rbp-160]
+	mov		rax, qword [rbp-224]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-384], rax
 
-	jmp		main_34_forCondition
+	jmp		main_43_mergeBranch
 
-main_41_forMerge:
-	mov		qword[rsp-88], r11
-	mov		qword[rsp-64], r8
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-80], r10
-	sub		rsp, 128
-	mov		rdi, r15
+main_42_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-384], rax
+
+	jmp		main_43_mergeBranch
+
+main_43_mergeBranch:
+	mov		rax, qword [rbp-384]
+	test	rax, rax
+	jz		main_45_leftFalse
+	jmp		main_44_leftTrue
+
+main_44_leftTrue:
+	mov		rdx, qword [rbp-160]
+	mov		rax, qword [rbp-56]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-120], rax
+
+	jmp		main_46_mergeBranch
+
+main_45_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-120], rax
+
+	jmp		main_46_mergeBranch
+
+main_46_mergeBranch:
+	mov		rax, qword [rbp-120]
+	test	rax, rax
+	jz		main_48_leftFalse
+	jmp		main_47_leftTrue
+
+main_47_leftTrue:
+	mov		rdx, qword [rbp-160]
+	mov		rax, qword [rbp-176]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-152], rax
+
+	jmp		main_49_mergeBranch
+
+main_48_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-152], rax
+
+	jmp		main_49_mergeBranch
+
+main_49_mergeBranch:
+	mov		rax, qword [rbp-152]
+	test	rax, rax
+	jz		main_51_leftFalse
+	jmp		main_50_leftTrue
+
+main_50_leftTrue:
+	mov		rdx, qword [rbp-160]
+	mov		rax, qword [global_var_h]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-168], rax
+
+	jmp		main_52_mergeBranch
+
+main_51_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-168], rax
+
+	jmp		main_52_mergeBranch
+
+main_52_mergeBranch:
+	mov		rax, qword [rbp-168]
+	test	rax, rax
+	jz		main_54_leftFalse
+	jmp		main_53_leftTrue
+
+main_53_leftTrue:
+	mov		rdx, qword [rbp-160]
+	mov		rax, qword [global_var_i]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-40], rax
+
+	jmp		main_55_mergeBranch
+
+main_54_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-40], rax
+
+	jmp		main_55_mergeBranch
+
+main_55_mergeBranch:
+	mov		rax, qword [rbp-40]
+	test	rax, rax
+	jz		main_57_leftFalse
+	jmp		main_56_leftTrue
+
+main_56_leftTrue:
+	mov		rdx, qword [rbp-160]
+	mov		rax, qword [global_var_j]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-440], rax
+
+	jmp		main_58_mergeBranch
+
+main_57_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-440], rax
+
+	jmp		main_58_mergeBranch
+
+main_58_mergeBranch:
+	mov		rax, qword [rbp-440]
+	test	rax, rax
+	jz		main_60_leftFalse
+	jmp		main_59_leftTrue
+
+main_59_leftTrue:
+	mov		rdx, qword [rbp-160]
+	mov		rax, qword [global_var_k]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-352], rax
+
+	jmp		main_61_mergeBranch
+
+main_60_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-352], rax
+
+	jmp		main_61_mergeBranch
+
+main_61_mergeBranch:
+	mov		rax, qword [rbp-352]
+	test	rax, rax
+	jz		main_63_leftFalse
+	jmp		main_62_leftTrue
+
+main_62_leftTrue:
+	mov		rdx, qword [rbp-184]
+	mov		rax, qword [rbp-224]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-368], rax
+
+	jmp		main_64_mergeBranch
+
+main_63_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-368], rax
+
+	jmp		main_64_mergeBranch
+
+main_64_mergeBranch:
+	mov		rax, qword [rbp-368]
+	test	rax, rax
+	jz		main_66_leftFalse
+	jmp		main_65_leftTrue
+
+main_65_leftTrue:
+	mov		rdx, qword [rbp-184]
+	mov		rax, qword [rbp-56]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-344], rax
+
+	jmp		main_67_mergeBranch
+
+main_66_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-344], rax
+
+	jmp		main_67_mergeBranch
+
+main_67_mergeBranch:
+	mov		rax, qword [rbp-344]
+	test	rax, rax
+	jz		main_69_leftFalse
+	jmp		main_68_leftTrue
+
+main_68_leftTrue:
+	mov		rdx, qword [rbp-184]
+	mov		rax, qword [rbp-176]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-328], rax
+
+	jmp		main_70_mergeBranch
+
+main_69_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-328], rax
+
+	jmp		main_70_mergeBranch
+
+main_70_mergeBranch:
+	mov		rax, qword [rbp-328]
+	test	rax, rax
+	jz		main_72_leftFalse
+	jmp		main_71_leftTrue
+
+main_71_leftTrue:
+	mov		rdx, qword [rbp-184]
+	mov		rax, qword [global_var_h]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-304], rax
+
+	jmp		main_73_mergeBranch
+
+main_72_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-304], rax
+
+	jmp		main_73_mergeBranch
+
+main_73_mergeBranch:
+	mov		rax, qword [rbp-304]
+	test	rax, rax
+	jz		main_75_leftFalse
+	jmp		main_74_leftTrue
+
+main_74_leftTrue:
+	mov		rdx, qword [rbp-184]
+	mov		rax, qword [global_var_i]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-104], rax
+
+	jmp		main_76_mergeBranch
+
+main_75_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-104], rax
+
+	jmp		main_76_mergeBranch
+
+main_76_mergeBranch:
+	mov		rax, qword [rbp-104]
+	test	rax, rax
+	jz		main_78_leftFalse
+	jmp		main_77_leftTrue
+
+main_77_leftTrue:
+	mov		rdx, qword [rbp-184]
+	mov		rax, qword [global_var_j]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-128], rax
+
+	jmp		main_79_mergeBranch
+
+main_78_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-128], rax
+
+	jmp		main_79_mergeBranch
+
+main_79_mergeBranch:
+	mov		rax, qword [rbp-128]
+	test	rax, rax
+	jz		main_81_leftFalse
+	jmp		main_80_leftTrue
+
+main_80_leftTrue:
+	mov		rdx, qword [rbp-184]
+	mov		rax, qword [global_var_k]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-248], rax
+
+	jmp		main_82_mergeBranch
+
+main_81_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-248], rax
+
+	jmp		main_82_mergeBranch
+
+main_82_mergeBranch:
+	mov		rax, qword [rbp-248]
+	test	rax, rax
+	jz		main_84_leftFalse
+	jmp		main_83_leftTrue
+
+main_83_leftTrue:
+	mov		rdx, qword [rbp-224]
+	mov		rax, qword [rbp-56]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-336], rax
+
+	jmp		main_85_mergeBranch
+
+main_84_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-336], rax
+
+	jmp		main_85_mergeBranch
+
+main_85_mergeBranch:
+	mov		rax, qword [rbp-336]
+	test	rax, rax
+	jz		main_87_leftFalse
+	jmp		main_86_leftTrue
+
+main_86_leftTrue:
+	mov		rdx, qword [rbp-224]
+	mov		rax, qword [rbp-176]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-264], rax
+
+	jmp		main_88_mergeBranch
+
+main_87_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-264], rax
+
+	jmp		main_88_mergeBranch
+
+main_88_mergeBranch:
+	mov		rax, qword [rbp-264]
+	test	rax, rax
+	jz		main_90_leftFalse
+	jmp		main_89_leftTrue
+
+main_89_leftTrue:
+	mov		rdx, qword [rbp-224]
+	mov		rax, qword [global_var_h]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-24], rax
+
+	jmp		main_91_mergeBranch
+
+main_90_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-24], rax
+
+	jmp		main_91_mergeBranch
+
+main_91_mergeBranch:
+	mov		rax, qword [rbp-24]
+	test	rax, rax
+	jz		main_93_leftFalse
+	jmp		main_92_leftTrue
+
+main_92_leftTrue:
+	mov		rdx, qword [rbp-224]
+	mov		rax, qword [global_var_i]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-464], rax
+
+	jmp		main_94_mergeBranch
+
+main_93_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-464], rax
+
+	jmp		main_94_mergeBranch
+
+main_94_mergeBranch:
+	mov		rax, qword [rbp-464]
+	test	rax, rax
+	jz		main_96_leftFalse
+	jmp		main_95_leftTrue
+
+main_95_leftTrue:
+	mov		rdx, qword [rbp-224]
+	mov		rax, qword [global_var_j]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-232], rax
+
+	jmp		main_97_mergeBranch
+
+main_96_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-232], rax
+
+	jmp		main_97_mergeBranch
+
+main_97_mergeBranch:
+	mov		rax, qword [rbp-232]
+	test	rax, rax
+	jz		main_99_leftFalse
+	jmp		main_98_leftTrue
+
+main_98_leftTrue:
+	mov		rdx, qword [rbp-224]
+	mov		rax, qword [global_var_k]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-112], rax
+
+	jmp		main_100_mergeBranch
+
+main_99_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-112], rax
+
+	jmp		main_100_mergeBranch
+
+main_100_mergeBranch:
+	mov		rax, qword [rbp-112]
+	test	rax, rax
+	jz		main_102_leftFalse
+	jmp		main_101_leftTrue
+
+main_101_leftTrue:
+	mov		rdx, qword [rbp-56]
+	mov		rax, qword [rbp-176]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-88], rax
+
+	jmp		main_103_mergeBranch
+
+main_102_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-88], rax
+
+	jmp		main_103_mergeBranch
+
+main_103_mergeBranch:
+	mov		rax, qword [rbp-88]
+	test	rax, rax
+	jz		main_105_leftFalse
+	jmp		main_104_leftTrue
+
+main_104_leftTrue:
+	mov		rdx, qword [rbp-56]
+	mov		rax, qword [global_var_h]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-312], rax
+
+	jmp		main_106_mergeBranch
+
+main_105_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-312], rax
+
+	jmp		main_106_mergeBranch
+
+main_106_mergeBranch:
+	mov		rax, qword [rbp-312]
+	test	rax, rax
+	jz		main_108_leftFalse
+	jmp		main_107_leftTrue
+
+main_107_leftTrue:
+	mov		rdx, qword [rbp-56]
+	mov		rax, qword [global_var_i]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-64], rax
+
+	jmp		main_109_mergeBranch
+
+main_108_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-64], rax
+
+	jmp		main_109_mergeBranch
+
+main_109_mergeBranch:
+	mov		rax, qword [rbp-64]
+	test	rax, rax
+	jz		main_111_leftFalse
+	jmp		main_110_leftTrue
+
+main_110_leftTrue:
+	mov		rdx, qword [rbp-56]
+	mov		rax, qword [global_var_j]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-240], rax
+
+	jmp		main_112_mergeBranch
+
+main_111_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-240], rax
+
+	jmp		main_112_mergeBranch
+
+main_112_mergeBranch:
+	mov		rax, qword [rbp-240]
+	test	rax, rax
+	jz		main_114_leftFalse
+	jmp		main_113_leftTrue
+
+main_113_leftTrue:
+	mov		rdx, qword [rbp-56]
+	mov		rax, qword [global_var_k]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-488], rax
+
+	jmp		main_115_mergeBranch
+
+main_114_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-488], rax
+
+	jmp		main_115_mergeBranch
+
+main_115_mergeBranch:
+	mov		rax, qword [rbp-488]
+	test	rax, rax
+	jz		main_117_leftFalse
+	jmp		main_116_leftTrue
+
+main_116_leftTrue:
+	mov		rdx, qword [rbp-176]
+	mov		rax, qword [global_var_h]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-32], rax
+
+	jmp		main_118_mergeBranch
+
+main_117_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-32], rax
+
+	jmp		main_118_mergeBranch
+
+main_118_mergeBranch:
+	mov		rax, qword [rbp-32]
+	test	rax, rax
+	jz		main_120_leftFalse
+	jmp		main_119_leftTrue
+
+main_119_leftTrue:
+	mov		rdx, qword [rbp-176]
+	mov		rax, qword [global_var_i]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-208], rax
+
+	jmp		main_121_mergeBranch
+
+main_120_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-208], rax
+
+	jmp		main_121_mergeBranch
+
+main_121_mergeBranch:
+	mov		rax, qword [rbp-208]
+	test	rax, rax
+	jz		main_123_leftFalse
+	jmp		main_122_leftTrue
+
+main_122_leftTrue:
+	mov		rdx, qword [rbp-176]
+	mov		rax, qword [global_var_j]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-320], rax
+
+	jmp		main_124_mergeBranch
+
+main_123_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-320], rax
+
+	jmp		main_124_mergeBranch
+
+main_124_mergeBranch:
+	mov		rax, qword [rbp-320]
+	test	rax, rax
+	jz		main_126_leftFalse
+	jmp		main_125_leftTrue
+
+main_125_leftTrue:
+	mov		rdx, qword [rbp-176]
+	mov		rax, qword [global_var_k]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-48], rax
+
+	jmp		main_127_mergeBranch
+
+main_126_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-48], rax
+
+	jmp		main_127_mergeBranch
+
+main_127_mergeBranch:
+	mov		rax, qword [rbp-48]
+	test	rax, rax
+	jz		main_129_leftFalse
+	jmp		main_128_leftTrue
+
+main_128_leftTrue:
+	mov		rdx, qword [global_var_i]
+	mov		rax, qword [global_var_j]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-424], rax
+
+	jmp		main_130_mergeBranch
+
+main_129_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-424], rax
+
+	jmp		main_130_mergeBranch
+
+main_130_mergeBranch:
+	mov		rax, qword [rbp-424]
+	test	rax, rax
+	jz		main_132_leftFalse
+	jmp		main_131_leftTrue
+
+main_131_leftTrue:
+	mov		rdx, qword [global_var_h]
+	mov		rax, qword [global_var_k]
+	cmp		rdx, rax
+	setne		al
+	movzx	eax, al
+	mov		qword [rbp-432], rax
+
+	jmp		main_133_mergeBranch
+
+main_132_leftFalse:
+	mov		rax, 0
+	mov		qword [rbp-432], rax
+
+	jmp		main_133_mergeBranch
+
+main_133_mergeBranch:
+	mov		rax, qword [rbp-432]
+	test	rax, rax
+	jz		main_135_ifFalse
+	jmp		main_134_ifTrue
+
+main_134_ifTrue:
+	mov		rax, qword [global_var_total]
+	mov		qword [rbp-80], rax
+
+	mov		rax, qword [global_var_total]
+	mov		rdx, 1
+	add		rax, rdx
+	mov		qword [global_var_total], rax
+
+	jmp		main_136_ifMerge
+
+main_135_ifFalse:
+	jmp		main_136_ifMerge
+
+main_136_ifMerge:
+	jmp		main_137_forIncrease
+
+main_137_forIncrease:
+	mov		rax, qword [rbp-176]
+	mov		qword [rbp-216], rax
+
+	mov		rax, qword [rbp-176]
+	mov		rdx, 1
+	add		rax, rdx
+	mov		qword [rbp-176], rax
+
+	jmp		main_12_forCondition
+
+main_138_forMerge:
+	jmp		main_139_forIncrease
+
+main_139_forIncrease:
+	mov		rax, qword [rbp-56]
+	mov		qword [rbp-272], rax
+
+	mov		rax, qword [rbp-56]
+	mov		rdx, 1
+	add		rax, rdx
+	mov		qword [rbp-56], rax
+
+	jmp		main_10_forCondition
+
+main_140_forMerge:
+	jmp		main_141_forIncrease
+
+main_141_forIncrease:
+	mov		rax, qword [rbp-224]
+	mov		qword [rbp-200], rax
+
+	mov		rax, qword [rbp-224]
+	mov		rdx, 1
+	add		rax, rdx
+	mov		qword [rbp-224], rax
+
+	jmp		main_8_forCondition
+
+main_142_forMerge:
+	jmp		main_143_forIncrease
+
+main_143_forIncrease:
+	mov		rax, qword [rbp-184]
+	mov		qword [rbp-280], rax
+
+	mov		rax, qword [rbp-184]
+	mov		rdx, 1
+	add		rax, rdx
+	mov		qword [rbp-184], rax
+
+	jmp		main_6_forCondition
+
+main_144_forMerge:
+	jmp		main_145_forIncrease
+
+main_145_forIncrease:
+	mov		rax, qword [rbp-160]
+	mov		qword [rbp-400], rax
+
+	mov		rax, qword [rbp-160]
+	mov		rdx, 1
+	add		rax, rdx
+	mov		qword [rbp-160], rax
+
+	jmp		main_4_forCondition
+
+main_146_forMerge:
+	jmp		main_147_forIncrease
+
+main_147_forIncrease:
+	mov		rax, qword [rbp-16]
+	mov		qword [rbp-408], rax
+
+	mov		rax, qword [rbp-16]
+	mov		rdx, 1
+	add		rax, rdx
+	mov		qword [rbp-16], rax
+
+	jmp		main_2_forCondition
+
+main_148_forMerge:
+	mov		rdi, qword [global_var_total]
 	call	FBH_toString
-	add		rsp, 128
-	mov		r11, qword[rsp-88]
-	mov		r8, qword[rsp-64]
-	mov		r9, qword[rsp-72]
-	mov		r10, qword[rsp-80]
-	mov		r12, rax
+	mov		qword [rbp-288], rax
 
-	mov		qword[rsp-88], r11
-	mov		qword[rsp-64], r8
-	mov		qword[rsp-72], r9
-	mov		qword[rsp-80], r10
-	sub		rsp, 128
-	mov		rdi, r12
-	call	FBH_print
-	add		rsp, 128
-	mov		r11, qword[rsp-88]
-	mov		r8, qword[rsp-64]
-	mov		r9, qword[rsp-72]
-	mov		r10, qword[rsp-80]
+	mov		rdi, qword [rbp-288]
+	call	FBH_println
 
 	mov		rax, 0
-	add		rsp, 128
-	mov		r15, qword[rsp-120]
-	mov		rbx, qword[rsp-24]
-	mov		r12, qword[rsp-96]
-	mov		r14, qword[rsp-112]
-	mov		r13, qword[rsp-104]
 	leave
 	ret
 
-	jmp		main_42_exit
+	jmp		main_149_exit
 
-main_42_exit:
-	add		rsp, 128
-	mov		r15, qword[rsp-120]
-	mov		rbx, qword[rsp-24]
-	mov		r12, qword[rsp-96]
-	mov		r14, qword[rsp-112]
-	mov		r13, qword[rsp-104]
+main_149_exit:
 	leave
 	ret
 
@@ -1211,6 +1365,18 @@ __parseIntFormat:
       db             "%ld", 0
 
 SECTION .bss
+global_var_N:
+    resq                    1
+global_var_h:
+    resq                    1
+global_var_i:
+    resq                    1
+global_var_j:
+    resq                    1
+global_var_k:
+    resq                    1
+global_var_total:
+    resq                    1
 @getIntBuf:
     resq                    1
 @parseIntBuf:
