@@ -17,8 +17,8 @@ public class InterferenceGraph {
 	public HashSet<VirtualRegister> nodes;
 	public HashMap<VirtualRegister, HashSet<VirtualRegister>> banned;
 	public static ArrayList<PhysicalRegister> registerList = new ArrayList<PhysicalRegister>() {{
-		add(NASMRegister.rdi);
-		add(NASMRegister.rsi);
+		//add(NASMRegister.rdi);
+		//add(NASMRegister.rsi);
 		add(NASMRegister.rbx);
 		add(NASMRegister.r8);
 		add(NASMRegister.r9);

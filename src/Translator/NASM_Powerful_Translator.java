@@ -206,10 +206,7 @@ public class NASM_Powerful_Translator extends NASM_Translator {
 							PhysicalRegister rcx = loadToSrc(NASMRegister.rcx, binaryInstruction.src2);
 							output.printf("\tcqo\n");
 							output.printf("\tidiv\t%s\n", rcx.name);
-							if (rax != NASMRegister.rax) {
-								output.printf("\tmov\t\t%s, rax\n", rax.name);
-							}
-							move(binaryInstruction.dest, rax);
+							move(binaryInstruction.dest, NASMRegister.rax);
 						} else if (binaryInstruction instanceof ModInstruction) {
 							PhysicalRegister rax = loadToSrc(NASMRegister.rax, binaryInstruction.src1);
 							if (rax != NASMRegister.rax) {
