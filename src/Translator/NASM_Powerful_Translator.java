@@ -147,17 +147,47 @@ public class NASM_Powerful_Translator extends NASM_Translator {
 		}
 	}
 
-	private void save() {
+	private void callerSave() {
 		for (PhysicalRegister register : allocator.getUsedRegisters()) {
+			if (register.id % 2 == 1) {
+				continue;
+			}
 			output.printf("\tmov\t\tqword[rsp-%d], %s\n", register.id * 8, register.name);
 		}
 		output.printf("\tsub\t\trsp, %d\n", 16 * 8);
 	}
 
-	private void resume() {
+	private void callerResume() {
 		output.printf("\tadd\t\trsp, %d\n", 16 * 8);
 		for (PhysicalRegister register : allocator.getUsedRegisters()) {
+			if (register.id % 2 == 1) {
+				continue;
+			}
 			output.printf("\tmov\t\t%s, qword[rsp-%d]\n", register.name, register.id * 8);
+		}
+	}
+
+	private void calleeSave() {
+		if (!graph.function.name.equals("main")) {
+			for (PhysicalRegister register : allocator.getUsedRegisters()) {
+				if (register.id % 2 == 0) {
+					continue;
+				}
+				output.printf("\tmov\t\tqword[rsp-%d], %s\n", register.id * 8, register.name);
+			}
+			output.printf("\tsub\t\trsp, %d\n", 16 * 8);
+		}
+	}
+
+	private void calleeResume() {
+		if (!graph.function.name.equals("main")) {
+			output.printf("\tadd\t\trsp, %d\n", 16 * 8);
+			for (PhysicalRegister register : allocator.getUsedRegisters()) {
+				if (register.id % 2 == 0) {
+					continue;
+				}
+				output.printf("\tmov\t\t%s, qword[rsp-%d]\n", register.name, register.id * 8);
+			}
 		}
 	}
 
@@ -170,6 +200,8 @@ public class NASM_Powerful_Translator extends NASM_Translator {
 		output.printf("\tpush\trbp\n");
 		output.printf("\tmov\t\trbp, rsp\n");
 		output.printf("\tsub\t\trsp, %d\n", graph.frame.size);
+
+		calleeSave();
 
 		for (int i = 0; i < graph.blockList.size(); i ++) {
 			Block block = graph.blockList.get(i);
@@ -227,7 +259,7 @@ public class NASM_Powerful_Translator extends NASM_Translator {
 							}
 							if (rcx != NASMRegister.rcx) {
 								output.printf("\tmov\t\trcx, %s\n", rcx.name);
-							}
+							}e
 							output.printf("\t%s\t\trax, cl\n", binaryInstruction.OPname());
 							move(binaryInstruction.dest, NASMRegister.rax);
 						} else {
@@ -289,13 +321,14 @@ public class NASM_Powerful_Translator extends NASM_Translator {
 						if (rax != NASMRegister.rax) {
 							output.printf("\tmov\t\trax, %s\n", rax.name);
 						}
+						calleeResume();
 						output.printf("\tleave\n");
 						output.printf("\tret\n");
 					} else if (instruction instanceof FunctionCallInstruction) {
 						FunctionCallInstruction callInstruction = (FunctionCallInstruction) instruction;
 						int totalSize = callInstruction.parameters.size() * 8;
 						totalSize += totalSize % 16;
-						save();
+						callerSave();
 						if (callInstruction.function.name.startsWith("FBH")) {
 							if (callInstruction.parameters.size() >= 1) {
 								move(NASMRegister.rdi, callInstruction.parameters.get(0));
@@ -320,7 +353,7 @@ public class NASM_Powerful_Translator extends NASM_Translator {
 						if (!callInstruction.function.name.startsWith("FBH")) {
 							output.printf("\tadd\t\trsp, %d\n", totalSize);
 						}
-						resume();
+						callerResume();
 						if (callInstruction.dest != null) {
 							move(callInstruction.dest, NASMRegister.rax);
 						}
@@ -328,10 +361,10 @@ public class NASM_Powerful_Translator extends NASM_Translator {
 				} else if (instruction instanceof MemoryInstruction) {
 					if (instruction instanceof AllocateInstruction) {
 						AllocateInstruction allocateInstruction = (AllocateInstruction) instruction;
-						save();
+						callerSave();
 						move(NASMRegister.rdi, allocateInstruction.size);
 						output.printf("\tcall\tmalloc\n");
-						resume();
+						callerResume();
 						move(allocateInstruction.dest, NASMRegister.rax);
 					} else if (instruction instanceof LoadInstruction) {
 						LoadInstruction loadInstruction = (LoadInstruction) instruction;
@@ -359,6 +392,9 @@ public class NASM_Powerful_Translator extends NASM_Translator {
 				output.printf("\n");
 			}
 		}
+
+		calleeResume();
+
 		output.printf("\tleave\n");
 		output.printf("\tret\n");
 	}
