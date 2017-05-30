@@ -23,7 +23,7 @@ public class Main {
 	public static void main(String[] args) throws Exception {
 
 		int LOCAL;
-		LOCAL = 1;
+		LOCAL = 0;
 		InputStream is;
 		if (LOCAL == 1) {
 			is = new FileInputStream("/home/xzj/rua/fangbohui-compiler2017bh-56b699b20866/src/test.txt");
