@@ -181,13 +181,15 @@ public class NASM_Powerful_Translator extends NASM_Translator {
 						UnaryInstruction unaryInstruction = (UnaryInstruction) instruction;
 						PhysicalRegister rax = loadToSrc(NASMRegister.rax, unaryInstruction.src);
 						if (unaryInstruction instanceof UnaryMinusInstruction) {
-							output.printf("\t%s \t%s\n", unaryInstruction.OPname(), rax.name);
+							output.printf("\tmov\t\trax, %s\n", rax.name);
+							output.printf("\t%s \trax\n", unaryInstruction.OPname());
+							move(unaryInstruction.dest, NASMRegister.rax);
 						} else {
 							output.printf("\ttest\t%s, %s\n", rax.name, rax.name);
 							output.printf("\tsete\tal\n");
-							output.printf("\tmovzx\t%s, al\n", rax.name);
+							output.printf("\tmovzx\trax, al\n");
+							move(unaryInstruction.dest, NASMRegister.rax);
 						}
-						move(unaryInstruction.dest, rax);
 					} else if (instruction instanceof BinaryInstruction) {
 						BinaryInstruction binaryInstruction = (BinaryInstruction) instruction;
 						if (binaryInstruction instanceof EqualityInstruction) {
@@ -228,16 +230,17 @@ public class NASM_Powerful_Translator extends NASM_Translator {
 
 							PhysicalRegister rax = loadToSrc(NASMRegister.rax, binaryInstruction.src1);
 							PhysicalRegister rcx = loadToSrc(NASMRegister.rcx, binaryInstruction.src2);
-/*
+
 							if (rax != NASMRegister.rax) {
 								output.printf("\tmov\t\trax, %s\n", rax.name);
 							}
 
 							output.printf("\t%s\t\trax, %s\n", binaryInstruction.OPname(), rcx.name);
 							move(binaryInstruction.dest, NASMRegister.rax);
-							*/
 
 
+
+/*
 							PhysicalRegister dest = allocator.allocating.get(binaryInstruction.dest);
 							if (dest == null) {
 								if (rax != NASMRegister.rax) {
@@ -263,7 +266,7 @@ public class NASM_Powerful_Translator extends NASM_Translator {
 								//output.printf("\tmov\t\t%s, %s\n", dest.name, rax.name);
 								//output.printf("\t%s\t\t%s, %s\n", binaryInstruction.OPname(), dest.name, rcx.name);
 							}
-
+*/
 
 						}
 					}
