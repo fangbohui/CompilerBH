@@ -233,7 +233,11 @@ public class NASM_Powerful_Translator extends NASM_Translator {
 							}
 							*/
 							PhysicalRegister dest = allocator.allocating.get(binaryInstruction.dest);
-							if (dest == rax) {
+							if (dest == null) {
+								output.printf("\tmov\t\trax, %s\n", rax.name);
+								output.printf("\t%s\t\trax, %s\n", binaryInstruction.OPname(), rcx.name);
+								move(binaryInstruction.dest, NASMRegister.rax);
+							} else if (dest == rax) {
 								output.printf("\t%s\t\t%s, %s\n", binaryInstruction.OPname(), rax.name, rcx.name);
 							} else if (dest == rcx) {
 								output.printf("\t%s\t\t%s, %s\n", binaryInstruction.OPname(), rcx.name, rax.name);
