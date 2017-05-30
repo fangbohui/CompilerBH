@@ -226,12 +226,21 @@ public class NASM_Powerful_Translator extends NASM_Translator {
 							move(binaryInstruction.dest, rax);
 						} else {
 							PhysicalRegister rax = loadToSrc(NASMRegister.rax, binaryInstruction.src1);
-//							if (rax != NASMRegister.rax) {
-//								output.printf("\tmov\t\trax, %s\n", rax.name);
-//							}
 							PhysicalRegister rcx = loadToSrc(NASMRegister.rcx, binaryInstruction.src2);
-							output.printf("\t%s\t\t%s, %s\n", binaryInstruction.OPname(), rax.name, rcx.name);
-							move(binaryInstruction.dest, rax);
+							/*
+							if (rax != NASMRegister.rax) {
+								output.printf("\tmov\t\trax, %s\n", rax.name);
+							}
+							*/
+							PhysicalRegister dest = allocator.allocating.get(binaryInstruction.dest);
+							if (dest == rax) {
+								output.printf("\t%s\t\t%s, %s\n", binaryInstruction.OPname(), rax.name, rcx.name);
+							} else if (dest == rcx) {
+								output.printf("\t%s\t\t%s, %s\n", binaryInstruction.OPname(), rcx.name, rax.name);
+							} else {
+								output.printf("\tmov\t\t%s, %s\n", dest.name, rax.name);
+								output.printf("\t%s\t\t%s, %s\n", binaryInstruction.OPname(), dest.name, rcx.name);
+							}
 						}
 					}
 				} else if (instruction instanceof ControlInstruction) {
