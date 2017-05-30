@@ -227,16 +227,19 @@ public class NASM_Powerful_Translator extends NASM_Translator {
 						} else {
 							PhysicalRegister rax = loadToSrc(NASMRegister.rax, binaryInstruction.src1);
 							PhysicalRegister rcx = loadToSrc(NASMRegister.rcx, binaryInstruction.src2);
-							/*
+
 							if (rax != NASMRegister.rax) {
 								output.printf("\tmov\t\trax, %s\n", rax.name);
 							}
-							*/
+
+							output.printf("\t%s\t\trax, %s\n", binaryInstruction.OPname(), rcx.name);
+							move(binaryInstruction.dest, NASMRegister.rax);
+							/*
 							PhysicalRegister dest = allocator.allocating.get(binaryInstruction.dest);
 							if (dest == null) {
 								output.printf("\tmov\t\trax, %s\n", rax.name);
 								output.printf("\t%s\t\trax, %s\n", binaryInstruction.OPname(), rcx.name);
-								move(binaryInstruction.dest, NASMRegister.rax);
+								output.printf("\tmov\t\t%s, rax\n", temporaryVarName(graph.frame.getOffset(binaryInstruction.dest)));
 							} else if (dest == rax) {
 								output.printf("\t%s\t\t%s, %s\n", binaryInstruction.OPname(), rax.name, rcx.name);
 							} else if (dest == rcx) {
@@ -245,6 +248,7 @@ public class NASM_Powerful_Translator extends NASM_Translator {
 								output.printf("\tmov\t\t%s, %s\n", dest.name, rax.name);
 								output.printf("\t%s\t\t%s, %s\n", binaryInstruction.OPname(), dest.name, rcx.name);
 							}
+							*/
 						}
 					}
 				} else if (instruction instanceof ControlInstruction) {
