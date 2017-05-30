@@ -9,6 +9,7 @@ import CFG.Instruction.ComputingInstruction.BinaryInstruction.OtherBinaryInstruc
 import CFG.Instruction.ComputingInstruction.BinaryInstruction.OtherBinaryInstructions.ModInstruction;
 import CFG.Instruction.ComputingInstruction.BinaryInstruction.OtherBinaryInstructions.RightShiftInstruction;
 import CFG.Instruction.ComputingInstruction.ComputingInstruction;
+import CFG.Instruction.ComputingInstruction.UnaryInstruction.OtherUnaryInstruction.BitNotInstruction;
 import CFG.Instruction.ComputingInstruction.UnaryInstruction.OtherUnaryInstruction.UnaryMinusInstruction;
 import CFG.Instruction.ComputingInstruction.UnaryInstruction.UnaryInstruction;
 import CFG.Instruction.ControlInstruction.ControlInstruction;
@@ -180,16 +181,16 @@ public class NASM_Powerful_Translator extends NASM_Translator {
 					if (instruction instanceof UnaryInstruction) {
 						UnaryInstruction unaryInstruction = (UnaryInstruction) instruction;
 						PhysicalRegister rax = loadToSrc(NASMRegister.rax, unaryInstruction.src);
-						if (unaryInstruction instanceof UnaryMinusInstruction) {
+						if (unaryInstruction instanceof UnaryMinusInstruction || unaryInstruction instanceof BitNotInstruction) {
 							output.printf("\tmov\t\trax, %s\n", rax.name);
 							output.printf("\t%s \trax\n", unaryInstruction.OPname());
 							move(unaryInstruction.dest, NASMRegister.rax);
-						} else {
+						}/* else {
 							output.printf("\ttest\t%s, %s\n", rax.name, rax.name);
 							output.printf("\tsete\tal\n");
 							output.printf("\tmovzx\trax, al\n");
 							move(unaryInstruction.dest, NASMRegister.rax);
-						}
+						}*/
 					} else if (instruction instanceof BinaryInstruction) {
 						BinaryInstruction binaryInstruction = (BinaryInstruction) instruction;
 						if (binaryInstruction instanceof EqualityInstruction) {

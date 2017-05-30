@@ -18,6 +18,6 @@ public class BitNotInstruction extends UnaryInstruction {
 	}
 
 	public String OPname() {
-		return String.format("");
+		return String.format("not");
 	}
 }
