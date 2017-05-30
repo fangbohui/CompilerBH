@@ -25,7 +25,6 @@ public class StoreInstruction extends MemoryInstruction {
 	@Override
 	public ArrayList<Operand> getDestOperands() {
 		ArrayList<Operand> operands = new ArrayList<>();
-		operands.add(dest);
 		return operands;
 	}
 
@@ -33,6 +32,7 @@ public class StoreInstruction extends MemoryInstruction {
 	public ArrayList<Operand> getSrcOperands() {
 		ArrayList<Operand> operands = new ArrayList<>();
 		operands.add(src);
+		operands.add(dest.base);
 		return operands;
 	}
 }
