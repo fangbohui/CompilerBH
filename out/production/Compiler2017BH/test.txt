@@ -1,14 +1,8 @@
-// input: 1 2 3 4
-
-int[] a = new int[4];
-int main()
-{
-    int[][] b = new int[4][];
-	int i;
-	b[0] = a;
-	b[1] = a;
-	b[2] = a;
-	b[3] = a;
-	println(toString(b.size()));
-    return 0;
+int main() {
+    int a = 5;
+    int b;
+    int c;
+    c = a++;
+    b = c;
+    println(toString(b+c+a));
 }

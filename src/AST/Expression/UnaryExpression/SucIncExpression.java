@@ -38,15 +38,15 @@ public class SucIncExpression extends UnaryExpression {
 		operand = Environment.registerTable.addTemporaryRegister(null);
 		if (expression.operand instanceof Address) {
 			Address address = (Address) expression.operand;
-			address = new Address(address.base, address.index, address.scale);
+			address = new Address(address.base, address.index, 8);
 			expression.load(instructions);
 			instructions.add(MoveInstruction.getInstruction(operand, expression.operand));
-			instructions.add(AddInstruction.getInstruction((VirtualRegister) expression.operand, operand, new ImmediatelyNumber(1)));
+			instructions.add(AddInstruction.getInstruction((VirtualRegister) expression.operand, expression.operand, new ImmediatelyNumber(1)));
 			instructions.add(StoreInstruction.getInstruction(expression.operand, address));
 		} else {
 			expression.load(instructions);
 			instructions.add(MoveInstruction.getInstruction(operand, expression.operand));
-			instructions.add(AddInstruction.getInstruction((VirtualRegister) expression.operand, operand, new ImmediatelyNumber(1)));
+			instructions.add(AddInstruction.getInstruction((VirtualRegister) expression.operand, expression.operand, new ImmediatelyNumber(1)));
 		}
 	}
 }
