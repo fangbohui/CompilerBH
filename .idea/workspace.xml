@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="130622e1-2e91-4c8e-b79c-317a8b8f5b0c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/Main.class" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/Main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Compiler2017BH/test.txt" afterPath="$PROJECT_DIR$/out/production/Compiler2017BH/test.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Translator/NASM_Powerful_Translator.java" afterPath="$PROJECT_DIR$/src/Translator/NASM_Powerful_Translator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test.txt" afterPath="$PROJECT_DIR$/src/test.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,8 +36,8 @@
       <file leaf-file-name="test.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="281" column="3" lean-forward="true" selection-start-line="281" selection-start-column="3" selection-end-line="281" selection-end-column="3" />
+            <state relative-caret-position="1283">
+              <caret line="292" column="0" lean-forward="true" selection-start-line="292" selection-start-column="0" selection-end-line="292" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -47,8 +46,8 @@
       <file leaf-file-name="fbh.asm" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fbh.asm">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5643">
-              <caret line="441" column="17" lean-forward="false" selection-start-line="441" selection-start-column="17" selection-end-line="441" selection-end-column="17" />
+            <state relative-caret-position="13562">
+              <caret line="732" column="19" lean-forward="false" selection-start-line="732" selection-start-column="19" selection-end-line="732" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -57,7 +56,7 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
+            <state relative-caret-position="451">
               <caret line="51" column="17" lean-forward="false" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -69,8 +68,8 @@
       <file leaf-file-name="NASM_Powerful_Translator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Translator/NASM_Powerful_Translator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="673">
-              <caret line="191" column="25" lean-forward="false" selection-start-line="191" selection-start-column="25" selection-end-line="191" selection-end-column="25" />
+            <state relative-caret-position="-1429">
+              <caret line="207" column="60" lean-forward="false" selection-start-line="207" selection-start-column="60" selection-end-line="207" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -91,8 +90,8 @@
       <file leaf-file-name="UnaryMinusInstruction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/UnaryInstruction/OtherUnaryInstruction/UnaryMinusInstruction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="38">
+              <caret line="5" column="35" lean-forward="true" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -101,8 +100,40 @@
       <file leaf-file-name="BitNotInstruction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/UnaryInstruction/OtherUnaryInstruction/BitNotInstruction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            <state relative-caret-position="266">
+              <caret line="20" column="30" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NASM_Naive_Translator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Translator/NASM_Naive_Translator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3534">
+              <caret line="213" column="8" lean-forward="false" selection-start-line="213" selection-start-column="8" selection-end-line="213" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InterferenceGraph.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CFG/InterferenceGraph.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="453">
+              <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LeftShiftExpression.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AST/Expression/BinaryExpression/LeftShiftExpression.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="411">
+              <caret line="41" column="64" lean-forward="false" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -119,8 +150,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>binary</find>
-      <find>bin</find>
       <find>!=</find>
       <find>add</find>
       <find>test</find>
@@ -144,11 +173,13 @@
       <find>call</find>
       <find>print</find>
       <find>rsp</find>
-      <find>rbx</find>
       <find>println</find>
       <find>rbxc</find>
       <find>divide</find>
       <find>idiv</find>
+      <find>heaps</find>
+      <find>rbx</find>
+      <find>r8</find>
     </findStrings>
     <replaceStrings>
       <replace>Momo</replace>
@@ -213,8 +244,8 @@
         <option value="$PROJECT_DIR$/src/AST/Expression/FunctionCallExpression.java" />
         <option value="$PROJECT_DIR$/src/AST/Type/ArrayType.java" />
         <option value="$PROJECT_DIR$/src/AST/Type/MemberClass/MemberVar.java" />
-        <option value="$PROJECT_DIR$/src/fbh.asm" />
         <option value="$PROJECT_DIR$/src/CFG/InterferenceGraph.java" />
+        <option value="$PROJECT_DIR$/src/fbh.asm" />
         <option value="$PROJECT_DIR$/src/Translator/NASM_Powerful_Translator.java" />
         <option value="$PROJECT_DIR$/src/test.txt" />
         <option value="$PROJECT_DIR$/src/Main.java" />
@@ -620,6 +651,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="UnaryExpression" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="compiler2017bh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="compiler2017bh" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AST" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Expression" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BinaryExpression" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1129,14 +1186,7 @@
       <workItem from="1495981887878" duration="34811000" />
       <workItem from="1496047603656" duration="61496000" />
       <workItem from="1496147371763" duration="16000" />
-      <workItem from="1496148053924" duration="5657000" />
-    </task>
-    <task id="LOCAL-00011" summary="The work is so huge...">
-      <created>1495801168264</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1495801168264</updated>
+      <workItem from="1496148053924" duration="8133000" />
     </task>
     <task id="LOCAL-00012" summary="I'm zz...">
       <created>1495807939724</created>
@@ -1474,11 +1524,18 @@
       <option name="project" value="LOCAL" />
       <updated>1496150454172</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="test the Register Allocator..">
+      <created>1496154798295</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1496154798295</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="384231000" />
+    <option name="totallyTimeSpent" value="386707000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1554,18 +1611,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Translator/NASM_Powerful_Translator.java</url>
-          <line>327</line>
+          <line>230</line>
           <properties />
-          <option name="timeStamp" value="89" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/CFG/InterferenceGraph.java</url>
-          <line>48</line>
-          <properties />
-          <option name="timeStamp" value="96" />
+          <option name="timeStamp" value="97" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="97" />
+      <option name="time" value="98" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1574,13 +1625,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/AST/Function.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-183">
-          <caret line="27" column="30" lean-forward="false" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/BinaryInstruction/OtherBinaryInstructions/RightShiftInstruction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -1620,13 +1664,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Translator/NASM_Naive_Translator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="95" column="47" lean-forward="false" selection-start-line="95" selection-start-column="47" selection-end-line="95" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -1857,16 +1894,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/InterferenceGraph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CFG/RegisterAllocator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -1893,18 +1920,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/UnaryInstruction/OtherUnaryInstruction/BitNotInstruction.java">
+    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/UnaryInstruction/OtherUnaryInstruction/UnaryMinusInstruction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        <state relative-caret-position="38">
+          <caret line="5" column="35" lean-forward="true" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/UnaryInstruction/OtherUnaryInstruction/UnaryMinusInstruction.java">
+    <entry file="file://$PROJECT_DIR$/src/CFG/Instruction/ComputingInstruction/UnaryInstruction/OtherUnaryInstruction/BitNotInstruction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="266">
+          <caret line="20" column="30" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Translator/NASM_Naive_Translator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3534">
+          <caret line="213" column="8" lean-forward="false" selection-start-line="213" selection-start-column="8" selection-end-line="213" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -1917,35 +1952,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fbh.asm">
+    <entry file="file://$PROJECT_DIR$/src/CFG/InterferenceGraph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5643">
-          <caret line="441" column="17" lean-forward="false" selection-start-line="441" selection-start-column="17" selection-end-line="441" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Translator/NASM_Powerful_Translator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="673">
-          <caret line="191" column="25" lean-forward="false" selection-start-line="191" selection-start-column="25" selection-end-line="191" selection-end-column="25" />
+        <state relative-caret-position="453">
+          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/AST/Expression/BinaryExpression/LeftShiftExpression.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="41" column="64" lean-forward="false" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fbh.asm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13562">
+          <caret line="732" column="19" lean-forward="false" selection-start-line="732" selection-start-column="19" selection-end-line="732" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="281" column="3" lean-forward="true" selection-start-line="281" selection-start-column="3" selection-end-line="281" selection-end-column="3" />
+        <state relative-caret-position="1283">
+          <caret line="292" column="0" lean-forward="true" selection-start-line="292" selection-start-column="0" selection-end-line="292" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Translator/NASM_Powerful_Translator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1429">
+          <caret line="207" column="60" lean-forward="false" selection-start-line="207" selection-start-column="60" selection-end-line="207" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
+        <state relative-caret-position="451">
           <caret line="51" column="17" lean-forward="false" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />

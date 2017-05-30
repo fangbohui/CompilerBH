@@ -221,11 +221,14 @@ public class NASM_Powerful_Translator extends NASM_Translator {
 						} else if (binaryInstruction instanceof LeftShiftInstruction || binaryInstruction instanceof RightShiftInstruction) {
 							PhysicalRegister rax = loadToSrc(NASMRegister.rax, binaryInstruction.src1);
 							PhysicalRegister rcx = loadToSrc(NASMRegister.rcx, binaryInstruction.src2);
+							if (rax != NASMRegister.rax) {
+								output.printf("\tmov\t\trax, %s\n", rax.name);
+							}
 							if (rcx != NASMRegister.rcx) {
 								output.printf("\tmov\t\trcx, %s\n", rcx.name);
 							}
-							output.printf("\t%s\t\t%s, cl\n", binaryInstruction.OPname(), rax.name);
-							move(binaryInstruction.dest, rax);
+							output.printf("\t%s\t\trax, cl\n", binaryInstruction.OPname());
+							move(binaryInstruction.dest, NASMRegister.rax);
 						} else {
 
 							PhysicalRegister rax = loadToSrc(NASMRegister.rax, binaryInstruction.src1);

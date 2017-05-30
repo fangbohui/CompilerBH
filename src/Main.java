@@ -57,7 +57,6 @@ public class Main {
 			new NASM_Naive_Translator(new PrintStream(os)).translate();
 		}
 */
-
 		if (LOCAL == 0) {
 			new NASM_Powerful_Translator(new PrintStream(System.out)).translate();
 		} else {
