@@ -38,9 +38,11 @@ public class FunctionCallInstruction extends FunctionInstruction {
 		if (dest != null) { // void
 			operands.add(dest);
 		}
-		for (VarStatement varStatement : Environment.program.varList) { // TODO
-			if (varStatement.symbol.register != null) {
-				operands.add(varStatement.symbol.register);
+		if (!function.name.startsWith("FBH_")) {
+			for (VarStatement varStatement : Environment.program.varList) {
+				if (varStatement.symbol.register != null) {
+					operands.add(varStatement.symbol.register);
+				}
 			}
 		}
 		return operands;
@@ -50,9 +52,11 @@ public class FunctionCallInstruction extends FunctionInstruction {
 	public ArrayList<Operand> getSrcOperands() {
 		ArrayList<Operand> operands = new ArrayList<>();
 		operands.addAll(parameters);
-		for (VarStatement varStatement : Environment.program.varList) {
-			if (varStatement.symbol.register != null) {
-				operands.add(varStatement.symbol.register);
+		if (!function.name.startsWith("FBH_")) {
+			for (VarStatement varStatement : Environment.program.varList) {
+				if (varStatement.symbol.register != null) {
+					operands.add(varStatement.symbol.register);
+				}
 			}
 		}
 		return operands;

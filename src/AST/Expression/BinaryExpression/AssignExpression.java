@@ -52,7 +52,7 @@ public class AssignExpression extends BinaryExpression {
 		if (operand instanceof Address) {
 			Address address = (Address) operand;
 			operand = Environment.registerTable.addTemporaryRegister(null);
-			//instructions.add(LoadInstruction.getInstruction((VirtualRegister) operand, address));
+			instructions.add(LoadInstruction.getInstruction((VirtualRegister) operand, address));
 		}
 	}
 }

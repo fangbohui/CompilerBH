@@ -232,9 +232,12 @@ public class NASM_Powerful_Translator extends NASM_Translator {
 							move(binaryInstruction.dest, rax);
 						} else {
 							PhysicalRegister rax = loadToSrc(NASMRegister.rax, binaryInstruction.src1);
+							if (rax != NASMRegister.rax) {
+								output.printf("\tmov\t\trax, %s\n", rax.name);
+							}
 							PhysicalRegister rcx = loadToSrc(NASMRegister.rcx, binaryInstruction.src2);
-							output.printf("\t%s\t\t%s, %s\n", binaryInstruction.OPname(), rax.name, rcx.name);
-							move(binaryInstruction.dest, rax);
+							output.printf("\t%s\t\trax, %s\n", binaryInstruction.OPname(), rcx.name);
+							move(binaryInstruction.dest, NASMRegister.rax);
 						}
 					}
 				} else if (instruction instanceof ControlInstruction) {
@@ -300,7 +303,7 @@ public class NASM_Powerful_Translator extends NASM_Translator {
 						LoadInstruction loadInstruction = (LoadInstruction) instruction;
 						PhysicalRegister src = loadToSrc(NASMRegister.rax, loadInstruction.src.base);
 						PhysicalRegister dest = loadToDest(NASMRegister.rdx, loadInstruction.dest);
-						output.printf("\tmov\t\t%s, [%s + %s*8]\n", dest.name, src.name, ((ImmediatelyNumber)(loadInstruction.src.index)).value);
+						output.printf("\tmov\t\t%s, [%s + %s*8]\n", dest.name, src.name, loadInstruction.src.index.value);
 						move(loadInstruction.dest, dest);
 					} else if (instruction instanceof MoveInstruction) {
 						MoveInstruction moveInstruction = (MoveInstruction) instruction;

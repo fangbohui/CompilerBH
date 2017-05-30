@@ -15,6 +15,7 @@ public class MemberVar extends Member {
 		super(name);
 		this.type = type;
 		this.offset = classType.totalSize;
-		classType.totalSize += 8; //TODO
+		classType.totalSize += 8;
 	}
+
 }

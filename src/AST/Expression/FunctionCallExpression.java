@@ -67,7 +67,6 @@ public class FunctionCallExpression extends Expression {
 	}
 
 	public void emit(ArrayList<Instruction> instructions) {
-		// TODO
 		ArrayList<Operand> operands = new ArrayList<>();
 		for (Expression parameter : parameters) {
 			parameter.emit(instructions);

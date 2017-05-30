@@ -54,6 +54,4 @@ public class ArrayType extends Type {
 		}
 		return false;
 	}
-
-	// TODO
 }
